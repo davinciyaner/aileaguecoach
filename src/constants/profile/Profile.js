@@ -15,6 +15,7 @@ export default function Profile() {
         rank: ""
     });
     const [message, setMessage] = useState("");
+    const [messageType, setMessageType] = useState("");
     const [plan, setPlan] = useState("Bronze");
 
     useEffect(() => {
@@ -74,8 +75,10 @@ export default function Profile() {
             setUser(prev => ({ ...prev, username: data.user.username }));
 
             setMessage("Updated successfully!");
+            setMessageType("success");
         } catch (err) {
             setMessage(`${err.message || err}`);
+            setMessageType("error");
         }
     };
 
@@ -224,7 +227,17 @@ export default function Profile() {
                     </section>
                 </div>
 
-                {message && <div className="mt-6 text-sm text-gray-300">{message}</div>}
+                {message && (
+                    <div
+                        className={`mt-6 text-sm font-medium ${
+                            messageType === "success"
+                                ? "text-green-500"
+                                : "text-red-500"
+                        }`}
+                    >
+                        {message}
+                    </div>
+                )}
             </main>
         </div>
     );

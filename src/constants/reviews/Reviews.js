@@ -83,9 +83,7 @@ export default function Reviews() {
     return (
         <section className="bg-gray-900 py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
-
-                {/* Titel und Stats */}
-                <div className="mx-auto max-w-2xl text-center mb-12">
+                <div id="reviews" className="mx-auto max-w-2xl text-center mb-12">
                     <h2 className="text-base font-semibold text-indigo-400">Customer Reviews</h2>
                     <p className="mt-2 text-4xl font-semibold text-white sm:text-5xl">
                         {totalReviews

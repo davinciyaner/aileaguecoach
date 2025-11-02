@@ -1,19 +1,21 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import Navbar from "@/components/navbar/Navbar";
 
 export default function CheckoutForm({ cartItems = [] }) {
     const searchParams = useSearchParams();
+    const router = useRouter(); // ✅ für Navigation
+
     const rawTier = searchParams.get("tier");
     const tierMap = {
-        "tier-hobby": "iron",
-        "tier-enterprise": "gold",
-        "tier-pro": "challenger",
+        "tier=iron": "iron",
+        "tier=gold": "gold",
+        "tier=challenger": "challenger",
     };
 
-    const tier = tierMap[rawTier] || "iron";
+    const tier = searchParams.get("tier") || "iron";
 
 
     const [loading, setLoading] = useState(false);
@@ -22,21 +24,20 @@ export default function CheckoutForm({ cartItems = [] }) {
     const [loggedInUser, setLoggedInUser] = useState(null);
 
     const plans = {
-        iron: { name: "Iron Plan", price: 4.99 },
-        gold: { name: "Gold Plan", price: 9.99 },
-        challenger: { name: "Challenger Plan", price: 19.99 },
+        iron: { name: "Hardstuck", price: 4.99 },
+        gold: { name: "Wanna Climb", price: 9.99 },
+        challenger: { name: "Go Pro", price: 19.99 },
     };
 
     const selectedPlan = plans[tier] || plans.iron;
 
-// Build cartItems dynamically
     const cartItemsToPay = [
         {
             id: tier,
             name: selectedPlan.name,
             price: selectedPlan.price,
-            quantity: 1
-        }
+            quantity: 1,
+        },
     ];
 
     const total = cartItemsToPay.reduce(
@@ -44,8 +45,6 @@ export default function CheckoutForm({ cartItems = [] }) {
         0
     );
 
-
-    // Holen der User-Daten beim Mounten
     useEffect(() => {
         const fetchUser = async () => {
             const token = localStorage.getItem("token");
@@ -54,8 +53,8 @@ export default function CheckoutForm({ cartItems = [] }) {
             try {
                 const res = await fetch("http://localhost:3001/api/auth/me", {
                     headers: {
-                        "Authorization": `Bearer ${token}`,  // JWT Header
-                        "Content-Type": "application/json"
+                        Authorization: `Bearer ${token}`,
+                        "Content-Type": "application/json",
                     },
                 });
                 if (!res.ok) throw new Error("Failed to fetch user");
@@ -69,10 +68,10 @@ export default function CheckoutForm({ cartItems = [] }) {
         fetchUser();
     }, []);
 
-
     const handlePayPalCheckout = async () => {
+        // ✅ Wenn kein User, zur Login-Seite weiterleiten
         if (!loggedInUser) {
-            alert("Please log in first!");
+            router.push("/login");
             return;
         }
 
@@ -91,7 +90,7 @@ export default function CheckoutForm({ cartItems = [] }) {
             if (!res.ok) throw new Error(data.message);
 
             setOrderId(data.paypalOrderId);
-            window.location.href = data.approveUrl; // Weiterleitung zu PayPal
+            window.location.href = data.approveUrl;
         } catch (err) {
             alert(err.message);
             setLoading(false);
@@ -127,12 +126,15 @@ export default function CheckoutForm({ cartItems = [] }) {
     return (
         <div className="space-y-6">
             <div className="mt-20">
-                <Navbar minimal={true}/>
+                <Navbar minimal={true} />
             </div>
+
             <div className="space-y-4">
                 {cartItemsToPay.map((item) => (
                     <div key={item.id} className="flex justify-between text-gray-300">
-                        <span>{item.name} x {item.quantity}</span>
+                        <span>
+                            {item.name} x {item.quantity}
+                        </span>
                         <span>{(item.price * item.quantity).toFixed(2)} €</span>
                     </div>
                 ))}
@@ -145,7 +147,7 @@ export default function CheckoutForm({ cartItems = [] }) {
 
             <button
                 onClick={handlePayPalCheckout}
-                disabled={loading || !loggedInUser}
+                disabled={loading}
                 className="w-full bg-indigo-500 hover:bg-indigo-400 text-white py-3 rounded-md font-semibold transition"
             >
                 {loading
@@ -160,7 +162,7 @@ export default function CheckoutForm({ cartItems = [] }) {
                     onClick={handleCapture}
                     className="mt-4 w-full bg-green-500 hover:bg-green-400 text-white py-2 rounded-md font-semibold transition"
                 >
-                    Capture Payment (Sandbox)
+                    Capture Payment
                 </button>
             )}
         </div>

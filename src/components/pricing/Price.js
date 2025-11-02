@@ -7,7 +7,7 @@ const tiers = [
     {
         name: 'Hardstuck',
         id: 'iron',
-        href: '/checkout?tier-iron',
+        href: '/checkout?tier=iron',
         priceMonthly: '4,99 €',
         description: "Still stuck in Bronze? No worries - even pros start somewhere. Small price, big potential and cheaper than your daily caffeine habit.",
         features: ['Track unlimited games'],
@@ -16,7 +16,7 @@ const tiers = [
     {
         name: 'Wanna Climb',
         id: 'gold',
-        href: '/checkout?tier-gold',
+        href: '/checkout?tier=gold',
         priceMonthly: '9,99 €',
         description: 'Ten bucks a month? Stop being the support main - it’s time to carry yourself. More games, more insights, less inting.',
         features: ['Track unlimited games', 'Community Discord'],
@@ -25,7 +25,7 @@ const tiers = [
     {
         name: 'Go Pro',
         id: 'challenger',
-        href: '/checkout?tier-challenger',
+        href: '/checkout?tier=challenger',
         priceMonthly: '19,99 €',
         description: "Winners invest in their growth. €19.99 a month isn’t a cost — it’s your statement that you’re done playing small.",
         features: ['Track unlimited games', 'Community Discord', '24/7 support', 'friend invite'],

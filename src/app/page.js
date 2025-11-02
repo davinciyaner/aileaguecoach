@@ -12,8 +12,8 @@ export default function Main() {
             <Home />
             <Features />
             <Stats />
-            <Reviews />
             <Price />
+            <Reviews />
             <Faq />
             <Footer />
         </>
