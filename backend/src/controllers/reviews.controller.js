@@ -5,13 +5,13 @@ export const createReview = async (req, res) => {
     try {
         const { name, rating, comment } = req.body;
         if (!rating || !comment) {
-            return res.status(400).json({ message: "Rating and comment are required." });
+            return res.status(400).json({ message: "Sterne und Kommentar sind erforderlich." });
         }
 
         const review = new Reviews({ name, rating, comment });
         await review.save();
 
-        res.status(201).json({ message: "Review submitted successfully!", review });
+        res.status(201).json({ message: "Bewertung erfolgreich abgegeben, danke.", review });
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: "Server error." });

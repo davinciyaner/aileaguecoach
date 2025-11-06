@@ -26,7 +26,7 @@ export const register = async (req, res) => {
 
         const existingUser = await User.findOne({$or: [{email}, {username}]});
         if (existingUser) {
-            return res.status(400).json({message: "E-Mail or username already exists."});
+            return res.status(400).json({message: "E-Mail oder Benutzername existiert bereits."});
         }
 
         const hashPassword = bcrypt.hashSync(password, 10);
@@ -41,10 +41,10 @@ export const register = async (req, res) => {
             rank: ""
         })
 
-        return res.status(201).json({message: "User saved successfully."});
+        return res.status(201).json({message: "Erfolgreich registriert."});
     } catch (error) {
         console.log(error);
-        return res.status(400).json({message: "Serverfehler"});
+        return res.status(400).json({message: "Etwas ist schiefgelaufen. Bitte versuche es erneut."});
     }
 }
 
@@ -54,10 +54,10 @@ export const login = async (req, res) => {
         // username: username?
         const user = await User.findOne({username});
 
-        if (!user) return res.status(400).json({message: "username not found."});
+        if (!user) return res.status(400).json({message: "Benutzername nicht gefunden."});
 
         const validPassword = await bcrypt.compare(password, user.password);
-        if (!validPassword) return res.status(400).json({message: "Invalid password"});
+        if (!validPassword) return res.status(400).json({message: "Falsches Passwort. Bitte versuche es erneut."});
 
         const token = jwt.sign({ id: user._id, username: user.username }, JWT_SECRET, { expiresIn: "1h" });
 
@@ -78,7 +78,7 @@ export const getMe = async (req, res) => {
         const user = await User.findById(req.user.id).select("-password"); // alle wichtigen Felder
         const profile = await Profile.findOne({ userId: req.user.id });
 
-        if (!user) return res.status(404).json({ message: "User not found" });
+        if (!user) return res.status(404).json({ message: "User nicht gefunden." });
 
         return res.status(200).json({
             user,
@@ -96,7 +96,7 @@ export const forgotPassword = async (req, res) => {
         const { email } = req.body;
 
         const user = await User.findOne({ email });
-        if (!user) return res.status(400).json({ message: "User with this email not found" });
+        if (!user) return res.status(400).json({ message: "Benutzername mit dieser E-Mail Adresse haben wir nicht gefunden." });
 
         const resetToken = crypto.randomBytes(32).toString("hex");
         const resetTokenExpires = Date.now() + 10 * 60 * 1000;
@@ -119,7 +119,7 @@ export const forgotPassword = async (req, res) => {
             `,
         })
 
-        return res.status(200).json({ message: "Code was sent to your email address" });
+        return res.status(200).json({ message: "Der Code wurde an deine E-Mail Adresse verschickt." });
     } catch (error) {
         console.error(error);
         return res.status(400).json({ message: "Server error" });
@@ -136,7 +136,7 @@ export const resetPassword = async (req, res) => {
         });
 
         if (!user)
-            return res.status(400).json({ message: "Invalid or expired token." });
+            return res.status(400).json({ message: "Falscher oder abgelaufender Code." });
 
         // Neues Passwort speichern
         const hashedPassword = await bcrypt.hash(newPassword, 10);
@@ -147,7 +147,7 @@ export const resetPassword = async (req, res) => {
         user.resetPasswordExpires = undefined;
         await user.save();
 
-        return res.status(200).json({ message: "Password successfully reset." });
+        return res.status(200).json({ message: "Passwort wurde erfolgreich geändert." });
     } catch (error) {
         console.error(error);
         return res.status(500).json({ message: "Server error." });

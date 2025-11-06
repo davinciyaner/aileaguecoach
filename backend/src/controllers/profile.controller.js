@@ -9,7 +9,7 @@ export const getProfile = async (req, res) => {
         const user = await User.findById(req.user.id).select("username");
         const profile = await Profile.findById(req.params.id);
 
-        if (!user) return res.status(404).json({ message: 'User not found' });
+        if (!user) return res.status(404).json({ message: 'User nicht gefunden.' });
 
         return res.status(200).json({
             user,
@@ -17,7 +17,7 @@ export const getProfile = async (req, res) => {
         });
     } catch (error) {
         console.error(error);
-        return res.status(401).json({ message: 'Unauthorized' });
+        return res.status(401).json({ message: 'Abgemeldet. Bitte melde dich an.' });
     }
 }
 
@@ -41,12 +41,12 @@ export const updateProfile = async (req, res) => {
         );
 
         return res.status(200).json({
-            message: "Profile successfully updated",
+            message: "Profile erfolgreich aktualisiert.",
             user: updatedUser,
             profile: updatedProfile,
         });
     } catch (error) {
         console.error(error);
-        return res.status(500).json({ message: "Update failed", error });
+        return res.status(500).json({ message: "Update fehlgeschlagen.", error });
     }
 };

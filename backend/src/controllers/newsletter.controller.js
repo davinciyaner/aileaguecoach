@@ -18,14 +18,14 @@ export const subscribeNewsletter = async (req, res) => {
         const { email } = req.body;
 
         if (!email) {
-            return res.status(400).json({ message: "Email is required." });
+            return res.status(400).json({ message: "Bitte geben Sie eine E-Mail-Adresse an." });
         }
 
         const existingEmail = await Newsletter.findOne({ email });
         if (existingEmail) {
             return res
                 .status(400)
-                .json({ message: "You are already subscribed to our newsletter." });
+                .json({ message: "Sie sind bereits für unseren Newsletter angemeldet." });
         }
 
         const subscriber = new Newsletter({ email });
@@ -34,12 +34,12 @@ export const subscribeNewsletter = async (req, res) => {
         const mailOptions = {
             from: `"AI Hans League of Legends Coach" <${process.env.GMAIL_USER}>`,
             to: email,
-            subject: "Welcome to AI Hans League of Legends Coach",
+            subject: "Willkommen beim AI Hans League of Legends Coach",
             html: `
-        <h2>Welcome to the AI Hans League of Legends Coach Community!</h2>
-        <p>You're now subscribed to receive exclusive updates, new feature drops, and performance insights from your AI Hans League of Legends Coach.</p>
+        <h2>Willkommen in der AI Hans League of Legends Coach Community!</h2>
+        <p>Sie sind nun angemeldet, um exklusive Updates, neue Features und Performance-Insights von Ihrem AI Hans League of Legends Coach zu erhalten.</p>
         <br/>
-        <p>Stay sharp,<br/>The Hans Team</p>
+        <p>Bleiben Sie scharf,<br/>Ihr Hans-Team</p>
       `,
         };
 
@@ -47,7 +47,7 @@ export const subscribeNewsletter = async (req, res) => {
 
         return res
             .status(200)
-            .json({ message: "Successfully subscribed to our Newsletter" });
+            .json({ message: "Erfolgreich für unseren Newsletter angemeldet." });
     } catch (error) {
         console.error("Subscribe Error:", error);
         return res.status(500).json({ error: error.message });
@@ -59,14 +59,14 @@ export const unsubscribeNewsletter = async (req, res) => {
         const { email } = req.query;
 
         if (!email) {
-            return res.status(400).json({ message: "Email is required." });
+            return res.status(400).json({ message: "Bitte geben Sie eine E-Mail-Adresse an." });
         }
 
         const existing = await Newsletter.findOne({ email });
         if (!existing) {
             return res
                 .status(404)
-                .json({ message: "Email not found in subscriber list." });
+                .json({ message: "Diese E-Mail-Adresse ist nicht in unserer Abonnentenliste vorhanden." });
         }
 
         await Newsletter.deleteOne({ email });
@@ -74,20 +74,20 @@ export const unsubscribeNewsletter = async (req, res) => {
         const mailOptions = {
             from: `"AI Hans League of Legends Coach" <${process.env.GMAIL_USER}>`,
             to: email,
-            subject: "You have unsubscribed from AI Hans League of Legends Coach ❌",
+            subject: "Abmeldung vom AI Hans League of Legends Coach",
             html: `
-        <h3>You've been successfully unsubscribed.</h3>
-        <p>We’re sorry to see you go! If this was a mistake, you can rejoin anytime by visiting our website.</p>
+        <h3>Sie wurden erfolgreich abgemeldet.</h3>
+        <p>Schade, dass Sie gehen! Falls dies ein Versehen war, können Sie sich jederzeit wieder anmelden, indem Sie unsere Website besuchen.</p>
         <br/>
-        <a href="${process.env.CLIENT_URL}" target="_blank">Return to AI Hans League of Legends Coach</a>
+        <a href="${process.env.CLIENT_URL}" target="_blank">Zurück zum AI Hans League of Legends Coach</a>
       `,
         };
 
         await transporter.sendMail(mailOptions);
 
-        res.status(200).json({ message: "Successfully unsubscribed." });
+        res.status(200).json({ message: "Erfolgreich abgemeldet." });
     } catch (error) {
         console.error("Unsubscribe Error:", error);
-        res.status(500).json({ message: "Server error." });
+        res.status(500).json({ message: "Serverfehler." });
     }
 };

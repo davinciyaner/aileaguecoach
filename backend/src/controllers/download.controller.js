@@ -21,7 +21,7 @@ export const downloadWindows = async (req, res) => {
     const filePath = path.join(__dirname, "..", "..", "downloads", "main.exe");
 
     if (!fs.existsSync(filePath)) {
-        return res.status(404).json({ message: "File not found" });
+        return res.status(404).json({ message: "File nicht gefunden." });
     }
 
     downloadStats.windows.downloads += 1;
