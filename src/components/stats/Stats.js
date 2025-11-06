@@ -7,31 +7,31 @@ import { Brain, Rocket, Users, Sparkles } from "lucide-react";
 const timeline = [
     {
         icon: Brain,
-        title: "Idea & Research",
-        date: "October 11 2025",
+        title: "Idee & Forschung",
+        date: "11. Oktober 2025",
         description:
-            "Hans was born — the idea to create a next-generation AI coach that helps League of Legends players reach their full potential.",
+            "Die Idee zu Hans war geboren – ein KI-Coach der nächsten Generation, der League of Legends-Spielern hilft, ihr volles Potenzial zu entfalten.",
     },
     {
         icon: Rocket,
-        title: "MVP Development",
-        date: "October 18 2025",
+        title: "MVP-Entwicklung",
+        date: "18. Oktober 2025",
         description:
-            "The first prototype is being built, featuring AI-driven real-time match analysis and coaching foundations.",
+            "Der erste Prototyp wird entwickelt – mit KI-gestützter Echtzeitanalyse und den Grundlagen für intelligentes Coaching.",
     },
     {
         icon: Users,
-        title: "Closed Beta Launch",
-        date: "October 26 2025",
+        title: "Geschlossene Beta",
+        date: "26. Oktober 2025",
         description:
-            "Early access opens for selected players to test Hans and help shape the future of AI-powered training.",
+            "Der frühe Zugang startet für ausgewählte Spieler, um Hans zu testen und die Zukunft des KI-basierten Trainings mitzugestalten.",
     },
     {
         icon: Sparkles,
-        title: "Public Release",
-        date: "November 3 2025",
+        title: "Öffentliche Veröffentlichung",
+        date: "3. November 2025",
         description:
-            "Hans goes live for everyone. Real-time coaching and performance dashboards become available to all players.",
+            "Hans geht offiziell live. Echtzeit-Coaching und Performance-Dashboards werden für alle Spieler verfügbar.",
     },
 ];
 
@@ -41,14 +41,14 @@ export default function Timeline() {
             <div className="mx-auto max-w-5xl px-6 lg:px-8">
                 <div id="future" className="text-center mb-16">
                     <h2 className="text-base font-semibold text-indigo-400">
-                        Our Roadmap
+                        Unsere Roadmap
                     </h2>
                     <p className="mt-2 text-4xl font-semibold text-white sm:text-5xl">
-                        Building the Future of AI Coaching
+                        Wir bauen die Zukunft des KI-Coachings
                     </p>
                     <p className="mt-6 text-lg text-gray-400 max-w-2xl mx-auto">
-                        From an ambitious idea to a revolutionary coaching platform —
-                        here’s how Hans evolves step by step.
+                        Von einer ehrgeizigen Idee zu einer revolutionären Coaching-Plattform –
+                        so entwickelt sich Hans Schritt für Schritt weiter.
                     </p>
                 </div>
 

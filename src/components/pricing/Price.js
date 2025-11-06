@@ -1,4 +1,4 @@
-"use client"
+/*"use client"
 
 import React from 'react';
 import { CheckIcon } from "@heroicons/react/16/solid";
@@ -50,7 +50,6 @@ const Price = () => {
                 </p>
             </div>
 
-            {/* 🧱 Cards Grid */}
             <div className="mx-auto mt-16 grid max-w-5xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
                 {tiers.map((tier) => (
                     <div
@@ -100,4 +99,4 @@ const Price = () => {
     );
 };
 
-export default Price;
+export default Price;*/

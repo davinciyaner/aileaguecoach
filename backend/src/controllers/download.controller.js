@@ -7,8 +7,8 @@ const __dirname = path.dirname(__filename);
 
 let downloadStats = {
     windows: {
-        version: "0.1.0-alpha.1",
-        releaseDate: "2025-10-31",
+        version: "0.1.0-Beta.1",
+        releaseDate: "06.11.2025",
         downloads: 0,
     },
 };

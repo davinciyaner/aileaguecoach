@@ -5,11 +5,10 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 
 import authRoutes from './routes/auth.routes.js';
-import orderRoutes from "./routes/order.routes.js";
-import newsletterRoutes from "./routes/newsletter.routes.js";
 import reviewsRoutes from "./routes/reviews.routes.js";
 import profileRoutes from "./routes/profile.routes.js";
 import downloadRoutes from "./routes/download.routes.js";
+import subscriptionRoutes from "./routes/subscription.routes.js";
 
 import dotenv from "dotenv";
 dotenv.config();
@@ -42,8 +41,7 @@ app.use('*', (req, res, next) => {
 // Assign Routes
 
 app.use('/api/auth', authRoutes);
-app.use("/api/", orderRoutes);
-app.use('/api/subscribe', newsletterRoutes);
+app.use('/api/subscribe', subscriptionRoutes);
 app.use("/api/reviews", reviewsRoutes);
 app.use("/api/profile", profileRoutes);
 app.use("/api/download", downloadRoutes);

@@ -1,5 +1,4 @@
 import Home from "@/components/home/Home";
-import Price from "@/components/pricing/Price";
 import Features from "@/components/features/Features";
 import Stats from "@/components/stats/Stats";
 import Footer from "@/components/footer/Footer";
@@ -12,7 +11,6 @@ export default function Main() {
             <Home />
             <Features />
             <Stats />
-            <Price />
             <Reviews />
             <Faq />
             <Footer />

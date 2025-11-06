@@ -7,10 +7,10 @@ import {useRouter} from "next/navigation";
 
 const navigation = [
     { name: 'Features', href: '#features' },
-    { name: 'Future', href: '#future' },
-    { name: 'Price', href: '#price' },
-    { name: 'Reviews', href: '#reviews' },
+    { name: 'Zukunft', href: '#future' },
+    { name: 'Bewertungen', href: '#reviews' },
     { name: 'FAQ', href: '#faq' },
+    { name: 'Download', href: '/download' },
 ]
 
 
@@ -25,7 +25,7 @@ const Navbar = ({ minimal = false }) => {
             <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
                 <div className="flex lg:flex-1">
                     <a href="/" className="-m-1.5 p-1.5">
-                        <h2 className="font-bold">AI League of Legends Coach</h2>
+                        <h2 className="font-bold">Hans AI Coach</h2>
                     </a>
                 </div>
                 <div className="flex lg:hidden">

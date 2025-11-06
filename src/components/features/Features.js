@@ -5,27 +5,27 @@ import { Brain, TrendingUp, Target, Zap } from "lucide-react";
 
 const features = [
     {
-        name: "AI Match Analysis",
+        name: "KI-Spielanalyse",
         description:
-            "Our AI reviews your games in detail — from gold lead and objectives to decision-making. Understand exactly what separates you from the next rank.",
+            "Unsere KI analysiert deine Spiele im Detail – von Goldvorsprung und Objectives bis hin zu Entscheidungsfindung. Erfahre genau, was dich vom nächsten Rang trennt.",
         icon: Brain,
     },
     {
-        name: "Progress Tracking",
+        name: "Fortschrittsverfolgung",
         description:
-            "Track your growth over time with visual stats like. (Coming Soon)",
+            "Verfolge dein Wachstum im Laufe der Zeit mit visuellen Statistiken. (Demnächst verfügbar)",
         icon: TrendingUp,
     },
     {
-        name: "Personalized Training Plans",
+        name: "Personalisierte Trainingspläne",
         description:
-            "Get custom daily drills and improvement tasks based on your weaknesses, role, and champion pool. (Coming Soon)",
+            "Erhalte tägliche, auf dich zugeschnittene Übungsaufgaben basierend auf deinen Schwächen, deiner Rolle und deinem Champion-Pool. (Demnächst verfügbar)",
         icon: Target,
     },
     {
-        name: "Live In-Game Coaching",
+        name: "Live Coaching im Spiel",
         description:
-            "Receive real-time tips while playing — your personal Challenger-level coach by your side.",
+            "Erhalte in Echtzeit Tipps während des Spiels – dein persönlicher Coach auf Challenger-Niveau an deiner Seite.",
         icon: Zap,
     },
 ];
@@ -48,11 +48,11 @@ const item = {
 export default function Features() {
     return (
         <section className="relative bg-gray-950 py-24 sm:py-32 overflow-hidden">
-            {/* subtle gradient glow in the background */}
+            {/* dezenter Farbverlauf im Hintergrund */}
             <div id="features" className="absolute inset-0 bg-gradient-to-b from-indigo-500/10 via-transparent to-gray-950 pointer-events-none" />
 
             <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
-                {/* Header */}
+                {/* Überschrift */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -61,18 +61,17 @@ export default function Features() {
                     className="mx-auto max-w-2xl text-center"
                 >
                     <h2 className="text-base font-semibold text-indigo-400">
-                        Smarter. Faster. Stronger.
+                        Schlauer. Schneller. Stärker.
                     </h2>
                     <p className="mt-2 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-                        The Future of League of Legends Coaching
+                        Die Zukunft des League of Legends Coachings
                     </p>
                     <p className="mt-6 text-lg text-gray-400">
-                        Hans is your personal AI coach — analyzing your games, creating
-                        tailored training plans, and teaching you how to think like a pro.
+                        Hans ist dein persönlicher KI-Coach – analysiert deine Spiele, erstellt individuelle Trainingspläne und zeigt dir, wie du wie ein Profi denkst.
                     </p>
                 </motion.div>
 
-                {/* Feature Grid */}
+                {/* Feature-Grid */}
                 <motion.div
                     variants={container}
                     initial="hidden"

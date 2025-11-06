@@ -5,9 +5,8 @@ import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/navbar/Navbar";
 
-
 export default function Home() {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const { user, logout } = useAuth();
     const [open, setOpen] = useState(false);
@@ -26,19 +25,20 @@ export default function Home() {
                             </a>
                         </div>
                     </div>
+
                     <div className="text-center">
                         <h1 className="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl">
-                            Climb your way to the top
+                            Steige an die Spitze auf
                         </h1>
                         <p className="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
-                            with our new AI tool it is easier than never before to climb to the top
+                            Mit unserem neuen KI-Tool war es noch nie so einfach, in League of Legends aufzusteigen und dein wahres Potenzial zu entfalten.
                         </p>
                         <div className="mt-10 flex items-center justify-center gap-x-6">
                             <a
                                 href="/download"
                                 className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
                             >
-                                Get started
+                                Jetzt starten
                             </a>
                         </div>
                     </div>

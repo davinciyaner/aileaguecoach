@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
 
 export default function Downloads() {
     const [stats, setStats] = useState(null);
@@ -11,7 +12,7 @@ export default function Downloads() {
             try {
                 const res = await fetch("http://localhost:3001/api/download/stats");
                 const data = await res.json();
-                setStats(data?.windows || null); // 👈 nur Windows-Daten erwarten
+                setStats(data?.windows || null);
             } catch (err) {
                 console.error("Error loading download stats:", err);
             } finally {
@@ -25,13 +26,14 @@ export default function Downloads() {
         return <div className="text-center text-gray-300 mt-20">Loading...</div>;
 
     return (
+        <div>
         <main className="flex flex-col items-center justify-center min-h-screen bg-[#0f0f14] text-white p-8">
             <div className="mt-20">
                 <Navbar minimal={true}/>
             </div>
-            <h1 className="text-4xl font-bold mb-4 text-indigo-400">Download AILC Coach</h1>
+            <h1 className="text-4xl font-bold mb-4 text-indigo-400">Download Hans AI Coach</h1>
             <p className="text-gray-400 mb-10 max-w-2xl text-center">
-                Lade die neueste Version herunter und starte deine Reise mit dem AI League Coach.
+                Lade die neueste Version herunter und starte deine Reise mit dem Hans AI Coach.
             </p>
 
             {/* Download Button */}
@@ -50,7 +52,7 @@ export default function Downloads() {
                     </p>
                 ) : (
                     <p className="text-gray-500 text-sm mt-3">
-                        Version 0.1.0-alpha.1
+                        Version 0.1.0-Beta.1
                     </p>
                 )}
             </div>
@@ -63,9 +65,8 @@ export default function Downloads() {
                 <p>• Internetverbindung für KI-Modelle erforderlich</p>
             </div>
 
-            <div className="mt-16 text-sm text-gray-500">
-                © {new Date().getFullYear()} AI League Coach — All rights reserved.
-            </div>
         </main>
+        <Footer />
+        </div>
     );
 }

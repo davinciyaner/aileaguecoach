@@ -47,8 +47,8 @@ export default function Reviews() {
     // ✅ Nur eingeloggte User dürfen absenden
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!loggedInUser) return alert("You must be logged in to write a review.");
-        if (!comment) return alert("Please enter a comment.");
+        if (!loggedInUser) return alert("Melde dich an, um eine Bewertung zu schreiben.");
+        if (!comment) return alert("Schreib eine Bewertung");
 
         const res = await fetch("http://localhost:3001/api/reviews", {
             method: "POST",
@@ -67,7 +67,7 @@ export default function Reviews() {
             setHoverRating(0);
             setShowForm(false);
             fetchData();
-            alert("Review submitted!");
+            alert("Danke für deine Bewertung");
         } else {
             alert(data.message);
         }
@@ -84,13 +84,13 @@ export default function Reviews() {
         <section className="bg-gray-900 py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div id="reviews" className="mx-auto max-w-2xl text-center mb-12">
-                    <h2 className="text-base font-semibold text-indigo-400">Customer Reviews</h2>
+                    <h2 className="text-base font-semibold text-indigo-400">Kundenbewertungen</h2>
                     <p className="mt-2 text-4xl font-semibold text-white sm:text-5xl">
                         {totalReviews
                             ? (reviews.reduce((sum, r) => sum + r.rating, 0) / totalReviews).toFixed(1)
-                            : 0} out of 5 stars
+                            : 0} von 5 Sternen
                     </p>
-                    <p className="mt-1 text-gray-400">Based on {totalReviews} reviews</p>
+                    <p className="mt-1 text-gray-400">{totalReviews} Kundenbewertungen</p>
                 </div>
 
                 {/* Review schreiben */}
@@ -100,11 +100,11 @@ export default function Reviews() {
                             onClick={() => setShowForm(!showForm)}
                             className="rounded-md bg-indigo-500 px-6 py-2 text-white font-semibold hover:bg-indigo-400 transition"
                         >
-                            {showForm ? "Close Review Form" : "Write a review"}
+                            {showForm ? "Bewertungen schließen" : "Schreibe eine Bewertung"}
                         </button>
                     ) : (
                         <p className="text-gray-400">
-                            Please <span className="text-indigo-400 font-semibold">log in</span> to write a review.
+                            Please <span className="text-indigo-400 font-semibold">Anmelden</span> um eine Bewertung zu schreiben.
                         </p>
                     )}
                 </div>
@@ -116,7 +116,7 @@ export default function Reviews() {
                     >
                         <input
                             type="text"
-                            placeholder="Your name"
+                            placeholder="Dein Username"
                             value={name}
                             readOnly
                             className="w-full rounded-md bg-gray-700/50 px-3 py-2 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 cursor-not-allowed"
@@ -135,7 +135,7 @@ export default function Reviews() {
                             ))}
                         </div>
                         <textarea
-                            placeholder="Your review"
+                            placeholder="Schreibe deine Bewertung hier..."
                             value={comment}
                             onChange={(e) => setComment(e.target.value)}
                             className="w-full rounded-md bg-gray-700/50 px-3 py-2 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500"
@@ -144,7 +144,7 @@ export default function Reviews() {
                             type="submit"
                             className="rounded-md bg-indigo-500 px-6 py-2 text-white font-semibold hover:bg-indigo-400 transition"
                         >
-                            Submit Review
+                            Bewertung abgeben
                         </button>
                     </form>
                 )}

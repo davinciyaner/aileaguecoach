@@ -4,34 +4,39 @@ import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 
 const faqs = [
     {
-        question: "What is Hans AI Coach?",
+        question: "Was ist Hans AI Coach?",
         answer:
-            "Hans is your personal AI-powered League of Legends coach. It provides live game analysis, tracks your performance, and gives personalized advice to help you climb the ladder faster.",
+            "Hans ist dein persönlicher, KI-gestützter League-of-Legends-Coach. Er analysiert deine Spiele in Echtzeit, verfolgt deine Performance und gibt dir personalisierte Tipps, damit du schneller im Rang aufsteigen kannst.",
     },
     {
-        question: "How does the AI give advice?",
+        question: "Wie funktioniert die KI-Beratung?",
         answer:
-            "The AI analyzes your gameplay data including kills, deaths, assists, map movements, and item choices. It then generates actionable insights and tips based on best practices and professional strategies.",
+            "Die KI analysiert deine Spieldaten – darunter Kills, Tode, Assists, Bewegungen auf der Karte und Item-Builds – und erstellt daraus individuelle Verbesserungsvorschläge basierend auf Profi-Strategien und Best Practices.",
     },
     {
-        question: "Do I need a subscription?",
+        question: "Brauche ich ein Abonnement?",
         answer:
-            "Yes, Hans AI Coach has multiple pricing tiers depending on how many games you want to track and the level of coaching support you need.",
+            "Nein, aktuell brauchst du kein Abonnement. Hans AI Coach befindet sich in der Beta-Phase und ist derzeit komplett kostenlos nutzbar. Später wird es verschiedene Preisstufen geben – abhängig davon, wie viele Spiele du tracken und wie tief die Coaching-Analyse gehen soll.",
     },
     {
-        question: "Can I cancel my subscription anytime?",
+        question: "Kann ich mein Konto oder zukünftige Abos jederzeit kündigen?",
         answer:
-            "Absolutely! You can manage and cancel your subscription directly from your account dashboard at any time.",
+            "Ja, selbstverständlich! Sobald die Bezahlversion aktiviert wird, kannst du dein Konto oder dein Abonnement jederzeit direkt über dein Dashboard verwalten und kündigen.",
     },
     {
-        question: "Is my data safe?",
+        question: "Sind meine Daten sicher?",
         answer:
-            "Yes! All your game data and personal information are encrypted and handled securely according to modern data privacy standards.",
+            "Ja! Alle deine Spieldaten und persönlichen Informationen werden verschlüsselt übertragen und sicher gespeichert – nach modernen Datenschutzstandards. Deine Daten gehören ausschließlich dir.",
     },
     {
-        question: "Why is it an .exe?",
+        question: "Warum ist es eine .exe-Datei?",
         answer:
-            "You get a notification from your Windows Defender because I honestly don't have 350-500 € for the certification. I'm a student and solo developed this AI coach.",
+            "Windows Defender zeigt möglicherweise eine Warnung, weil die Anwendung aktuell keine offizielle Code-Zertifizierung besitzt. Diese kostet 350–500 €. Da ich Student bin und Hans AI Coach als Solo-Projekt entwickle, kann ich mir das momentan noch nicht leisten. Die Software ist jedoch sicher.",
+    },
+    {
+        question: "Ist das Programm wirklich kostenlos?",
+        answer:
+            "Ja! In der aktuellen Beta-Version ist Hans AI Coach komplett kostenlos. Du kannst alle Kernfunktionen frei testen und mir Feedback geben, um die Entwicklung zu verbessern. In Zukunft wird es ein faires Preismodell mit verschiedenen Stufen geben.",
     },
 ];
 
@@ -39,11 +44,7 @@ export default function Faq() {
     const [openIndex, setOpenIndex] = useState(null);
 
     const toggleIndex = (index) => {
-        if (openIndex === index) {
-            setOpenIndex(null);
-        } else {
-            setOpenIndex(index);
-        }
+        setOpenIndex(openIndex === index ? null : index);
     };
 
     return (
@@ -52,10 +53,10 @@ export default function Faq() {
                 <div className="mx-auto max-w-2xl text-center">
                     <h2 id="faq" className="text-base font-semibold text-indigo-400">FAQ</h2>
                     <p className="mt-2 text-4xl font-semibold text-white sm:text-5xl">
-                        Frequently Asked Questions
+                        Häufig gestellte Fragen
                     </p>
                     <p className="mt-6 text-lg text-gray-400">
-                        Here are some of the most common questions we get from new users.
+                        Hier findest du Antworten auf die häufigsten Fragen rund um Hans AI Coach.
                     </p>
                 </div>
 
@@ -63,7 +64,7 @@ export default function Faq() {
                     {faqs.map((faq, index) => (
                         <div
                             key={index}
-                            className="bg-gray-800 rounded-xl p-6 cursor-pointer"
+                            className="bg-gray-800 rounded-xl p-6 cursor-pointer transition hover:bg-gray-750"
                             onClick={() => toggleIndex(index)}
                         >
                             <div className="flex items-center justify-between">
