@@ -6,7 +6,6 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-console.log(">>> ENV PORT:", process.env.PORT);
 
 import authRoutes from "./routes/auth.routes.js";
 import reviewsRoutes from "./routes/reviews.routes.js";
@@ -16,7 +15,7 @@ import subscriptionRoutes from "./routes/subscription.routes.js";
 
 const app = express();
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3001;
 
 
 app.use(express.json({ limit: "50mb" }));
@@ -27,7 +26,8 @@ app.use(cookieParser());
 const allowedOrigins = [process.env.CLIENT_URL].filter(Boolean);
 
 app.use(cors({
-    origin: 'https://aihanscoach.vercel.app', // Frontend-URL
+    origin: 'https://aihanscoach.vercel.app',
+    //origin: 'http://localhost:3000',
     methods: ['GET','POST','PUT','DELETE'],
     credentials: true
 }));
@@ -48,34 +48,34 @@ app.get("/health", async (req, res) => {
     });
 });
 
-// 🏁 Testroute
+
 app.get("/", (req, res) => {
     res.json({ message: "AI League Coach Backend läuft 🚀" });
 });
 
-// 🔗 Routen
+
 app.use("/api/auth", authRoutes);
 app.use("/api/subscribe", subscriptionRoutes);
 app.use("/api/reviews", reviewsRoutes);
 app.use("/api/profile", profileRoutes);
 app.use("/api/download", downloadRoutes);
 
-// ⚠️ 404 Fallback
+
 app.use("*", (req, res) => {
     res.status(404).json({ status: false, message: "Endpoint Not Found" });
 });
 
-// 🚀 Verbindung zur MongoDB + Serverstart
+
 const startServer = async () => {
     try {
         await mongoose.connect(process.env.DB_URL, { dbName: "AIleague" });
-        console.log("✅ MongoDB verbunden");
+        console.log("MongoDB verbunden");
 
         app.listen(PORT, () => {
-            console.log(`✅ Server läuft auf Port ${PORT}`);
+            console.log(`Server läuft auf Port ${PORT}`);
         });
     } catch (err) {
-        console.error("❌ MongoDB Fehler:", err);
+        console.error("MongoDB Fehler:", err);
     }
 };
 
