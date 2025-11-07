@@ -1,21 +1,19 @@
 import bcrypt from "bcrypt";
 import User from "../models/auth.model.js";
+import Profile from "../models/profile.model.js";
 import jwt from "jsonwebtoken";
 import crypto from "crypto";
 import nodemailer from "nodemailer";
 
-const JWT_SECRET = "secret";
-
 import dotenv from "dotenv";
-import Profile from "../models/profile.model.js";
 dotenv.config();
 
 
 const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-        user: process.env.GMAIL_USER,  // z.B. hansleaguecoach@gmail.com
-        pass: process.env.GMAIL_PASS,  // App-Passwort
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_PASS,
     },
 });
 
@@ -43,7 +41,6 @@ export const register = async (req, res) => {
 
         return res.status(201).json({message: "Erfolgreich registriert."});
     } catch (error) {
-        console.log(error);
         return res.status(400).json({message: "Etwas ist schiefgelaufen. Bitte versuche es erneut."});
     }
 }
@@ -51,7 +48,6 @@ export const register = async (req, res) => {
 export const login = async (req, res) => {
     try {
         const {username, password} = req.body;
-        // username: username?
         const user = await User.findOne({username});
 
         if (!user) return res.status(400).json({message: "Benutzername nicht gefunden."});
@@ -59,7 +55,7 @@ export const login = async (req, res) => {
         const validPassword = await bcrypt.compare(password, user.password);
         if (!validPassword) return res.status(400).json({message: "Falsches Passwort. Bitte versuche es erneut."});
 
-        const token = jwt.sign({ id: user._id, username: user.username }, JWT_SECRET, { expiresIn: "1h" });
+        const token = jwt.sign({ id: user._id, username: user.username }, process.env.JWT_SECRET, { expiresIn: "1h" });
 
         return res.status(201).json({
             message: "User successfully logged in.",
@@ -68,7 +64,6 @@ export const login = async (req, res) => {
             Profile
         });
     } catch (error) {
-        console.log(error);
         return res.status(400).json({message: "Serverfehler"});
     }
 }
@@ -85,7 +80,6 @@ export const getMe = async (req, res) => {
             profile: profile || {}
         });
     } catch (error) {
-        console.error(error);
         return res.status(500).json({ message: "Server error" });
     }
 };
@@ -96,7 +90,7 @@ export const forgotPassword = async (req, res) => {
         const { email } = req.body;
 
         const user = await User.findOne({ email });
-        if (!user) return res.status(400).json({ message: "Benutzername mit dieser E-Mail Adresse haben wir nicht gefunden." });
+        if (!user) return res.status(400).json({ message: "Dieser Benutzername mit dieser E-Mail Adresse existiert nicht." });
 
         const resetToken = crypto.randomBytes(32).toString("hex");
         const resetTokenExpires = Date.now() + 10 * 60 * 1000;
@@ -121,7 +115,6 @@ export const forgotPassword = async (req, res) => {
 
         return res.status(200).json({ message: "Der Code wurde an deine E-Mail Adresse verschickt." });
     } catch (error) {
-        console.error(error);
         return res.status(400).json({ message: "Server error" });
     }
 };
@@ -149,7 +142,6 @@ export const resetPassword = async (req, res) => {
 
         return res.status(200).json({ message: "Passwort wurde erfolgreich geändert." });
     } catch (error) {
-        console.error(error);
         return res.status(500).json({ message: "Server error." });
     }
 };

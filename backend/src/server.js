@@ -54,7 +54,7 @@ app.use('*', (req, res) => {
     .json( {status: false, message: 'Endpoint Not Found'} );
 })
 
-mongoose.connect("mongodb+srv://finnpaustian:9AlLYsWN1wM2wmyf@aileague.5togtll.mongodb.net/?retryWrites=true&w=majority&appName=AIleague")
+mongoose.connect(process.env.DB_URL)
     .then(() => console.log("MongoDB verbunden"))
     .catch(err => console.error("MongoDB Fehler:", err));
 

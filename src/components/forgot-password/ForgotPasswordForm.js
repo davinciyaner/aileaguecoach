@@ -21,11 +21,11 @@ export default function ForgotPasswordForm() {
         setMessage('')
 
         if (!email) {
-            setError('Please enter your email adress')
+            setError('Bitte geben deine E-Mail Adresse ein')
             return
         }
         if (!validateEmail(email)) {
-            setError('Please enter a valid email adress')
+            setError('Bitte gebe eine richtige E-Mail Adresse ein')
             return
         }
 
@@ -44,7 +44,7 @@ export default function ForgotPasswordForm() {
             }
 
             setMessage(
-                'We have send you and email with a code.'
+                'Wir haben dir den Code an die von dir angegebene E-Mail Adresse geschickt.'
             )
 
             // optional: nach X Sekunden zurück zum Login
@@ -53,7 +53,7 @@ export default function ForgotPasswordForm() {
             }, 5000)
 
         } catch (err) {
-            setError(err.message || 'Server error. Please try again.')
+            setError(err.message || 'Etwas ist schiefgelaufen. Bitte versuche es erneut.')
         } finally {
             setLoading(false)
         }
@@ -62,9 +62,9 @@ export default function ForgotPasswordForm() {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-900 px-6 py-12">
             <div className="w-full max-w-md bg-gray-800 p-8 rounded-lg shadow">
-                <h2 className="text-2xl font-semibold text-white mb-4">Forgot password</h2>
+                <h2 className="text-2xl font-semibold text-white mb-4">Passwort vergessen</h2>
                 <p className="text-sm text-gray-300 mb-6">
-                    Enter your email and we'll send you a link to reset your password.
+                    Bitte gebe deine E-Mail Adresse ein. Du erhälst einen Code zum wiederherstellen.
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -74,7 +74,7 @@ export default function ForgotPasswordForm() {
                             type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            placeholder="you@example.com"
+                            placeholder="du@gmail.com"
                             className="mt-1 block w-full rounded-md bg-white/5 px-3 py-2 text-white placeholder:text-gray-500 focus:outline-2 focus:outline-indigo-500"
                             required
                         />
@@ -89,7 +89,7 @@ export default function ForgotPasswordForm() {
                             disabled={loading}
                             className="w-full bg-indigo-500 hover:bg-indigo-400 text-white py-2 rounded-md font-semibold disabled:opacity-60"
                         >
-                            {loading ? 'Sending…' : 'Send reset link'}
+                            {loading ? 'Senden…' : 'Gesendet'}
                         </button>
                     </div>
                 </form>
@@ -99,7 +99,7 @@ export default function ForgotPasswordForm() {
                         onClick={() => router.push('/login')}
                         className="text-sm text-indigo-300 hover:text-indigo-200 underline"
                     >
-                        Back to login
+                        Zurück zur Anmeldung
                     </button>
                 </div>
             </div>

@@ -16,22 +16,19 @@ export default function Reviews() {
     const [expanded, setExpanded] = useState({});
     const [loggedInUser, setLoggedInUser] = useState(null);
 
-    // ✅ User beim Mounten laden
     useEffect(() => {
         const token = localStorage.getItem("token");
         if (!token) return;
 
         try {
             const decoded = jwtDecode(token);
-            // optional: von deinem Backend mehr Userdaten holen
             setLoggedInUser(decoded);
-            setName(decoded.username || decoded.name || ""); // automatisch ins Name-Feld eintragen
+            setName(decoded.username || decoded.name || "");
         } catch (err) {
             console.error("Invalid token:", err);
         }
     }, []);
 
-    // ✅ Reviews und Stats laden
     const fetchData = async () => {
         const res = await fetch("http://localhost:3001/api/reviews/stats");
         const data = await res.json();
@@ -44,7 +41,6 @@ export default function Reviews() {
         fetchData();
     }, []);
 
-    // ✅ Nur eingeloggte User dürfen absenden
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!loggedInUser) return alert("Melde dich an, um eine Bewertung zu schreiben.");
@@ -93,7 +89,6 @@ export default function Reviews() {
                     <p className="mt-1 text-gray-400">{totalReviews} Kundenbewertungen</p>
                 </div>
 
-                {/* Review schreiben */}
                 <div className="text-center mb-12">
                     {loggedInUser ? (
                         <button
@@ -104,7 +99,7 @@ export default function Reviews() {
                         </button>
                     ) : (
                         <p className="text-gray-400">
-                            Please <span className="text-indigo-400 font-semibold">Anmelden</span> um eine Bewertung zu schreiben.
+                            Bitte <span className="text-indigo-400 font-semibold">melde dich an,</span> um eine Bewertung zu schreiben.
                         </p>
                     )}
                 </div>
@@ -116,7 +111,7 @@ export default function Reviews() {
                     >
                         <input
                             type="text"
-                            placeholder="Dein Username"
+                            placeholder="Dein Benutzername"
                             value={name}
                             readOnly
                             className="w-full rounded-md bg-gray-700/50 px-3 py-2 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 cursor-not-allowed"

@@ -50,7 +50,6 @@ export const createSubscription = async (req, res) => {
             ).href,
         });
     } catch (error) {
-        console.log(error);
         return res.status(500).json({ message: error.message });
     }
 }
@@ -76,7 +75,6 @@ export const handleWebhook = async (req, res) => {
         }
         return res.sendStatus(200);
     } catch (err) {
-        console.log(err);
         return res.sendStatus(500);
     }
 }
@@ -117,7 +115,6 @@ export const cancelSubscription = async (req, res) => {
             expiryDate: user.expiryDate,
         });
     } catch (error) {
-        console.log(error);
         return res.status(500).json({ message: error.message });
     }
 }

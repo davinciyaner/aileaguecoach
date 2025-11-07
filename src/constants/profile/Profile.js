@@ -83,7 +83,7 @@ export default function Profile() {
             setForm((prev) => ({ ...prev, ...data.profile, username: data.user.username }));
             setUser((prev) => ({ ...prev, username: data.user.username }));
 
-            setMessage("Updated successfully!");
+            setMessage("Aktualisierung erfolgreich.");
             setMessageType("success");
         } catch (err) {
             setMessage(`${err.message || err}`);
@@ -92,15 +92,15 @@ export default function Profile() {
     };
 
     if (loading)
-        return <div className="text-center text-white mt-10">Loading...</div>;
+        return <div className="text-center text-white mt-10">Lädt...</div>;
     if (!user)
         return (
             <div className="text-center text-white mt-10">
-                Please{" "}
+                Bitte{" "}
                 <a href="/login" className="text-indigo-400 font-semibold">
-                    log in
+                    melde dich an
                 </a>{" "}
-                to see your profile.
+                um dein Profil zu sehen.
             </div>
         );
 
@@ -116,10 +116,7 @@ export default function Profile() {
                 <div className="mt-20">
                     <Navbar minimal={true} />
                 </div>
-                <h1 className="text-3xl font-bold mb-6">{form.username}'s profile</h1>
-                <p className="text-gray-400 mb-10">
-                    This information will be displayed publicly, so be careful what you share.
-                </p>
+                <h1 className="text-3xl font-bold mb-6">{form.username}'s Profil</h1>
 
                 <div className="space-y-12">
                     {["username", "email", "leaguename", "rank"].map((field) => (
@@ -142,7 +139,7 @@ export default function Profile() {
                                 onClick={() => handleUpdate(field)}
                                 className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 rounded-lg font-semibold"
                             >
-                                Update
+                                aktualisieren
                             </button>
                         </div>
                     ))}

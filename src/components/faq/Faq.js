@@ -31,7 +31,7 @@ const faqs = [
     {
         question: "Warum ist es eine .exe-Datei?",
         answer:
-            "Windows Defender zeigt möglicherweise eine Warnung, weil die Anwendung aktuell keine offizielle Code-Zertifizierung besitzt. Diese kostet 350–500 €. Da ich Student bin und Hans AI Coach als Solo-Projekt entwickle, kann ich mir das momentan noch nicht leisten. Die Software ist jedoch sicher.",
+            "Windows Defender zeigt möglicherweise eine Warnung, weil die Anwendung aktuell keine offizielle Code-Zertifizierung besitzt. Diese kostet 350–500 €. Da ich eine Ausbidlung mache und Hans AI Coach als Solo-Projekt entwickle, kann ich mir das momentan noch nicht leisten. Die Software ist jedoch sicher.",
     },
     {
         question: "Ist das Programm wirklich kostenlos?",

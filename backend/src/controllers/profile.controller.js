@@ -16,7 +16,6 @@ export const getProfile = async (req, res) => {
             profile: profile || {}
         });
     } catch (error) {
-        console.error(error);
         return res.status(401).json({ message: 'Abgemeldet. Bitte melde dich an.' });
     }
 }
@@ -28,7 +27,6 @@ export const updateProfile = async (req, res) => {
         const updateData = {};
         if (username) updateData.username = username;
         if (email) updateData.email = email;
-        //if (leaguename) updateData.username = leaguename;
         if (password) updateData.password = await bcrypt.hash(password, 10);
 
         const updatedUser = await User.findByIdAndUpdate(req.user.id, updateData, { new: true }).select("username");
@@ -46,7 +44,6 @@ export const updateProfile = async (req, res) => {
             profile: updatedProfile,
         });
     } catch (error) {
-        console.error(error);
         return res.status(500).json({ message: "Update fehlgeschlagen.", error });
     }
 };

@@ -14,7 +14,7 @@ export default function Downloads() {
                 const data = await res.json();
                 setStats(data?.windows || null);
             } catch (err) {
-                console.error("Error loading download stats:", err);
+                console.error(err);
             } finally {
                 setLoading(false);
             }
@@ -61,8 +61,8 @@ export default function Downloads() {
             <div className="mt-12 max-w-xl text-center text-gray-400 text-sm leading-relaxed">
                 <h2 className="text-lg text-indigo-400 mb-2 font-semibold">Systemanforderungen</h2>
                 <p>• Windows 10 oder höher (64-bit)</p>
-                <p>• Mindestens 4 GB RAM und 500 MB freier Speicherplatz</p>
-                <p>• Internetverbindung für KI-Modelle erforderlich</p>
+                <p>• Mindestens 4 GB RAM und 200 MB freier Speicherplatz</p>
+                <p>• Internetverbindung</p>
             </div>
 
         </main>

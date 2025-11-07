@@ -29,7 +29,7 @@ const timeline = [
     {
         icon: Sparkles,
         title: "Öffentliche Veröffentlichung",
-        date: "3. November 2025",
+        date: "7. November 2025",
         description:
             "Hans geht offiziell live. Echtzeit-Coaching und Performance-Dashboards werden für alle Spieler verfügbar.",
     },

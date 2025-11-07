@@ -4,12 +4,11 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-// Ein einziger Transporter für alle Mail-Funktionen
 const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-        user: process.env.GMAIL_USER,  // z.B. hansleaguecoach@gmail.com
-        pass: process.env.GMAIL_PASS,  // App-Passwort
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_PASS,
     },
 });
 
@@ -49,7 +48,6 @@ export const subscribeNewsletter = async (req, res) => {
             .status(200)
             .json({ message: "Erfolgreich für unseren Newsletter angemeldet." });
     } catch (error) {
-        console.error("Subscribe Error:", error);
         return res.status(500).json({ error: error.message });
     }
 };
@@ -87,7 +85,6 @@ export const unsubscribeNewsletter = async (req, res) => {
 
         res.status(200).json({ message: "Erfolgreich abgemeldet." });
     } catch (error) {
-        console.error("Unsubscribe Error:", error);
         res.status(500).json({ message: "Serverfehler." });
     }
 };
