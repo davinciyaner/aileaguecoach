@@ -17,7 +17,7 @@ import subscriptionRoutes from "./routes/subscription.routes.js";
 const app = express();
 
 // Railway setzt den PORT automatisch
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT;
 
 // Middleware
 app.use(express.json({ limit: "50mb" }));
