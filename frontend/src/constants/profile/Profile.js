@@ -28,13 +28,15 @@ export default function Profile() {
         challenger: { label: "Challenger", price: 19.99, desc: "24/7 Support + Friend Invite" },
     };*/
 
+    const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
     useEffect(() => {
         const fetchUser = async () => {
             const token = localStorage.getItem("token");
             if (!token) return;
 
             try {
-                const resUser = await fetch("http://localhost:3001/api/auth/me", {
+                const resUser = await fetch(`${API_URL}/api/auth/me`, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 if (!resUser.ok) throw new Error("Failed to fetch user");
@@ -69,7 +71,7 @@ export default function Profile() {
         setMessage("");
         try {
             const token = localStorage.getItem("token");
-            const res = await fetch("http://localhost:3001/api/profile/update", {
+            const res = await fetch(`${API_URL}/api/profile/update`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",

@@ -11,13 +11,15 @@ export default function RegisterForm() {
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
 
+    const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
     const fetchRegister = async (e) => {
         e.preventDefault()
         setError('')
         setLoading(true)
 
         try {
-            const res = await fetch('/api/auth/register', {
+            const res = await fetch(`${API_URL}/api/auth/register`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, username, password }),

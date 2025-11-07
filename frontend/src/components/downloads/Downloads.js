@@ -7,10 +7,12 @@ export default function Downloads() {
     const [stats, setStats] = useState(null);
     const [loading, setLoading] = useState(true);
 
+    const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
     useEffect(() => {
         const fetchStats = async () => {
             try {
-                const res = await fetch("http://localhost:3001/api/download/stats");
+                const res = await fetch(`${API_URL}/api/download/stats`);
                 const data = await res.json();
                 setStats(data?.windows || null);
             } catch (err) {

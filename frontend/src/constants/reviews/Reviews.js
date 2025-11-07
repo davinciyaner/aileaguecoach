@@ -16,6 +16,8 @@ export default function Reviews() {
     const [expanded, setExpanded] = useState({});
     const [loggedInUser, setLoggedInUser] = useState(null);
 
+    const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
     useEffect(() => {
         const token = localStorage.getItem("token");
         if (!token) return;
@@ -30,7 +32,7 @@ export default function Reviews() {
     }, []);
 
     const fetchData = async () => {
-        const res = await fetch("http://localhost:3001/api/reviews/stats");
+        const res = await fetch(`${API_URL}/api/reviews/stats`);
         const data = await res.json();
         setReviews(data.reviews);
         setStats(data.stats);
@@ -46,7 +48,7 @@ export default function Reviews() {
         if (!loggedInUser) return alert("Melde dich an, um eine Bewertung zu schreiben.");
         if (!comment) return alert("Schreib eine Bewertung");
 
-        const res = await fetch("http://localhost:3001/api/reviews", {
+        const res = await fetch(`${API_URL}/api/reviews`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

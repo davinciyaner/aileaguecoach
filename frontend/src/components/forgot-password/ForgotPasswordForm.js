@@ -10,6 +10,8 @@ export default function ForgotPasswordForm() {
     const [message, setMessage] = useState('')
     const [loading, setLoading] = useState(false)
 
+    const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
     const validateEmail = (value) => {
         // einfache Email-Validation
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
@@ -31,7 +33,7 @@ export default function ForgotPasswordForm() {
 
         setLoading(true)
         try {
-            const res = await fetch('http://localhost:3001/api/auth/forgot-password', {
+            const res = await fetch(`${API_URL}/api/auth/forgot-password`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email }),
