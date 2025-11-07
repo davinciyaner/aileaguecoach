@@ -41,7 +41,7 @@ export default function Downloads() {
             {/* Download Button */}
             <div className="text-center">
                 <a
-                    href="http://localhost:3001/api/download/windows"
+                    href={`${API_URL}/api/download/windows`}
                     className="px-10 py-4 bg-indigo-600 hover:bg-indigo-500 rounded-xl text-lg font-semibold transition-all duration-200"
                 >
                     ⬇️ Download for Windows
