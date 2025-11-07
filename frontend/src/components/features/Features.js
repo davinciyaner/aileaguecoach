@@ -47,9 +47,12 @@ const item = {
 
 export default function Features() {
     return (
-        <section className="relative bg-gray-950 py-24 sm:py-32 overflow-hidden">
-            {/* dezenter Farbverlauf im Hintergrund */}
-            <div id="features" className="absolute inset-0 bg-gradient-to-b from-indigo-500/10 via-transparent to-gray-950 pointer-events-none" />
+        <section className="relative bg-[#0a0a0f] py-24 sm:py-32 overflow-hidden">
+            {/* sanfter Verlauf */}
+            <div
+                id="features"
+                className="absolute inset-0 bg-gradient-to-b from-indigo-500/10 via-transparent to-[#0a0a0f] pointer-events-none"
+            />
 
             <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
                 {/* Überschrift */}
@@ -60,7 +63,7 @@ export default function Features() {
                     viewport={{ once: true }}
                     className="mx-auto max-w-2xl text-center"
                 >
-                    <h2 className="text-base font-semibold text-indigo-400">
+                    <h2 className="text-sm font-semibold text-indigo-400 tracking-wide uppercase">
                         Schlauer. Schneller. Stärker.
                     </h2>
                     <p className="mt-2 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
@@ -85,9 +88,9 @@ export default function Features() {
                             variants={item}
                             whileHover={{
                                 scale: 1.03,
-                                boxShadow: "0 0 20px rgba(99, 102, 241, 0.3)",
+                                boxShadow: "0 0 20px rgba(99, 102, 241, 0.25)",
                             }}
-                            className="relative rounded-2xl bg-gray-800/40 p-8 shadow-lg ring-1 ring-white/10 transition-all"
+                            className="relative rounded-2xl bg-[rgba(31,41,55,0.4)] backdrop-blur-sm p-8 shadow-lg border border-white/10 transition-all"
                         >
                             <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-indigo-500/20 text-indigo-400 mb-6">
                                 <feature.icon className="h-6 w-6" />
@@ -95,7 +98,9 @@ export default function Features() {
                             <h3 className="text-xl font-semibold text-white mb-2">
                                 {feature.name}
                             </h3>
-                            <p className="text-gray-400 text-base">{feature.description}</p>
+                            <p className="text-gray-400 text-base">
+                                {feature.description}
+                            </p>
                         </motion.div>
                     ))}
                 </motion.div>

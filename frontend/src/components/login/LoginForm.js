@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "@/context/AuthContext";
 
 export default function LoginForm() {
     const router = useRouter();
@@ -13,7 +13,7 @@ export default function LoginForm() {
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
 
-    const API_URL = "https://aileaguecoach.onrender.com;"
+    const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
     const handleLogin = async (e) => {
         e.preventDefault();
