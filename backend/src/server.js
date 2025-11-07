@@ -40,18 +40,39 @@ app.use(
 );
 
 
+app.get("/health", async (req, res) => {
+    const dbState = mongoose.connection.readyState;
+    const dbStatus =
+        dbState === 1 ? "connected" :
+            dbState === 2 ? "connecting" :
+                dbState === 0 ? "disconnected" : "disconnecting";
+
+    res.status(200).json({
+        status: "ok",
+        uptime: process.uptime(),
+        db: dbStatus,
+        timestamp: new Date().toISOString(),
+    });
+});
+
+// 🏁 Testroute
+app.get("/", (req, res) => {
+    res.json({ message: "AI League Coach Backend läuft 🚀" });
+});
+
+// 🔗 Routen
 app.use("/api/auth", authRoutes);
 app.use("/api/subscribe", subscriptionRoutes);
 app.use("/api/reviews", reviewsRoutes);
 app.use("/api/profile", profileRoutes);
 app.use("/api/download", downloadRoutes);
 
-
+// ⚠️ 404 Fallback
 app.use("*", (req, res) => {
     res.status(404).json({ status: false, message: "Endpoint Not Found" });
 });
 
-
+// 🚀 Verbindung zur MongoDB + Serverstart
 const startServer = async () => {
     try {
         await mongoose.connect(process.env.DB_URL, { dbName: "AIleague" });
