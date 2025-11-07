@@ -26,18 +26,11 @@ app.use(cookieParser());
 
 const allowedOrigins = [process.env.CLIENT_URL].filter(Boolean);
 
-app.use(
-    cors({
-        origin: (origin, callback) => {
-            if (!origin) return callback(null, true); // mobile apps / Postman
-            if (allowedOrigins.includes(origin)) {
-                return callback(null, true);
-            }
-            callback(new Error("CORS policy does not allow access from this origin"));
-        },
-        credentials: true,
-    })
-);
+app.use(cors({
+    origin: process.env.CLIENT_URL, // deine Vercel-URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true, // falls Cookies oder Auth-Header genutzt werden
+}));
 
 
 app.get("/health", async (req, res) => {
