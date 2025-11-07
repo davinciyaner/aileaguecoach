@@ -16,15 +16,14 @@ import subscriptionRoutes from "./routes/subscription.routes.js";
 
 const app = express();
 
-// 🔧 Port – Railway nutzt automatisch seinen eigenen, lokal greift .env
 const PORT = process.env.PORT || 8080;
 
-// 🧩 Middleware
+
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 app.use(cookieParser());
 
-// 🌍 CORS
+
 const allowedOrigins = [process.env.CLIENT_URL].filter(Boolean);
 
 app.use(
@@ -41,40 +40,18 @@ app.use(
 );
 
 
-// 🧠 Healthcheck (für Railway, UptimeRobot, Vercel etc.)
-app.get("/health", async (req, res) => {
-    const dbState = mongoose.connection.readyState;
-    const dbStatus =
-        dbState === 1 ? "connected" :
-            dbState === 2 ? "connecting" :
-                dbState === 0 ? "disconnected" : "disconnecting";
-
-    res.status(200).json({
-        status: "ok",
-        uptime: process.uptime(),
-        db: dbStatus,
-        timestamp: new Date().toISOString(),
-    });
-});
-
-// 🏁 Testroute
-app.get("/", (req, res) => {
-    res.json({ message: "AI League Coach Backend läuft 🚀" });
-});
-
-// 🔗 Routen
 app.use("/api/auth", authRoutes);
 app.use("/api/subscribe", subscriptionRoutes);
 app.use("/api/reviews", reviewsRoutes);
 app.use("/api/profile", profileRoutes);
 app.use("/api/download", downloadRoutes);
 
-// ⚠️ 404 Fallback
+
 app.use("*", (req, res) => {
     res.status(404).json({ status: false, message: "Endpoint Not Found" });
 });
 
-// 🚀 Verbindung zur MongoDB + Serverstart
+
 const startServer = async () => {
     try {
         await mongoose.connect(process.env.DB_URL, { dbName: "AIleague" });
