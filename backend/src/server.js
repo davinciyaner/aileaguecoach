@@ -27,10 +27,23 @@ app.use(express.urlencoded( { extended: true, limit: '10mb' } ));
 app.use(cookieParser());
 app.use(cors());
 
+const allowedOrigins = [
+    process.env.CLIENT_URL,   // Vercel Frontend URL
+    "http://localhost:3000"   // lokal
+];
+
 app.use(cors({
-    origin: "http://localhost:3000", // erlaubt Anfragen vom Frontend
-    credentials: true,
+    origin: function(origin, callback){
+        if(!origin) return callback(null, true);
+        if(allowedOrigins.indexOf(origin) === -1){
+            const msg = 'CORS policy does not allow access from this origin';
+            return callback(new Error(msg), false);
+        }
+        return callback(null, true);
+    },
+    credentials: true
 }));
+
 
 // This middleware adds the json header to every response
 app.use('*', (req, res, next) => {
