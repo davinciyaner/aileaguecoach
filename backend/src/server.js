@@ -27,9 +27,9 @@ app.use(cookieParser());
 const allowedOrigins = [process.env.CLIENT_URL].filter(Boolean);
 
 app.use(cors({
-    origin: process.env.CLIENT_URL, // deine Vercel-URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true, // falls Cookies oder Auth-Header genutzt werden
+    origin: 'https://aihanscoach.vercel.app', // Frontend-URL
+    methods: ['GET','POST','PUT','DELETE'],
+    credentials: true
 }));
 
 
