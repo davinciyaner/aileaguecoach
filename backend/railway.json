@@ -1,0 +1,9 @@
+{
+  "build": {
+    "builder": "nodejs",
+    "installCommand": "npm install",
+    "buildCommand": "",
+    "startCommand": "npm start"
+  },
+  "rootDirectory": "."
+}
