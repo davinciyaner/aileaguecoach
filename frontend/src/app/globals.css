@@ -1,4 +1,4 @@
-/* Tailwind CSS Direktiven für v4 */
+/* Tailwind Direktiven für v4 */
 @import "tailwindcss/preflight"; /* ersetzt @tailwind base */
 @tailwind utilities;
 
@@ -10,7 +10,6 @@
     --text-color: #ffffff;
 }
 
-/* Beispiel globale Styles */
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
