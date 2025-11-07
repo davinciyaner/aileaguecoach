@@ -26,18 +26,20 @@ app.use(cookieParser());
 
 // 🌍 CORS
 const allowedOrigins = [process.env.CLIENT_URL].filter(Boolean);
+
 app.use(
     cors({
         origin: (origin, callback) => {
-            if (!origin) return callback(null, true);
-            if (allowedOrigins.length === 0 || allowedOrigins.includes(origin)) {
+            if (!origin) return callback(null, true); // mobile apps / Postman
+            if (allowedOrigins.includes(origin)) {
                 return callback(null, true);
             }
-            return callback(new Error("CORS policy does not allow access from this origin"), false);
+            callback(new Error("CORS policy does not allow access from this origin"));
         },
         credentials: true,
     })
 );
+
 
 // 🧠 Healthcheck (für Railway, UptimeRobot, Vercel etc.)
 app.get("/health", async (req, res) => {
