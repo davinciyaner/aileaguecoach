@@ -1,78 +1,76 @@
-import mongoose from "mongoose";
-
+// src/server.js
 import express from "express";
+import mongoose from "mongoose";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import dotenv from "dotenv";
 
-import authRoutes from './routes/auth.routes.js';
+// Load environment variables
+dotenv.config();
+
+import authRoutes from "./routes/auth.routes.js";
 import reviewsRoutes from "./routes/reviews.routes.js";
 import profileRoutes from "./routes/profile.routes.js";
 import downloadRoutes from "./routes/download.routes.js";
 import subscriptionRoutes from "./routes/subscription.routes.js";
 
-import dotenv from "dotenv";
-dotenv.config();
-
-// Instantiate an Express Application
 const app = express();
 
+// PORT für Railway
 const PORT = process.env.PORT || 3001;
 
-// Configure Express App Instance
-app.use(express.json( { limit: '50mb' } ));
-app.use(express.urlencoded( { extended: true, limit: '10mb' } ));
-
-// Configure custom logger middleware
-
+// Middleware
+app.use(express.json({ limit: "50mb" }));
+app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 app.use(cookieParser());
-app.use(cors());
 
+// CORS konfigurieren
 const allowedOrigins = [
-    process.env.CLIENT_URL,   // Vercel Frontend URL
-    "http://localhost:3000"   // lokal
+    process.env.CLIENT_URL, // Vercel Frontend
+    "http://localhost:3000", // lokal
 ];
 
-app.use(cors({
-    origin: function(origin, callback){
-        if(!origin) return callback(null, true);
-        if(allowedOrigins.indexOf(origin) === -1){
-            const msg = 'CORS policy does not allow access from this origin';
-            return callback(new Error(msg), false);
-        }
-        return callback(null, true);
-    },
-    credentials: true
-}));
+app.use(
+    cors({
+        origin: (origin, callback) => {
+            if (!origin) return callback(null, true); // mobile apps, curl etc.
+            if (allowedOrigins.indexOf(origin) === -1) {
+                return callback(new Error("CORS policy does not allow access from this origin"), false);
+            }
+            return callback(null, true);
+        },
+        credentials: true,
+    })
+);
 
-
-// This middleware adds the json header to every response
-app.use('*', (req, res, next) => {
-    res.setHeader('Content-Type', 'application/json');
+// JSON Header für alle Responses
+app.use("*", (req, res, next) => {
+    res.setHeader("Content-Type", "application/json");
     next();
-})
+});
 
-// Assign Routes
-
-app.use('/api/auth', authRoutes);
-app.use('/api/subscribe', subscriptionRoutes);
+// Routes
+app.use("/api/auth", authRoutes);
+app.use("/api/subscribe", subscriptionRoutes);
 app.use("/api/reviews", reviewsRoutes);
 app.use("/api/profile", profileRoutes);
 app.use("/api/download", downloadRoutes);
 
+// 404 Handler
+app.use("*", (req, res) => {
+    res.status(404).json({ status: false, message: "Endpoint Not Found" });
+});
 
-// Handle not valid route
-app.use('*', (req, res) => {
-    res
-    .status(404)
-    .json( {status: false, message: 'Endpoint Not Found'} );
-})
-
-mongoose.connect(process.env.DB_URL)
+// MongoDB Verbindung
+mongoose
+    .connect(process.env.DB_URL, { dbName: "AIleague" })
     .then(() => console.log("MongoDB verbunden"))
-    .catch(err => console.error("MongoDB Fehler:", err));
+    .catch((err) => {
+        console.error("MongoDB Fehler:", err);
+        process.exit(1); // Container stoppen, falls DB nicht erreichbar
+    });
 
-// Open Server on selected Port
-app.listen(
-    PORT,
-    () => console.info('Server listening on port ', PORT)
-);
+// Server starten
+app.listen(PORT, () => {
+    console.log(`Server läuft auf Port ${PORT}`);
+});
