@@ -16,8 +16,8 @@ import subscriptionRoutes from "./routes/subscription.routes.js";
 
 const app = express();
 
-// PORT für Railway
-const PORT = process.env.PORT;
+// Railway setzt den PORT automatisch
+const PORT = process.env.PORT || 3001;
 
 // Middleware
 app.use(express.json({ limit: "50mb" }));
@@ -25,25 +25,23 @@ app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 app.use(cookieParser());
 
 // CORS konfigurieren
-const allowedOrigins = [
-    process.env.CLIENT_URL, // Vercel Frontend
-];
+const allowedOrigins = [process.env.CLIENT_URL].filter(Boolean); // Nur definierte Origins
 
 app.use(
     cors({
         origin: (origin, callback) => {
             if (!origin) return callback(null, true); // mobile apps, curl etc.
-            if (allowedOrigins.indexOf(origin) === -1) {
-                return callback(new Error("CORS policy does not allow access from this origin"), false);
+            if (allowedOrigins.length === 0 || allowedOrigins.includes(origin)) {
+                return callback(null, true);
             }
-            return callback(null, true);
+            return callback(new Error("CORS policy does not allow access from this origin"), false);
         },
         credentials: true,
     })
 );
 
 // JSON Header für alle Responses
-app.use("*", (req, res, next) => {
+app.use((req, res, next) => {
     res.setHeader("Content-Type", "application/json");
     next();
 });
@@ -60,16 +58,20 @@ app.use("*", (req, res) => {
     res.status(404).json({ status: false, message: "Endpoint Not Found" });
 });
 
-// MongoDB Verbindung
-mongoose
-    .connect("mongodb+srv://finnpaustian:9AlLYsWN1wM2wmyf@aileague.5togtll.mongodb.net/?retryWrites=true&w=majority&appName=AIleague", { dbName: "AIleague" })
-    .then(() => console.log("MongoDB verbunden"))
-    .catch((err) => {
+// Funktion für DB-Verbindung + Serverstart
+const startServer = async () => {
+    try {
+        await mongoose.connect(process.env.DB_URL, { dbName: "AIleague" });
+        console.log("MongoDB verbunden");
+
+        app.listen(PORT, () => {
+            console.log(`Server läuft auf Port ${PORT}`);
+        });
+    } catch (err) {
         console.error("MongoDB Fehler:", err);
-        process.exit(1); // Container stoppen, falls DB nicht erreichbar
-    });
+        // Container nicht beenden – Railway darf Healthcheck weiterhin prüfen
+    }
+};
 
 // Server starten
-app.listen(PORT, () => {
-    console.log(`Server läuft auf Port ${PORT}`);
-});
+startServer();
