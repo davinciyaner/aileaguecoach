@@ -1,12 +1,12 @@
-// src/server.js
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 
-// Load environment variables
 dotenv.config();
+
+console.log(">>> ENV PORT:", process.env.PORT);
 
 import authRoutes from "./routes/auth.routes.js";
 import reviewsRoutes from "./routes/reviews.routes.js";
@@ -16,21 +16,20 @@ import subscriptionRoutes from "./routes/subscription.routes.js";
 
 const app = express();
 
-// Railway setzt den PORT automatisch
-const PORT = process.env.PORT;
+// 🔧 Port – Railway nutzt automatisch seinen eigenen, lokal greift .env
+const PORT = process.env.PORT || 3001;
 
-// Middleware
+// 🧩 Middleware
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 app.use(cookieParser());
 
-// CORS konfigurieren
-const allowedOrigins = [process.env.CLIENT_URL].filter(Boolean); // Nur definierte Origins
-
+// 🌍 CORS
+const allowedOrigins = [process.env.CLIENT_URL].filter(Boolean);
 app.use(
     cors({
         origin: (origin, callback) => {
-            if (!origin) return callback(null, true); // mobile apps, curl etc.
+            if (!origin) return callback(null, true);
             if (allowedOrigins.length === 0 || allowedOrigins.includes(origin)) {
                 return callback(null, true);
             }
@@ -40,38 +39,51 @@ app.use(
     })
 );
 
-// JSON Header für alle Responses
-app.use((req, res, next) => {
-    res.setHeader("Content-Type", "application/json");
-    next();
+// 🧠 Healthcheck (für Railway, UptimeRobot, Vercel etc.)
+app.get("/health", async (req, res) => {
+    const dbState = mongoose.connection.readyState;
+    const dbStatus =
+        dbState === 1 ? "connected" :
+            dbState === 2 ? "connecting" :
+                dbState === 0 ? "disconnected" : "disconnecting";
+
+    res.status(200).json({
+        status: "ok",
+        uptime: process.uptime(),
+        db: dbStatus,
+        timestamp: new Date().toISOString(),
+    });
 });
 
-// Routes
+// 🏁 Testroute
+app.get("/", (req, res) => {
+    res.json({ message: "AI League Coach Backend läuft 🚀" });
+});
+
+// 🔗 Routen
 app.use("/api/auth", authRoutes);
 app.use("/api/subscribe", subscriptionRoutes);
 app.use("/api/reviews", reviewsRoutes);
 app.use("/api/profile", profileRoutes);
 app.use("/api/download", downloadRoutes);
 
-// 404 Handler
+// ⚠️ 404 Fallback
 app.use("*", (req, res) => {
     res.status(404).json({ status: false, message: "Endpoint Not Found" });
 });
 
-// Funktion für DB-Verbindung + Serverstart
+// 🚀 Verbindung zur MongoDB + Serverstart
 const startServer = async () => {
     try {
         await mongoose.connect(process.env.DB_URL, { dbName: "AIleague" });
-        console.log("MongoDB verbunden");
+        console.log("✅ MongoDB verbunden");
 
         app.listen(PORT, () => {
-            console.log(`Server läuft auf Port ${PORT}`);
+            console.log(`✅ Server läuft auf Port ${PORT}`);
         });
     } catch (err) {
-        console.error("MongoDB Fehler:", err);
-        // Container nicht beenden – Railway darf Healthcheck weiterhin prüfen
+        console.error("❌ MongoDB Fehler:", err);
     }
 };
 
-// Server starten
 startServer();
