@@ -17,7 +17,7 @@ import subscriptionRoutes from "./routes/subscription.routes.js";
 const app = express();
 
 // PORT für Railway
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT;
 
 // Middleware
 app.use(express.json({ limit: "50mb" }));
@@ -27,7 +27,6 @@ app.use(cookieParser());
 // CORS konfigurieren
 const allowedOrigins = [
     process.env.CLIENT_URL, // Vercel Frontend
-    "http://localhost:3000", // lokal
 ];
 
 app.use(
@@ -63,7 +62,7 @@ app.use("*", (req, res) => {
 
 // MongoDB Verbindung
 mongoose
-    .connect(process.env.DB_URL, { dbName: "AIleague" })
+    .connect("mongodb+srv://finnpaustian:9AlLYsWN1wM2wmyf@aileague.5togtll.mongodb.net/?retryWrites=true&w=majority&appName=AIleague", { dbName: "AIleague" })
     .then(() => console.log("MongoDB verbunden"))
     .catch((err) => {
         console.error("MongoDB Fehler:", err);
