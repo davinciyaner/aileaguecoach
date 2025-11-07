@@ -1,6 +1,5 @@
-/* Tailwind CSS Direktiven */
-@tailwind base;
-@tailwind components;
+/* Tailwind CSS Direktiven für v4 */
+@import "tailwindcss/preflight"; /* ersetzt @tailwind base */
 @tailwind utilities;
 
 /* Eigene CSS-Variablen / globale Styles */
