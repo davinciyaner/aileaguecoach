@@ -6,13 +6,15 @@ export default function Footer() {
     const [email, setEmail] = useState("");
     const [subscribed, setSubscribed] = useState(false);
 
+    const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
     // Newsletter abonnieren
     const handleSubscribe = async (event) => {
         event.preventDefault();
         if (!email) return alert("Bitte gib eine gültige E-Mail-Adresse ein.");
 
         try {
-            const res = await fetch("http://localhost:3001/api/subscribe/newsletter", {
+            const res = await fetch(`${API_URL}/api/subscribe/newsletter`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email }),
@@ -34,7 +36,7 @@ export default function Footer() {
         if (!email) return;
         try {
             const res = await fetch(
-                `http://localhost:3001/api/subscribe/unsubscribe?email=${encodeURIComponent(email)}`
+                `${API_URL}/api/subscribe/unsubscribe?email=${encodeURIComponent(email)}`
             );
             const data = await res.json();
             alert(data.message);
