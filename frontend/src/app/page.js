@@ -7,7 +7,7 @@ import Footer from "../components/footer/Footer";
 import Faq from "../components/faq/Faq";
 import Reviews from "../constants/reviews/Reviews";
 
-// ✅ SEO-Metadaten (werden serverseitig ins <head> geschrieben)
+
 export const metadata = {
     title: "League of Legends AI – Analysiere dein Spiel in Echtzeit",
     description:

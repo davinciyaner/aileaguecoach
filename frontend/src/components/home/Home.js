@@ -10,7 +10,6 @@ export default function Home() {
     return (
         <>
             <Head>
-                {/* --- SEO-Basics --- */}
                 <title>League of Legends AI – Analysiere dein Spiel in Echtzeit</title>
                 <meta
                     name="description"
@@ -24,7 +23,6 @@ export default function Home() {
                 <meta name="robots" content="index, follow" />
                 <meta name="language" content="de" />
 
-                {/* --- Open Graph / Social --- */}
                 <meta property="og:title" content="League of Legends AI – Dein smarter Ranked Coach" />
                 <meta
                     property="og:description"
@@ -35,20 +33,16 @@ export default function Home() {
                 <meta property="og:type" content="website" />
                 <meta property="og:locale" content="de_DE" />
 
-                {/* --- Twitter Card --- */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="League of Legends AI – KI für Ranked-Spieler" />
                 <meta name="twitter:description" content="Verbessere dein Spiel mit Echtzeit-KI-Analyse, Meta-Daten & Champion-Synergie-Tracking." />
                 <meta name="twitter:image" content="/preview.png" />
 
-                {/* --- Canonical URL --- */}
                 <link rel="canonical" href="https://aihanscoach.vercel.app/" />
 
-                {/* --- Favicons --- */}
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            {/* --- Seiteninhalt --- */}
             <div className="bg-gray-900 min-h-screen">
                 <Navbar />
 
