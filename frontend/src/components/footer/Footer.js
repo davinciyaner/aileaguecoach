@@ -24,6 +24,7 @@ export default function Footer() {
 
             if (res.ok) {
                 setSubscribed(true);
+                alert("Danke für deine Anmeldung!")
             }
         } catch (err) {
             console.error(err);
