@@ -12,6 +12,7 @@ import reviewsRoutes from "./routes/reviews.routes.js";
 import profileRoutes from "./routes/profile.routes.js";
 import downloadRoutes from "./routes/download.routes.js";
 import subscriptionRoutes from "./routes/subscription.routes.js";
+import newsletterRoutes from "./routes/newsletter.routes.js";
 
 const app = express();
 
@@ -59,6 +60,7 @@ app.use("/api/subscribe", subscriptionRoutes);
 app.use("/api/reviews", reviewsRoutes);
 app.use("/api/profile", profileRoutes);
 app.use("/api/download", downloadRoutes);
+app.use("/api/newsletter", newsletterRoutes);
 
 
 app.use("*", (req, res) => {

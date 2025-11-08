@@ -14,7 +14,7 @@ export default function Footer() {
         if (!email) return alert("Bitte gib eine gültige E-Mail-Adresse ein.");
 
         try {
-            const res = await fetch(`${API_URL}/api/subscribe/newsletter`, {
+            const res = await fetch(`${API_URL}/newsletter/newsletter`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email }),
@@ -36,7 +36,7 @@ export default function Footer() {
         if (!email) return;
         try {
             const res = await fetch(
-                `${API_URL}/api/subscribe/unsubscribe?email=${encodeURIComponent(email)}`
+                `${API_URL}/api/newsletter/unsubscribe?email=${encodeURIComponent(email)}`
             );
             const data = await res.json();
             alert(data.message);
