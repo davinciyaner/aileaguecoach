@@ -110,6 +110,9 @@ export default function Footer() {
                         <a href="/legal-notice" className="text-gray-400 hover:text-indigo-400">
                             Impressum
                         </a>
+                        <a href="https://discord.gg/4ecd9TvCmU" className="text-gray-400 hover:text-indigo-400">
+                            <img src="/icons/Discord-Symbol-White.png" alt="Discord" className="w-8 h-6" />
+                        </a>
                         <a href="mailto:hansleaguecoach@gmail.com" className="text-gray-400 hover:text-indigo-400">
                             <Mail className="h-5 w-5" />
                         </a>

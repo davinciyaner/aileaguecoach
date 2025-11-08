@@ -12,6 +12,7 @@ const navigation = [
     { name: 'Bewertungen', href: '#reviews' },
     { name: 'FAQ', href: '#faq' },
     { name: 'Download', href: '/download' },
+    { name: 'Discord', href: 'https://discord.gg/4ecd9TvCmU' },
 ]
 
 const Navbar = ({ minimal = false }) => {
