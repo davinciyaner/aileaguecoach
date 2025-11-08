@@ -19,6 +19,7 @@ export const metadata = {
     description: "Analysiere deine Spiele mit KI und erhalte Live-Empfehlungen.",
 };
 
+
 export default function RootLayout({ children }) {
   return (
       <html lang="de">
