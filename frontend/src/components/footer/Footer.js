@@ -14,7 +14,7 @@ export default function Footer() {
         if (!email) return alert("Bitte gib eine gültige E-Mail-Adresse ein.");
 
         try {
-            const res = await fetch(`${API_URL}/newsletter/newsletter`, {
+            const res = await fetch(`${API_URL}/api/newsletter/newsletter`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email }),
