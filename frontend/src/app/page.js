@@ -1,5 +1,3 @@
-// app/page.js
-
 import Home from "../components/home/Home";
 import Features from "../components/features/Features";
 import Stats from "../components/stats/Stats";
