@@ -26,7 +26,7 @@ export const metadata = {
         siteName: "League of Legends AI",
         images: [
             {
-                url: "/preview.png",
+                url: "/favicon.ico",
                 width: 1200,
                 height: 630,
                 alt: "League of Legends AI Vorschau",

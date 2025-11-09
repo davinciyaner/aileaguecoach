@@ -18,6 +18,9 @@ export const metadata = {
     metadataBase: new URL("https://aihanscoach.vercel.app"),
     title: "League of Legends AI – Dein smarter Ranked Coach",
     description: "Analysiere deine Spiele mit KI und erhalte Live-Empfehlungen.",
+    icons: {
+        icon: "/favicon.ico",
+    }
 };
 
 
