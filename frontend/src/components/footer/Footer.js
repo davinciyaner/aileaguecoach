@@ -5,30 +5,35 @@ import { Mail } from "lucide-react";
 export default function Footer() {
     const [email, setEmail] = useState("");
     const [subscribed, setSubscribed] = useState(false);
-
+    const [message, setMessage] = useState("");
+    const [messageColor, setMessageColor] = useState("");
     const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
     // Newsletter abonnieren
     const handleSubscribe = async (event) => {
         event.preventDefault();
-        if (!email) return alert("Bitte gib eine gültige E-Mail-Adresse ein.");
+        if (!email) return setMessage("Bitte gib eine gültige E-Mail-Adresse ein.");
 
         try {
             const res = await fetch(`${API_URL}/api/newsletter/newsletter`, {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email }),
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({email}),
             });
             const data = await res.json();
-            alert(data.message);
 
             if (res.ok) {
                 setSubscribed(true);
-                alert("Danke für deine Anmeldung!")
+                setMessageColor("text-green-500");
+                setMessage("✅ Erfolgreich für den Newsletter angemeldet!");
+            } else {
+                setMessageColor("text-red-500");
+                setMessage(data.message || "Fehler bei der Anmeldung.");
             }
         } catch (err) {
             console.error(err);
-            alert("Etwas ist schiefgelaufen. Bitte versuche es erneut.");
+            setMessageColor("text-red-500");
+            setMessage("Etwas ist schiefgelaufen. Bitte versuche es erneut.");
         }
     };
 
@@ -40,15 +45,23 @@ export default function Footer() {
                 `${API_URL}/api/newsletter/unsubscribe?email=${encodeURIComponent(email)}`
             );
             const data = await res.json();
-            alert(data.message);
-            if (res.ok) setSubscribed(false);
+
+            if (res.ok) {
+                setSubscribed(false);
+                setMessageColor("text-green-500");
+                setMessage("✅ Erfolgreich abgemeldet.");
+            } else {
+                setMessageColor("text-red-500");
+                setMessage(data.message || "Fehler bei der Abmeldung.");
+            }
         } catch (err) {
             console.error(err);
-            alert("Etwas ist schiefgelaufen. Bitte versuche es erneut.");
+            setMessageColor("text-red-500");
+            setMessage("Etwas ist schiefgelaufen. Bitte versuche es erneut.");
         }
     };
 
-    // Optional: automatisches Abmelden über Query-Parameter
+    // Automatische Abmeldung per Query
     useEffect(() => {
         const queryEmail = new URLSearchParams(window.location.search).get("email");
         if (queryEmail) {
@@ -70,38 +83,48 @@ export default function Footer() {
                     </p>
 
                     {!subscribed ? (
-                        <form className="mt-6 flex max-w-md mx-auto gap-x-3" onSubmit={handleSubscribe}>
-                            <input
-                                type="email"
-                                required
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                placeholder="E-Mail-Adresse eingeben"
-                                className="min-w-0 flex-auto rounded-md border-0 bg-gray-800/50 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-gray-700 focus:ring-2 focus:ring-indigo-500 sm:text-sm sm:leading-6"
-                            />
-                            <button
-                                type="submit"
-                                className="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-                            >
-                                Abonnieren
-                            </button>
+                        <form className="mt-6 flex flex-col items-center max-w-md mx-auto gap-3"
+                              onSubmit={handleSubscribe}>
+                            <div className="flex w-full gap-x-3">
+                                <input
+                                    type="email"
+                                    required
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    placeholder="E-Mail-Adresse eingeben"
+                                    className="min-w-0 flex-auto rounded-md border-0 bg-gray-800/50 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-gray-700 focus:ring-2 focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                                />
+                                <button
+                                    type="submit"
+                                    className="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                                >
+                                    Abonnieren
+                                </button>
+                            </div>
+                            {message && (
+                                <p className={`mt-2 text-sm ${messageColor}`}>{message}</p>
+                            )}
                         </form>
                     ) : (
-                        <div className="mt-6 flex justify-center gap-x-3">
+                        <div className="mt-6 flex flex-col items-center gap-3">
               <span className="text-gray-300 px-3.5 py-2.5 rounded-md bg-gray-800/50">
                 Abonniert: {email}
               </span>
                             <button
                                 onClick={handleUnsubscribe}
-                                className="flex-none rounded-md bg-red-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500"
+                                className="flex-none rounded-md bg-red-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-400 focus-visible:outline-offset-2 focus-visible:outline-red-500"
                             >
                                 Abbestellen
                             </button>
+                            {message && (
+                                <p className={`mt-2 text-sm ${messageColor}`}>{message}</p>
+                            )}
                         </div>
                     )}
                 </div>
 
-                <div className="border-t border-gray-800 pt-12 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div
+                    className="border-t border-gray-800 pt-12 flex flex-col md:flex-row items-center justify-between gap-6">
                     <div className="text-gray-400 text-sm text-center md:text-left">
                         © {new Date().getFullYear()} Hans AI Coach. Alle Rechte vorbehalten.
                     </div>
@@ -114,10 +137,10 @@ export default function Footer() {
                             Impressum
                         </a>
                         <a href="https://discord.gg/4ecd9TvCmU" className="text-gray-400 hover:text-indigo-400">
-                            <img src="/icons/Discord-Symbol-White.png" alt="Discord" className="w-8 h-6" />
+                            <img src="/icons/Discord-Symbol-White.png" alt="Discord" className="w-8 h-6"/>
                         </a>
                         <a href="mailto:hansleaguecoach@gmail.com" className="text-gray-400 hover:text-indigo-400">
-                            <Mail className="h-5 w-5" />
+                            <Mail className="h-5 w-5"/>
                         </a>
                     </div>
                 </div>

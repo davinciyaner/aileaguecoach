@@ -6,7 +6,6 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-
 import authRoutes from "./routes/auth.routes.js";
 import reviewsRoutes from "./routes/reviews.routes.js";
 import profileRoutes from "./routes/profile.routes.js";
