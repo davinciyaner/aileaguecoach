@@ -7,6 +7,7 @@ import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 
 const navigation = [
+    { name: 'About', href: '/about' },
     { name: 'Features', href: '#features' },
     { name: 'Zukunft', href: '#future' },
     { name: 'Bewertungen', href: '#reviews' },
