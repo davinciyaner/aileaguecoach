@@ -45,33 +45,42 @@ export default function Home() {
             </Head>
 
             <div className="bg-gray-900 min-h-screen">
-                <Navbar/>
+                <Navbar />
 
                 <main className="relative isolate px-6 pt-14 lg:px-8">
-                    <section className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56 text-center">
-                        <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-                            <div className="relative rounded-full px-3 py-1 text-sm text-gray-400 ring-1 ring-white/50">
-                                BETA VERSION
+                    <section className="mx-auto max-w-6xl py-32 sm:py-48 lg:py-56 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
+                        <div className="text-center lg:text-left">
+                            <div className="hidden sm:mb-8 sm:flex sm:justify-center lg:justify-start">
+                                <div className="relative rounded-full px-3 py-1 text-sm text-gray-400 ring-1 ring-white/50">
+                                    BETA VERSION
+                                </div>
+                            </div>
+
+                            <h1 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">
+                                Steige an die Spitze auf
+                            </h1>
+
+                            <p className="mt-8 text-lg text-gray-400 sm:text-xl">
+                                Mit unserer KI war es noch nie so einfach, in League of Legends aufzusteigen
+                                – analysiere Spiele in Echtzeit, erkenne Fehler und finde Synergien mit Champions, die zu
+                                dir passen.
+                            </p>
+
+                            <div className="mt-10 flex justify-center lg:justify-start gap-x-6">
+                                <a
+                                    href="/download"
+                                    className="rounded-md bg-indigo-500 px-6 py-3 text-white font-semibold text-sm shadow hover:bg-indigo-400 transition"
+                                >
+                                    Jetzt starten
+                                </a>
                             </div>
                         </div>
-
-                        <h1 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">
-                            Steige an die Spitze auf
-                        </h1>
-
-                        <p className="mt-8 text-lg text-gray-400 sm:text-xl">
-                            Mit unserer KI war es noch nie so einfach, in League of Legends aufzusteigen
-                            – analysiere Spiele in Echtzeit, erkenne Fehler und finde Synergien mit Champions, die zu
-                            dir passen.
-                        </p>
-
-                        <div className="mt-10 flex justify-center gap-x-6">
-                            <a
-                                href="/download"
-                                className="rounded-md bg-indigo-500 px-6 py-3 text-white font-semibold text-sm shadow hover:bg-indigo-400 transition"
-                            >
-                                Jetzt starten
-                            </a>
+                        <div className="flex justify-center lg:justify-end">
+                            <img
+                                src="/homepictures/hansai.png"
+                                alt="League of Legends KI"
+                                className="w-full max-w-3xl rounded-2xl shadow-lg"
+                            />
                         </div>
                     </section>
                 </main>

@@ -17,9 +17,9 @@ const features = [
         icon: TrendingUp,
     },
     {
-        name: "Personalisierte Trainingspläne",
+        name: "Champion Ratschlag",
         description:
-            "Erhalte tägliche, auf dich zugeschnittene Übungsaufgaben basierend auf deinen Schwächen, deiner Rolle und deinem Champion-Pool. (Demnächst verfügbar)",
+            "Erfahre noch vor Spielbeginn, welche Champions dir den entscheidenden Vorteil verschaffen. Unsere KI analysiert dein Gegnerteam in Echtzeit und zeigt dir die besten und schlechtesten Picks für deinen Sieg.",
         icon: Target,
     },
     {
@@ -51,7 +51,7 @@ export default function Features() {
             {/* sanfter Verlauf */}
             <div
                 id="features"
-                className="absolute inset-0 bg-gradient-to-b from-indigo-500/10 via-transparent to-[#0a0a0f] pointer-events-none"
+                className="absolute inset-0 bg-gradient-to-b from-[#0a0a0f] via-transparent to-indigo-500/10 pointer-events-none"
             />
 
             <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
@@ -105,6 +105,36 @@ export default function Features() {
                     ))}
                 </motion.div>
             </div>
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                viewport={{ once: true }}
+                className="mt-20 flex justify-center"
+            >
+                <div
+                    className="rounded-3xl bg-[rgba(31,41,55,0.4)] backdrop-blur-sm shadow-lg"
+                    style={{
+                        width: "40%"
+                    }}
+                >
+                    <motion.img
+                        src="/homepictures/pickadvisor.png"
+                        alt="Hans AI Coach Analyse"
+                        className="object-cover rounded-2xl w-full h-auto"
+                        style={{
+                            transform: "scale(1.1)",
+                            transformOrigin: "center",
+                            maxHeight: "500px",
+                        }}
+                        whileHover={{
+                            scale: 1.03,
+                            boxShadow: "0 0 30px rgba(99, 102, 241, 0.25)",
+                        }}
+                        transition={{ duration: 0.3 }}
+                    />
+                </div>
+            </motion.div>
         </section>
     );
 }
