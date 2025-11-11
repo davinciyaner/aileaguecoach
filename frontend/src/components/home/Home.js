@@ -62,8 +62,7 @@ export default function Home() {
 
                             <p className="mt-8 text-lg text-gray-400 sm:text-xl">
                                 Mit unserer KI war es noch nie so einfach, in League of Legends aufzusteigen
-                                – analysiere Spiele in Echtzeit, erkenne Fehler und finde Synergien mit Champions, die zu
-                                dir passen.
+                                – analysiere Spiele in Echtzeit, berechne deine Gewinnchance live und kriege Empfehlungen wie du und dein Team das Spiel gewinnt.
                             </p>
 
                             <div className="mt-10 flex justify-center lg:justify-start gap-x-6">

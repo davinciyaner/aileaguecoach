@@ -105,12 +105,19 @@ export default function Features() {
                     ))}
                 </motion.div>
             </div>
+            <p className="mt-10 text-center text-3xl font-semibold tracking-tight text-white sm:text-4xl">Champion Empfehlung</p>
+            <p className="mt-6 text-center text-lg text-gray-400">
+                Kriege während der Championauswahl Champions vorgeschlagen die gut gegen deine Gegner sind.
+            </p>
+            <p className="mt-2 text-center text-gray-400 text-base">
+                Empfohlene Items kommen bald dazu
+            </p>
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.4 }}
                 viewport={{ once: true }}
-                className="mt-20 flex justify-center"
+                className="mt-10 flex justify-center"
             >
                 <div
                     className="rounded-3xl bg-[rgba(31,41,55,0.4)] backdrop-blur-sm shadow-lg"
@@ -125,7 +132,7 @@ export default function Features() {
                         style={{
                             transform: "scale(1.1)",
                             transformOrigin: "center",
-                            maxHeight: "500px",
+                            maxHeight: "800px",
                         }}
                         whileHover={{
                             scale: 1.03,
