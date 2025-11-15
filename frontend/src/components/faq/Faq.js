@@ -38,6 +38,11 @@ const faqs = [
         answer:
             "Ja! In der aktuellen Beta-Version ist Hans AI Coach komplett kostenlos. Du kannst alle Kernfunktionen frei testen und mir Feedback geben, um die Entwicklung zu verbessern. In Zukunft wird es ein faires Preismodell mit verschiedenen Stufen geben.",
     },
+    {
+        question: "Kann ich dafür gebannt werden?",
+        answer:
+        "Nein. Unsere Software verstößt nicht gegen die Richtlinien von Riot Games. Wir agieren wie ein normaler Live-Coach: Die Analyse erfolgt außerhalb des Spiels, ohne Eingriffe in den Client oder das Gameplay. Wir verwenden ausschließlich die offizielle Riot API, die von Riot ausdrücklich erlaubt ist. Deshalb ist ein Bann ausgeschlossen."
+    },
 ];
 
 export default function Faq() {
