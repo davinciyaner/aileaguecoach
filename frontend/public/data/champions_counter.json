@@ -1,0 +1,3853 @@
+{
+  "Aatrox": {
+    "id": "Aatrox",
+    "name": "Aatrox",
+    "info": {
+      "attack": 8,
+      "defense": 4,
+      "magic": 3,
+      "difficulty": 4
+    },
+    "tags": [
+      "Fighter"
+    ],
+    "winrate": null,
+    "counters": [
+      "Cassiopeia",
+      "Fiora",
+      "Heimerdinger",
+      "Singed",
+      "Quinn"
+    ],
+    "combos": [
+      "A+E+A",
+      "Q+W+E+QQ",
+      "EQWQAQA",
+      "EWQQQA"
+    ]
+  },
+  "Ahri": {
+    "id": "Ahri",
+    "name": "Ahri",
+    "info": {
+      "attack": 3,
+      "defense": 4,
+      "magic": 8,
+      "difficulty": 5
+    },
+    "tags": [
+      "Mage",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Kennen",
+      "Chogath",
+      "Twisted Fate",
+      "Qiyana",
+      "Swain"
+    ],
+    "tips": ""
+  },
+  "Akali": {
+    "id": "Akali",
+    "name": "Akali",
+    "info": {
+      "attack": 5,
+      "defense": 3,
+      "magic": 8,
+      "difficulty": 7
+    },
+    "tags": [
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Sion",
+      "Morgana",
+      "Kennen",
+      "Swain",
+      "Talon"
+    ],
+    "tips": ""
+  },
+  "Akshan": {
+    "id": "Akshan",
+    "name": "Akshan",
+    "info": {
+      "attack": 0,
+      "defense": 0,
+      "magic": 0,
+      "difficulty": 0
+    },
+    "tags": [
+      "Marksman",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Sion",
+      "Yasuo",
+      "Anivia",
+      "Kassadin",
+      "Twisted Fate"
+    ],
+    "tips": ""
+  },
+  "Alistar": {
+    "id": "Alistar",
+    "name": "Alistar",
+    "info": {
+      "attack": 6,
+      "defense": 9,
+      "magic": 5,
+      "difficulty": 7
+    },
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "winrate": null,
+    "counters": [
+      "Taric",
+      "Fiddlesticks",
+      "Morgana",
+      "Leblanc",
+      "Velkoz"
+    ],
+    "tips": ""
+  },
+  "Ambessa": {
+    "id": "Ambessa",
+    "name": "Ambessa",
+    "info": {
+      "attack": 9,
+      "defense": 2,
+      "magic": 0,
+      "difficulty": 10
+    },
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Varus",
+      "Shen",
+      "Warwick",
+      "Kennen",
+      "Riven"
+    ],
+    "tips": ""
+  },
+  "Amumu": {
+    "id": "Amumu",
+    "name": "Amumu",
+    "info": {
+      "attack": 2,
+      "defense": 6,
+      "magic": 8,
+      "difficulty": 3
+    },
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "winrate": null,
+    "counters": [
+      "Kindred",
+      "Khazix",
+      "Nunu",
+      "Master Yi",
+      "Dr. Mundo"
+    ],
+    "tips": ""
+  },
+  "Anivia": {
+    "id": "Anivia",
+    "name": "Anivia",
+    "info": {
+      "attack": 1,
+      "defense": 4,
+      "magic": 10,
+      "difficulty": 10
+    },
+    "tags": [
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Brand",
+      "Ziggs",
+      "Syndra",
+      "Xerath",
+      "Akali"
+    ],
+    "tips": ""
+  },
+  "Annie": {
+    "id": "Annie",
+    "name": "Annie",
+    "info": {
+      "attack": 2,
+      "defense": 3,
+      "magic": 10,
+      "difficulty": 6
+    },
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "winrate": null,
+    "counters": [
+      "Aurelion Sol",
+      "Naafiri",
+      "Xerath",
+      "Vladimir",
+      "Leblanc"
+    ],
+    "tips": ""
+  },
+  "Aphelios": {
+    "id": "Aphelios",
+    "name": "Aphelios",
+    "info": {
+      "attack": 6,
+      "defense": 2,
+      "magic": 1,
+      "difficulty": 10
+    },
+    "tags": [
+      "Marksman"
+    ],
+    "winrate": null,
+    "counters": [
+      "Yasuo",
+      "Veigar",
+      "Seraphine",
+      "Ziggs",
+      "Hwei"
+    ],
+    "tips": ""
+  },
+  "Ashe": {
+    "id": "Ashe",
+    "name": "Ashe",
+    "info": {
+      "attack": 7,
+      "defense": 3,
+      "magic": 2,
+      "difficulty": 4
+    },
+    "tags": [
+      "Marksman",
+      "Support"
+    ],
+    "winrate": null,
+    "counters": [
+      "Nilah",
+      "Swain",
+      "Ziggs",
+      "Yasuo",
+      "Kogmaw"
+    ],
+    "tips": ""
+  },
+  "Aurelion Sol": {
+    "id": "AurelionSol",
+    "name": "Aurelion Sol",
+    "info": {
+      "attack": 2,
+      "defense": 3,
+      "magic": 8,
+      "difficulty": 7
+    },
+    "tags": [
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Kayle",
+      "Brand",
+      "Quinn",
+      "Ziggs",
+      "Fizz"
+    ],
+    "tips": ""
+  },
+  "Aurora": {
+    "id": "Aurora",
+    "name": "Aurora",
+    "info": {
+      "attack": 3,
+      "defense": 4,
+      "magic": 8,
+      "difficulty": 5
+    },
+    "tags": [
+      "Mage",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Akshan",
+      "Pantheon",
+      "Annie",
+      "Fizz",
+      "Vex"
+    ],
+    "tips": ""
+  },
+  "Azir": {
+    "id": "Azir",
+    "name": "Azir",
+    "info": {
+      "attack": 6,
+      "defense": 3,
+      "magic": 8,
+      "difficulty": 9
+    },
+    "tags": [
+      "Mage",
+      "Marksman"
+    ],
+    "winrate": null,
+    "counters": [
+      "Sion",
+      "Chogath",
+      "Swain",
+      "Neeko",
+      "Quinn"
+    ],
+    "tips": ""
+  },
+  "Bard": {
+    "id": "Bard",
+    "name": "Bard",
+    "info": {
+      "attack": 4,
+      "defense": 4,
+      "magic": 5,
+      "difficulty": 9
+    },
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Maokai",
+      "Leblanc",
+      "Amumu",
+      "Elise",
+      "Sona"
+    ],
+    "tips": ""
+  },
+  "Bel'Veth": {
+    "id": "Belveth",
+    "name": "Bel'Veth",
+    "info": {
+      "attack": 4,
+      "defense": 2,
+      "magic": 7,
+      "difficulty": 10
+    },
+    "tags": [
+      "Fighter"
+    ],
+    "winrate": null,
+    "counters": [
+      "Shyvana",
+      "Briar",
+      "Elise",
+      "Nunu",
+      "Poppy"
+    ],
+    "tips": ""
+  },
+  "Blitzcrank": {
+    "id": "Blitzcrank",
+    "name": "Blitzcrank",
+    "info": {
+      "attack": 4,
+      "defense": 8,
+      "magic": 5,
+      "difficulty": 4
+    },
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "winrate": null,
+    "counters": [
+      "Fiddlesticks",
+      "Shaco",
+      "Zyra",
+      "Galio",
+      "Amumu"
+    ],
+    "tips": ""
+  },
+  "Brand": {
+    "id": "Brand",
+    "name": "Brand",
+    "info": {
+      "attack": 2,
+      "defense": 2,
+      "magic": 9,
+      "difficulty": 4
+    },
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "winrate": null,
+    "counters": [
+      "Zilean",
+      "Janna",
+      "Pantheon",
+      "Brand",
+      "Yuumi"
+    ],
+    "tips": ""
+  },
+  "Braum": {
+    "id": "Braum",
+    "name": "Braum",
+    "info": {
+      "attack": 3,
+      "defense": 9,
+      "magic": 4,
+      "difficulty": 3
+    },
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "winrate": null,
+    "counters": [
+      "Xerath",
+      "Taric",
+      "Velkoz",
+      "Brand",
+      "Zilean"
+    ],
+    "tips": ""
+  },
+  "Briar": {
+    "id": "Briar",
+    "name": "Briar",
+    "info": {
+      "attack": 9,
+      "defense": 5,
+      "magic": 3,
+      "difficulty": 3
+    },
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Teemo",
+      "Taliyah",
+      "Rammus",
+      "Ivern",
+      "Ekko"
+    ],
+    "tips": ""
+  },
+  "Caitlyn": {
+    "id": "Caitlyn",
+    "name": "Caitlyn",
+    "info": {
+      "attack": 8,
+      "defense": 2,
+      "magic": 2,
+      "difficulty": 6
+    },
+    "tags": [
+      "Marksman"
+    ],
+    "winrate": null,
+    "counters": [
+      "Yasuo",
+      "Veigar",
+      "Kogmaw",
+      "Ziggs",
+      "Hwei"
+    ],
+    "tips": ""
+  },
+  "Camille": {
+    "id": "Camille",
+    "name": "Camille",
+    "info": {
+      "attack": 8,
+      "defense": 6,
+      "magic": 3,
+      "difficulty": 4
+    },
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Heimerdinger",
+      "Cassiopeia",
+      "Teemo",
+      "Shen",
+      "Vayne"
+    ],
+    "tips": ""
+  },
+  "Cassiopeia": {
+    "id": "Cassiopeia",
+    "name": "Cassiopeia",
+    "info": {
+      "attack": 2,
+      "defense": 3,
+      "magic": 9,
+      "difficulty": 10
+    },
+    "tags": [
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Velkoz",
+      "Talon",
+      "Syndra",
+      "Hwei",
+      "Anivia"
+    ],
+    "tips": ""
+  },
+  "Cho'Gath": {
+    "id": "Chogath",
+    "name": "Cho'Gath",
+    "info": {
+      "attack": 3,
+      "defense": 7,
+      "magic": 7,
+      "difficulty": 5
+    },
+    "tags": [
+      "Tank",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Heimerdinger",
+      "Swain",
+      "Kayle",
+      "Ryze",
+      "Yone"
+    ],
+    "tips": ""
+  },
+  "Corki": {
+    "id": "Corki",
+    "name": "Corki",
+    "info": {
+      "attack": 8,
+      "defense": 3,
+      "magic": 6,
+      "difficulty": 6
+    },
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Yasuo",
+      "Senna",
+      "Zeri",
+      "Nilah",
+      "Mel"
+    ],
+    "tips": ""
+  },
+  "Darius": {
+    "id": "Darius",
+    "name": "Darius",
+    "info": {
+      "attack": 9,
+      "defense": 5,
+      "magic": 1,
+      "difficulty": 2
+    },
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "winrate": null,
+    "counters": [
+      "Reksai",
+      "Quinn",
+      "Cassiopeia",
+      "Kennen",
+      "Heimerdinger"
+    ],
+    "tips": ""
+  },
+  "Diana": {
+    "id": "Diana",
+    "name": "Diana",
+    "info": {
+      "attack": 7,
+      "defense": 6,
+      "magic": 8,
+      "difficulty": 4
+    },
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Ivern",
+      "Udyr",
+      "Master Yi",
+      "Warwick",
+      "Teemo"
+    ],
+    "tips": ""
+  },
+  "Draven": {
+    "id": "Draven",
+    "name": "Draven",
+    "info": {
+      "attack": 9,
+      "defense": 3,
+      "magic": 1,
+      "difficulty": 8
+    },
+    "tags": [
+      "Marksman"
+    ],
+    "winrate": null,
+    "counters": [
+      "Mel",
+      "Nilah",
+      "Swain",
+      "Hwei",
+      "Senna"
+    ],
+    "tips": ""
+  },
+  "Dr. Mundo": {
+    "id": "DrMundo",
+    "name": "Dr. Mundo",
+    "info": {
+      "attack": 5,
+      "defense": 7,
+      "magic": 6,
+      "difficulty": 5
+    },
+    "tags": [
+      "Tank",
+      "Fighter"
+    ],
+    "winrate": null,
+    "counters": [
+      "Trundle",
+      "Illaoi",
+      "Olaf",
+      "Gwen",
+      "Irelia"
+    ],
+    "tips": ""
+  },
+  "Ekko": {
+    "id": "Ekko",
+    "name": "Ekko",
+    "info": {
+      "attack": 5,
+      "defense": 3,
+      "magic": 7,
+      "difficulty": 8
+    },
+    "tags": [
+      "Assassin",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Taliyah",
+      "Shyvana",
+      "Ivern",
+      "Nunu",
+      "Jax"
+    ],
+    "tips": ""
+  },
+  "Elise": {
+    "id": "Elise",
+    "name": "Elise",
+    "info": {
+      "attack": 6,
+      "defense": 5,
+      "magic": 7,
+      "difficulty": 9
+    },
+    "tags": [
+      "Assassin",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Rammus",
+      "Shaco",
+      "Sejuani",
+      "Nocturne",
+      "Evelynn"
+    ],
+    "tips": ""
+  },
+  "Evelynn": {
+    "id": "Evelynn",
+    "name": "Evelynn",
+    "info": {
+      "attack": 4,
+      "defense": 2,
+      "magic": 7,
+      "difficulty": 10
+    },
+    "tags": [
+      "Assassin",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Fiddlesticks",
+      "Trundle",
+      "Rammus",
+      "Belveth",
+      "Ekko"
+    ],
+    "tips": ""
+  },
+  "Ezreal": {
+    "id": "Ezreal",
+    "name": "Ezreal",
+    "info": {
+      "attack": 7,
+      "defense": 2,
+      "magic": 6,
+      "difficulty": 7
+    },
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Swain",
+      "Yasuo",
+      "Seraphine",
+      "Vayne",
+      "Kogmaw"
+    ],
+    "tips": ""
+  },
+  "Fiddlesticks": {
+    "id": "Fiddlesticks",
+    "name": "Fiddlesticks",
+    "info": {
+      "attack": 2,
+      "defense": 3,
+      "magic": 9,
+      "difficulty": 9
+    },
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "winrate": null,
+    "counters": [
+      "Taliyah",
+      "Karthus",
+      "Belveth",
+      "Rammus",
+      "Udyr"
+    ],
+    "tips": ""
+  },
+  "Fiora": {
+    "id": "Fiora",
+    "name": "Fiora",
+    "info": {
+      "attack": 10,
+      "defense": 4,
+      "magic": 2,
+      "difficulty": 3
+    },
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Heimerdinger",
+      "Quinn",
+      "Reksai",
+      "Zac",
+      "Poppy"
+    ],
+    "tips": ""
+  },
+  "Fizz": {
+    "id": "Fizz",
+    "name": "Fizz",
+    "info": {
+      "attack": 6,
+      "defense": 4,
+      "magic": 7,
+      "difficulty": 6
+    },
+    "tags": [
+      "Assassin",
+      "Fighter"
+    ],
+    "winrate": null,
+    "counters": [
+      "Brand",
+      "Quinn",
+      "Pantheon",
+      "Diana",
+      "Kennen"
+    ],
+    "tips": ""
+  },
+  "Galio": {
+    "id": "Galio",
+    "name": "Galio",
+    "info": {
+      "attack": 1,
+      "defense": 10,
+      "magic": 6,
+      "difficulty": 5
+    },
+    "tags": [
+      "Tank",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Pantheon",
+      "Kennen",
+      "Vex",
+      "Velkoz",
+      "Neeko"
+    ],
+    "tips": ""
+  },
+  "Gangplank": {
+    "id": "Gangplank",
+    "name": "Gangplank",
+    "info": {
+      "attack": 7,
+      "defense": 6,
+      "magic": 4,
+      "difficulty": 9
+    },
+    "tags": [
+      "Fighter"
+    ],
+    "winrate": null,
+    "counters": [
+      "Taahm Kench",
+      "Gwen",
+      "Quinn",
+      "Kayle",
+      "Nasus"
+    ],
+    "tips": ""
+  },
+  "Garen": {
+    "id": "Garen",
+    "name": "Garen",
+    "info": {
+      "attack": 7,
+      "defense": 7,
+      "magic": 1,
+      "difficulty": 5
+    },
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "winrate": null,
+    "counters": [
+      "Kayle",
+      "Swain",
+      "Quinn",
+      "Warwick",
+      "Poppy"
+    ],
+    "tips": ""
+  },
+  "Gnar": {
+    "id": "Gnar",
+    "name": "Gnar",
+    "info": {
+      "attack": 6,
+      "defense": 5,
+      "magic": 5,
+      "difficulty": 8
+    },
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "winrate": null,
+    "counters": [
+      "Rumble",
+      "Zac",
+      "Vayne",
+      "Kled",
+      "Kennen"
+    ],
+    "tips": ""
+  },
+  "Gragas": {
+    "id": "Gragas",
+    "name": "Gragas",
+    "info": {
+      "attack": 4,
+      "defense": 7,
+      "magic": 6,
+      "difficulty": 5
+    },
+    "tags": [
+      "Fighter",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Reksai",
+      "Heimerdinger",
+      "Poppy",
+      "Rumble",
+      "Yorick"
+    ],
+    "tips": ""
+  },
+  "Graves": {
+    "id": "Graves",
+    "name": "Graves",
+    "info": {
+      "attack": 8,
+      "defense": 5,
+      "magic": 3,
+      "difficulty": 3
+    },
+    "tags": [
+      "Marksman"
+    ],
+    "winrate": null,
+    "counters": [
+      "Gragas",
+      "Nidalee",
+      "Fiddlesticks",
+      "Dr Mundo",
+      "Khazix"
+    ],
+    "tips": ""
+  },
+  "Gwen": {
+    "id": "Gwen",
+    "name": "Gwen",
+    "info": {
+      "attack": 7,
+      "defense": 4,
+      "magic": 5,
+      "difficulty": 5
+    },
+    "tags": [
+      "Fighter"
+    ],
+    "winrate": null,
+    "counters": [
+      "Warwick",
+      "Varus",
+      "Singed",
+      "Riven",
+      "Yasuo"
+    ],
+    "tips": ""
+  },
+  "Hecarim": {
+    "id": "Hecarim",
+    "name": "Hecarim",
+    "info": {
+      "attack": 8,
+      "defense": 6,
+      "magic": 4,
+      "difficulty": 6
+    },
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "winrate": null,
+    "counters": [
+      "Kindred",
+      "Zed",
+      "Teemo",
+      "Trundle",
+      "Belveth"
+    ],
+    "tips": ""
+  },
+  "Heimerdinger": {
+    "id": "Heimerdinger",
+    "name": "Heimerdinger",
+    "info": {
+      "attack": 2,
+      "defense": 6,
+      "magic": 8,
+      "difficulty": 8
+    },
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "winrate": null,
+    "counters": [
+      "Rumble",
+      "Kennen",
+      "Quinn",
+      "Poppy",
+      "Kled"
+    ],
+    "tips": ""
+  },
+  "Hwei": {
+    "id": "Hwei",
+    "name": "Hwei",
+    "info": {
+      "attack": 7,
+      "defense": 1,
+      "magic": 8,
+      "difficulty": 9
+    },
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "winrate": null,
+    "counters": [
+      "Quinn",
+      "Pantheon",
+      "Naafiri",
+      "Neeko",
+      "Annie"
+    ],
+    "tips": ""
+  },
+  "Illaoi": {
+    "id": "Illaoi",
+    "name": "Illaoi",
+    "info": {
+      "attack": 8,
+      "defense": 6,
+      "magic": 3,
+      "difficulty": 4
+    },
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "winrate": null,
+    "counters": [
+      "Varus",
+      "Kayle",
+      "Swain",
+      "Kayn",
+      "Teemo"
+    ],
+    "tips": ""
+  },
+  "Irelia": {
+    "id": "Irelia",
+    "name": "Irelia",
+    "info": {
+      "attack": 7,
+      "defense": 4,
+      "magic": 5,
+      "difficulty": 5
+    },
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Udyr",
+      "Poppy",
+      "Zac",
+      "Volibear",
+      "Singed"
+    ],
+    "tips": ""
+  },
+  "Ivern": {
+    "id": "Ivern",
+    "name": "Ivern",
+    "info": {
+      "attack": 3,
+      "defense": 5,
+      "magic": 7,
+      "difficulty": 7
+    },
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Shaco",
+      "Nunu",
+      "Reksai",
+      "Naafiri",
+      "Fiddlesticks"
+    ],
+    "tips": ""
+  },
+  "Janna": {
+    "id": "Janna",
+    "name": "Janna",
+    "info": {
+      "attack": 3,
+      "defense": 5,
+      "magic": 7,
+      "difficulty": 7
+    },
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Teemo",
+      "Leblanc",
+      "Seraphine",
+      "Galio",
+      "Taric"
+    ],
+    "tips": ""
+  },
+  "Jarvan IV": {
+    "id": "JarvanIV",
+    "name": "Jarvan IV",
+    "info": {
+      "attack": 6,
+      "defense": 8,
+      "magic": 3,
+      "difficulty": 5
+    },
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "winrate": null,
+    "counters": [
+      "Reksai",
+      "Briar",
+      "Khazix",
+      "Diana",
+      "Sylas"
+    ],
+    "tips": ""
+  },
+  "Jax": {
+    "id": "Jax",
+    "name": "Jax",
+    "info": {
+      "attack": 7,
+      "defense": 5,
+      "magic": 7,
+      "difficulty": 5
+    },
+    "tags": [
+      "Fighter"
+    ],
+    "winrate": null,
+    "counters": [
+      "Singed",
+      "Vladimir",
+      "Heimerdinger",
+      "Garen",
+      "Zac"
+    ],
+    "tips": ""
+  },
+  "Jayce": {
+    "id": "Jayce",
+    "name": "Jayce",
+    "info": {
+      "attack": 8,
+      "defense": 4,
+      "magic": 3,
+      "difficulty": 7
+    },
+    "tags": [
+      "Marksman",
+      "Fighter"
+    ],
+    "winrate": null,
+    "counters": [
+      "Poppy",
+      "Master Yi",
+      "Kennen",
+      "Pantheon",
+      "Swain"
+    ],
+    "tips": ""
+  },
+  "Jhin": {
+    "id": "Jhin",
+    "name": "Jhin",
+    "info": {
+      "attack": 10,
+      "defense": 2,
+      "magic": 6,
+      "difficulty": 6
+    },
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Tristana",
+      "Nilah",
+      "Yasuo",
+      "Kaisa",
+      "Veigar"
+    ],
+    "tips": ""
+  },
+  "Jinx": {
+    "id": "Jinx",
+    "name": "Jinx",
+    "info": {
+      "attack": 9,
+      "defense": 2,
+      "magic": 4,
+      "difficulty": 6
+    },
+    "tags": [
+      "Marksman"
+    ],
+    "winrate": null,
+    "counters": [
+      "Brand",
+      "Yasuo",
+      "Hwei",
+      "Seraphine",
+      "Kogmaw"
+    ],
+    "tips": ""
+  },
+  "Kai'Sa": {
+    "id": "Kaisa",
+    "name": "Kai'Sa",
+    "info": {
+      "attack": 8,
+      "defense": 5,
+      "magic": 3,
+      "difficulty": 6
+    },
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Jinx",
+      "Ashe",
+      "Smolder",
+      "Aphelios",
+      "Samira"
+    ],
+    "tips": ""
+  },
+  "Kalista": {
+    "id": "Kalista",
+    "name": "Kalista",
+    "info": {
+      "attack": 8,
+      "defense": 2,
+      "magic": 4,
+      "difficulty": 7
+    },
+    "tags": [
+      "Marksman"
+    ],
+    "winrate": null,
+    "counters": [
+      "Draven",
+      "Mel",
+      "Miss Fortune",
+      "Lucian",
+      "Aphelios"
+    ],
+    "tips": ""
+  },
+  "Karma": {
+    "id": "Karma",
+    "name": "Karma",
+    "info": {
+      "attack": 1,
+      "defense": 7,
+      "magic": 8,
+      "difficulty": 5
+    },
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "winrate": null,
+    "counters": [
+      "Taric",
+      "Sona",
+      "Zoe",
+      "Blitzcrank",
+      "Fiddlesticks"
+    ],
+    "tips": ""
+  },
+  "Karthus": {
+    "id": "Karthus",
+    "name": "Karthus",
+    "info": {
+      "attack": 2,
+      "defense": 2,
+      "magic": 10,
+      "difficulty": 7
+    },
+    "tags": [
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Gragas",
+      "Rammus",
+      "Master Yi",
+      "Ivern",
+      "Udyr"
+    ],
+    "tips": ""
+  },
+  "Kassadin": {
+    "id": "Kassadin",
+    "name": "Kassadin",
+    "info": {
+      "attack": 3,
+      "defense": 5,
+      "magic": 8,
+      "difficulty": 8
+    },
+    "tags": [
+      "Assassin",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Sion",
+      "Jayce",
+      "Annie",
+      "Pantheon",
+      "Kayle"
+    ],
+    "tips": ""
+  },
+  "Katarina": {
+    "id": "Katarina",
+    "name": "Katarina",
+    "info": {
+      "attack": 4,
+      "defense": 3,
+      "magic": 9,
+      "difficulty": 8
+    },
+    "tags": [
+      "Assassin",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Kennen",
+      "Kayle",
+      "Vladimir",
+      "Cassiopeia",
+      "Quinn"
+    ],
+    "tips": ""
+  },
+  "Kayle": {
+    "id": "Kayle",
+    "name": "Kayle",
+    "info": {
+      "attack": 6,
+      "defense": 6,
+      "magic": 7,
+      "difficulty": 7
+    },
+    "tags": [
+      "Mage",
+      "Marksman"
+    ],
+    "winrate": null,
+    "counters": [
+      "Irelia",
+      "Quinn",
+      "Reksai",
+      "Vayne",
+      "Kennen"
+    ],
+    "tips": ""
+  },
+  "Kayn": {
+    "id": "Kayn",
+    "name": "Kayn",
+    "info": {
+      "attack": 10,
+      "defense": 6,
+      "magic": 1,
+      "difficulty": 8
+    },
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Poppy",
+      "Gragas",
+      "Warwick",
+      "Udyr",
+      "Kindred"
+    ],
+    "tips": ""
+  },
+  "Kennen": {
+    "id": "Kennen",
+    "name": "Kennen",
+    "info": {
+      "attack": 6,
+      "defense": 4,
+      "magic": 7,
+      "difficulty": 4
+    },
+    "tags": [
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Reksai",
+      "Kled",
+      "Nasus",
+      "Irelia",
+      "Chogath"
+    ],
+    "tips": ""
+  },
+  "Kha'Zix": {
+    "id": "Khazix",
+    "name": "Kha'Zix",
+    "info": {
+      "attack": 9,
+      "defense": 4,
+      "magic": 3,
+      "difficulty": 6
+    },
+    "tags": [
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Rengar",
+      "Diana",
+      "Shaco",
+      "Hecarim",
+      "Nidalee"
+    ],
+    "tips": ""
+  },
+  "Kindred": {
+    "id": "Kindred",
+    "name": "Kindred",
+    "info": {
+      "attack": 8,
+      "defense": 2,
+      "magic": 2,
+      "difficulty": 4
+    },
+    "tags": [
+      "Marksman"
+    ],
+    "winrate": null,
+    "counters": [
+      "Ivern",
+      "Wukong",
+      "Taliyah",
+      "Naafiri",
+      "Teemo"
+    ],
+    "tips": ""
+  },
+  "Kled": {
+    "id": "Kled",
+    "name": "Kled",
+    "info": {
+      "attack": 8,
+      "defense": 2,
+      "magic": 2,
+      "difficulty": 7
+    },
+    "tags": [
+      "Fighter"
+    ],
+    "winrate": null,
+    "counters": [
+      "Aurora",
+      "Ryze",
+      "Cassiopeia",
+      "Olaf",
+      "Varus"
+    ],
+    "tips": ""
+  },
+  "Kog'Maw": {
+    "id": "KogMaw",
+    "name": "Kog'Maw",
+    "info": {
+      "attack": 8,
+      "defense": 2,
+      "magic": 5,
+      "difficulty": 6
+    },
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Ashe",
+      "Smolder",
+      "Vayne",
+      "Zeri",
+      "Ziggs"
+    ],
+    "tips": ""
+  },
+  "K'Sante": {
+    "id": "KSante",
+    "name": "K'Sante",
+    "info": {
+      "attack": 8,
+      "defense": 8,
+      "magic": 7,
+      "difficulty": 9
+    },
+    "tags": [
+      "Tank",
+      "Fighter"
+    ],
+    "winrate": null,
+    "counters": [
+      "Kayle",
+      "Garen",
+      "Fiora",
+      "Darius",
+      "Aatrox"
+    ],
+    "tips": ""
+  },
+  "LeBlanc": {
+    "id": "Leblanc",
+    "name": "LeBlanc",
+    "info": {
+      "attack": 1,
+      "defense": 4,
+      "magic": 10,
+      "difficulty": 9
+    },
+    "tags": [
+      "Assassin",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Yasuo",
+      "Lissandra",
+      "Ahri",
+      "Zed",
+      "Malzahar"
+    ],
+    "tips": ""
+  },
+  "Lee Sin": {
+    "id": "LeeSin",
+    "name": "Lee Sin",
+    "info": {
+      "attack": 8,
+      "defense": 5,
+      "magic": 3,
+      "difficulty": 6
+    },
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Reksai",
+      "Warwick",
+      "Briar",
+      "Shaco",
+      "Nidalee"
+    ],
+    "tips": ""
+  },
+  "Leona": {
+    "id": "Leona",
+    "name": "Leona",
+    "info": {
+      "attack": 4,
+      "defense": 8,
+      "magic": 3,
+      "difficulty": 4
+    },
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "winrate": null,
+    "counters": [
+      "Taric",
+      "Fiddlesticks",
+      "Zoe",
+      "Teemo",
+      "Sona"
+    ],
+    "tips": ""
+  },
+  "Lillia": {
+    "id": "Lillia",
+    "name": "Lillia",
+    "info": {
+      "attack": 0,
+      "defense": 2,
+      "magic": 10,
+      "difficulty": 8
+    },
+    "tags": [
+      "Fighter",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Ekko",
+      "Amumu",
+      "Fiddlesticks",
+      "Udyr",
+      "Zyra"
+    ],
+    "tips": ""
+  },
+  "Lissandra": {
+    "id": "Lissandra",
+    "name": "Lissandra",
+    "info": {
+      "attack": 2,
+      "defense": 5,
+      "magic": 8,
+      "difficulty": 6
+    },
+    "tags": [
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Cassiopeia",
+      "Sion",
+      "Tristana",
+      "Pantheon",
+      "Xerath"
+    ],
+    "tips": ""
+  },
+  "Lucian": {
+    "id": "Lucian",
+    "name": "Lucian",
+    "info": {
+      "attack": 8,
+      "defense": 5,
+      "magic": 3,
+      "difficulty": 6
+    },
+    "tags": [
+      "Marksman",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Senna",
+      "Seraphine",
+      "Veigar",
+      "Brand",
+      "Nilah"
+    ],
+    "tips": ""
+  },
+  "Lulu": {
+    "id": "Lulu",
+    "name": "Lulu",
+    "info": {
+      "attack": 4,
+      "defense": 5,
+      "magic": 7,
+      "difficulty": 5
+    },
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Fiddlesticks",
+      "Leblanc",
+      "Amumu",
+      "Galio",
+      "Blitzcrank"
+    ],
+    "tips": ""
+  },
+  "Lux": {
+    "id": "Lux",
+    "name": "Lux",
+    "info": {
+      "attack": 2,
+      "defense": 4,
+      "magic": 9,
+      "difficulty": 5
+    },
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "winrate": null,
+    "counters": [
+      "Sona",
+      "Hwei",
+      "Zyra",
+      "Pyke",
+      "Soraka"
+    ],
+    "tips": ""
+  },
+  "Malphite": {
+    "id": "Malphite",
+    "name": "Malphite",
+    "info": {
+      "attack": 5,
+      "defense": 9,
+      "magic": 7,
+      "difficulty": 2
+    },
+    "tags": [
+      "Tank",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Taahm Kench",
+      "Sion",
+      "Chogath",
+      "Ryze",
+      "Singed"
+    ],
+    "tips": ""
+  },
+  "Malzahar": {
+    "id": "Malzahar",
+    "name": "Malzahar",
+    "info": {
+      "attack": 2,
+      "defense": 2,
+      "magic": 9,
+      "difficulty": 6
+    },
+    "tags": [
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Swain",
+      "Kayle",
+      "Fizz",
+      "Kassadin",
+      "Quinn"
+    ],
+    "tips": ""
+  },
+  "Maokai": {
+    "id": "Maokai",
+    "name": "Maokai",
+    "info": {
+      "attack": 3,
+      "defense": 8,
+      "magic": 6,
+      "difficulty": 3
+    },
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "winrate": null,
+    "counters": [
+      "Taric",
+      "Sona",
+      "Renata",
+      "Nami",
+      "Elise"
+    ],
+    "tips": ""
+  },
+  "Master Yi": {
+    "id": "MasterYi",
+    "name": "Master Yi",
+    "info": {
+      "attack": 10,
+      "defense": 4,
+      "magic": 2,
+      "difficulty": 4
+    },
+    "tags": [
+      "Assassin",
+      "Fighter"
+    ],
+    "winrate": null,
+    "counters": [
+      "Ivern",
+      "Kindred",
+      "Briar",
+      "Warwick",
+      "Elise"
+    ],
+    "tips": ""
+  },
+  "Milio": {
+    "id": "Milio",
+    "name": "Milio",
+    "info": {
+      "attack": 2,
+      "defense": 4,
+      "magic": 8,
+      "difficulty": 5
+    },
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Taric",
+      "Velkoz",
+      "Elise",
+      "Janna",
+      "Soraka"
+    ],
+    "tips": ""
+  },
+  "Miss Fortune": {
+    "id": "MissFortune",
+    "name": "Miss Fortune",
+    "info": {
+      "attack": 8,
+      "defense": 2,
+      "magic": 5,
+      "difficulty": 1
+    },
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Hwei",
+      "Kogmaw",
+      "Senna",
+      "Draven",
+      "Ashe"
+    ],
+    "tips": ""
+  },
+  "Wukong": {
+    "id": "MonkeyKing",
+    "name": "Wukong",
+    "info": {
+      "attack": 8,
+      "defense": 5,
+      "magic": 2,
+      "difficulty": 3
+    },
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "winrate": null,
+    "counters": [
+      "Trundle",
+      "Diana",
+      "Jarvan",
+      "Sylas",
+      "Khazix"
+    ],
+    "tips": ""
+  },
+  "Mordekaiser": {
+    "id": "Mordekaiser",
+    "name": "Mordekaiser",
+    "info": {
+      "attack": 4,
+      "defense": 6,
+      "magic": 7,
+      "difficulty": 4
+    },
+    "tags": [
+      "Fighter",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Cassiopeia",
+      "Varus",
+      "Heimerdinger",
+      "Riven",
+      "Warwick"
+    ],
+    "tips": ""
+  },
+  "Morgana": {
+    "id": "Morgana",
+    "name": "Morgana",
+    "info": {
+      "attack": 1,
+      "defense": 6,
+      "magic": 8,
+      "difficulty": 1
+    },
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "winrate": null,
+    "counters": [
+      "Janna",
+      "Teemo",
+      "Elise",
+      "Leblanc",
+      "Shaco"
+    ],
+    "tips": ""
+  },
+  "Naafiri": {
+    "id": "Naafiri",
+    "name": "Naafiri",
+    "info": {
+      "attack": 9,
+      "defense": 5,
+      "magic": 0,
+      "difficulty": 2
+    },
+    "tags": [
+      "Assassin",
+      "Fighter"
+    ],
+    "winrate": null,
+    "counters": [
+      "Gwen",
+      "Morgana",
+      "Fiddlesticks",
+      "Diana",
+      "Ekko"
+    ],
+    "tips": ""
+  },
+  "Nami": {
+    "id": "Nami",
+    "name": "Nami",
+    "info": {
+      "attack": 4,
+      "defense": 3,
+      "magic": 7,
+      "difficulty": 5
+    },
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Amumu",
+      "Elise",
+      "Bltzcrank",
+      "Zoe",
+      "Taric"
+    ],
+    "tips": ""
+  },
+  "Nasus": {
+    "id": "Nasus",
+    "name": "Nasus",
+    "info": {
+      "attack": 7,
+      "defense": 5,
+      "magic": 6,
+      "difficulty": 6
+    },
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "winrate": null,
+    "counters": [
+      "Cassiopeia",
+      "Wukong",
+      "Varus",
+      "Taahm Kench",
+      "Singed"
+    ],
+    "tips": ""
+  },
+  "Nautilus": {
+    "id": "Nautilus",
+    "name": "Nautilus",
+    "info": {
+      "attack": 4,
+      "defense": 6,
+      "magic": 6,
+      "difficulty": 6
+    },
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "winrate": null,
+    "counters": [
+      "Rell",
+      "Fiddlesticks",
+      "Galio",
+      "Zyra",
+      "Janna"
+    ],
+    "tips": ""
+  },
+  "Neeko": {
+    "id": "Neeko",
+    "name": "Neeko",
+    "info": {
+      "attack": 1,
+      "defense": 1,
+      "magic": 9,
+      "difficulty": 5
+    },
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "winrate": null,
+    "counters": [
+      "Teemo",
+      "Leblanc",
+      "Amumu",
+      "Pantheon",
+      "Brand"
+    ],
+    "tips": ""
+  },
+  "Nidalee": {
+    "id": "Nidalee",
+    "name": "Nidalee",
+    "info": {
+      "attack": 5,
+      "defense": 4,
+      "magic": 7,
+      "difficulty": 8
+    },
+    "tags": [
+      "Assassin",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Volibear",
+      "Trundle",
+      "Taliyah",
+      "Kayn",
+      "Belveth"
+    ],
+    "tips": ""
+  },
+  "Nilah": {
+    "id": "Nilah",
+    "name": "Nilah",
+    "info": {
+      "attack": 8,
+      "defense": 4,
+      "magic": 4,
+      "difficulty": 10
+    },
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Kogmaw",
+      "Mel",
+      "Xayah",
+      "Smoler",
+      "Kalista"
+    ],
+    "tips": ""
+  },
+  "Nocturne": {
+    "id": "Nocturne",
+    "name": "Nocturne",
+    "info": {
+      "attack": 9,
+      "defense": 5,
+      "magic": 2,
+      "difficulty": 4
+    },
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Ivern",
+      "Zac",
+      "Poppy",
+      "Jax",
+      "Lillia"
+    ],
+    "tips": ""
+  },
+  "Nunu & Willump": {
+    "id": "Nunu",
+    "name": "Nunu & Willump",
+    "info": {
+      "attack": 4,
+      "defense": 6,
+      "magic": 7,
+      "difficulty": 4
+    },
+    "tags": [
+      "Tank",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Khazix",
+      "Diana",
+      "Jarvan",
+      "Master Yi",
+      "Kayn"
+    ],
+    "tips": ""
+  },
+  "Olaf": {
+    "id": "Olaf",
+    "name": "Olaf",
+    "info": {
+      "attack": 9,
+      "defense": 5,
+      "magic": 3,
+      "difficulty": 3
+    },
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "winrate": null,
+    "counters": [
+      "Illaoi",
+      "Heimerdinger",
+      "Akali",
+      "Vayne",
+      "Gragas"
+    ],
+    "tips": ""
+  },
+  "Orianna": {
+    "id": "Orianna",
+    "name": "Orianna",
+    "info": {
+      "attack": 4,
+      "defense": 3,
+      "magic": 9,
+      "difficulty": 7
+    },
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "winrate": null,
+    "counters": [
+      "Velkoz",
+      "Kennen",
+      "Swain",
+      "Akshan",
+      "Aurelion Sol"
+    ],
+    "tips": ""
+  },
+  "Ornn": {
+    "id": "Ornn",
+    "name": "Ornn",
+    "info": {
+      "attack": 5,
+      "defense": 9,
+      "magic": 3,
+      "difficulty": 5
+    },
+    "tags": [
+      "Tank"
+    ],
+    "winrate": null,
+    "counters": [
+      "Olaf",
+      "Fiora",
+      "Poppy",
+      "Pantheon",
+      "Cassiopeia"
+    ],
+    "tips": ""
+  },
+  "Pantheon": {
+    "id": "Pantheon",
+    "name": "Pantheon",
+    "info": {
+      "attack": 9,
+      "defense": 4,
+      "magic": 3,
+      "difficulty": 4
+    },
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Hwei",
+      "Zilean",
+      "Maokai",
+      "Galio",
+      "Milio"
+    ],
+    "tips": ""
+  },
+  "Poppy": {
+    "id": "Poppy",
+    "name": "Poppy",
+    "info": {
+      "attack": 6,
+      "defense": 7,
+      "magic": 2,
+      "difficulty": 6
+    },
+    "tags": [
+      "Tank",
+      "Fighter"
+    ],
+    "winrate": null,
+    "counters": [
+      "Galio",
+      "Hwei",
+      "Fiddlesticks",
+      "Maokai",
+      "Soraka"
+    ],
+    "tips": ""
+  },
+  "Pyke": {
+    "id": "Pyke",
+    "name": "Pyke",
+    "info": {
+      "attack": 9,
+      "defense": 3,
+      "magic": 1,
+      "difficulty": 7
+    },
+    "tags": [
+      "Support",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Leblanc",
+      "Teemo",
+      "Amumu",
+      "Maokai",
+      "Poppy"
+    ],
+    "tips": ""
+  },
+  "Qiyana": {
+    "id": "Qiyana",
+    "name": "Qiyana",
+    "info": {
+      "attack": 0,
+      "defense": 2,
+      "magic": 4,
+      "difficulty": 8
+    },
+    "tags": [
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Sejuani",
+      "Ivern",
+      "Warwick",
+      "Taliyah",
+      "Udyr"
+    ],
+    "tips": ""
+  },
+  "Quinn": {
+    "id": "Quinn",
+    "name": "Quinn",
+    "info": {
+      "attack": 9,
+      "defense": 4,
+      "magic": 2,
+      "difficulty": 5
+    },
+    "tags": [
+      "Marksman",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Illaoi",
+      "Olaf",
+      "Sett",
+      "Malphite",
+      "Rumble"
+    ],
+    "tips": ""
+  },
+  "Rakan": {
+    "id": "Rakan",
+    "name": "Rakan",
+    "info": {
+      "attack": 2,
+      "defense": 4,
+      "magic": 8,
+      "difficulty": 5
+    },
+    "tags": [
+      "Support"
+    ],
+    "winrate": null,
+    "counters": [
+      "Shaco",
+      "Amumu",
+      "Seraphine",
+      "Fiddlesticks",
+      "Renata"
+    ],
+    "tips": ""
+  },
+  "Rammus": {
+    "id": "Rammus",
+    "name": "Rammus",
+    "info": {
+      "attack": 4,
+      "defense": 10,
+      "magic": 5,
+      "difficulty": 5
+    },
+    "tags": [
+      "Tank"
+    ],
+    "winrate": null,
+    "counters": [
+      "Shaco",
+      "Reksai",
+      "Nunu",
+      "Wukong",
+      "Xin Zhao"
+    ],
+    "tips": ""
+  },
+  "Rek'Sai": {
+    "id": "RekSai",
+    "name": "Rek'Sai",
+    "info": {
+      "attack": 8,
+      "defense": 5,
+      "magic": 2,
+      "difficulty": 3
+    },
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "winrate": null,
+    "counters": [
+      "Gragas",
+      "Amumu",
+      "Zac",
+      "Wukong",
+      "Diana"
+    ],
+    "tips": ""
+  },
+  "Rell": {
+    "id": "Rell",
+    "name": "Rell",
+    "info": {
+      "attack": 0,
+      "defense": 0,
+      "magic": 0,
+      "difficulty": 0
+    },
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "winrate": null,
+    "counters": [
+      "Amumu",
+      "Teemo",
+      "Leblanc",
+      "Pantheon",
+      "Seraphine"
+    ],
+    "tips": ""
+  },
+  "Renata Glasc": {
+    "id": "Renata",
+    "name": "Renata Glasc",
+    "info": {
+      "attack": 2,
+      "defense": 6,
+      "magic": 9,
+      "difficulty": 8
+    },
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Nami",
+      "Sona",
+      "Soraka",
+      "Milio",
+      "Karma"
+    ],
+    "tips": ""
+  },
+  "Renekton": {
+    "id": "Renekton",
+    "name": "Renekton",
+    "info": {
+      "attack": 8,
+      "defense": 5,
+      "magic": 2,
+      "difficulty": 3
+    },
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "winrate": null,
+    "counters": [
+      "Warwick",
+      "Teemo",
+      "Vayne",
+      "Singed",
+      "Trundle"
+    ],
+    "tips": ""
+  },
+  "Rengar": {
+    "id": "Rengar",
+    "name": "Rengar",
+    "info": {
+      "attack": 7,
+      "defense": 4,
+      "magic": 2,
+      "difficulty": 8
+    },
+    "tags": [
+      "Assassin",
+      "Fighter"
+    ],
+    "winrate": null,
+    "counters": [
+      "Warwick",
+      "Xin Zhao",
+      "Master Yi",
+      "Dr Mundo",
+      "Rammus"
+    ],
+    "tips": ""
+  },
+  "Riven": {
+    "id": "Riven",
+    "name": "Riven",
+    "info": {
+      "attack": 8,
+      "defense": 5,
+      "magic": 1,
+      "difficulty": 8
+    },
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Quinn",
+      "Swain",
+      "Kennen",
+      "Malphite",
+      "Warwick"
+    ],
+    "tips": ""
+  },
+  "Rumble": {
+    "id": "Rumble",
+    "name": "Rumble",
+    "info": {
+      "attack": 3,
+      "defense": 6,
+      "magic": 8,
+      "difficulty": 10
+    },
+    "tags": [
+      "Fighter",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Udyr",
+      "Singed",
+      "Kennen",
+      "Kled",
+      "Sett"
+    ],
+    "tips": ""
+  },
+  "Ryze": {
+    "id": "Ryze",
+    "name": "Ryze",
+    "info": {
+      "attack": 2,
+      "defense": 2,
+      "magic": 10,
+      "difficulty": 7
+    },
+    "tags": [
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Quinn",
+      "Qiyana",
+      "Velkoz",
+      "Morgana",
+      "Cassiopeia"
+    ],
+    "tips": ""
+  },
+  "Samira": {
+    "id": "Samira",
+    "name": "Samira",
+    "info": {
+      "attack": 8,
+      "defense": 5,
+      "magic": 3,
+      "difficulty": 6
+    },
+    "tags": [
+      "Marksman",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Twitch",
+      "Xayah",
+      "Corki",
+      "Nilah",
+      "Jinx"
+    ],
+    "tips": ""
+  },
+  "Sejuani": {
+    "id": "Sejuani",
+    "name": "Sejuani",
+    "info": {
+      "attack": 5,
+      "defense": 7,
+      "magic": 6,
+      "difficulty": 4
+    },
+    "tags": [
+      "Tank"
+    ],
+    "winrate": null,
+    "counters": [
+      "Lillia",
+      "Gragas",
+      "Karthus",
+      "Diana",
+      "Jax"
+    ],
+    "tips": ""
+  },
+  "Senna": {
+    "id": "Senna",
+    "name": "Senna",
+    "info": {
+      "attack": 7,
+      "defense": 2,
+      "magic": 6,
+      "difficulty": 7
+    },
+    "tags": [
+      "Support",
+      "Marksman"
+    ],
+    "winrate": null,
+    "counters": [
+      "Amumu",
+      "Zyra",
+      "Tresh",
+      "Elise",
+      "Xerath"
+    ],
+    "tips": ""
+  },
+  "Seraphine": {
+    "id": "Seraphine",
+    "name": "Seraphine",
+    "info": {
+      "attack": 0,
+      "defense": 0,
+      "magic": 0,
+      "difficulty": 0
+    },
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Hwei",
+      "Amumu",
+      "Zilean",
+      "Galio",
+      "Milio"
+    ],
+    "tips": ""
+  },
+  "Sett": {
+    "id": "Sett",
+    "name": "Sett",
+    "info": {
+      "attack": 8,
+      "defense": 5,
+      "magic": 1,
+      "difficulty": 2
+    },
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "winrate": null,
+    "counters": [
+      "Kennen",
+      "Ryze",
+      "Riven",
+      "Swain",
+      "Malphite"
+    ],
+    "tips": ""
+  },
+  "Shaco": {
+    "id": "Shaco",
+    "name": "Shaco",
+    "info": {
+      "attack": 8,
+      "defense": 4,
+      "magic": 6,
+      "difficulty": 9
+    },
+    "tags": [
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Shyvana",
+      "Taliyah",
+      "Lillia",
+      "Trundle",
+      "Master Yi"
+    ],
+    "tips": ""
+  },
+  "Shen": {
+    "id": "Shen",
+    "name": "Shen",
+    "info": {
+      "attack": 3,
+      "defense": 9,
+      "magic": 3,
+      "difficulty": 4
+    },
+    "tags": [
+      "Tank"
+    ],
+    "winrate": null,
+    "counters": [
+      "Varus",
+      "Quinn",
+      "Heimerdinger",
+      "Yasuo",
+      "Singed"
+    ],
+    "tips": ""
+  },
+  "Shyvana": {
+    "id": "Shyvana",
+    "name": "Shyvana",
+    "info": {
+      "attack": 8,
+      "defense": 6,
+      "magic": 3,
+      "difficulty": 4
+    },
+    "tags": [
+      "Fighter",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Sejuani",
+      "Gwen",
+      "Ivern",
+      "Pantheon",
+      "Udyr"
+    ],
+    "tips": ""
+  },
+  "Singed": {
+    "id": "Singed",
+    "name": "Singed",
+    "info": {
+      "attack": 4,
+      "defense": 8,
+      "magic": 7,
+      "difficulty": 5
+    },
+    "tags": [
+      "Tank",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Jayce",
+      "Heimerdinger",
+      "Kayle",
+      "Trundle",
+      "Swain"
+    ],
+    "tips": ""
+  },
+  "Sion": {
+    "id": "Sion",
+    "name": "Sion",
+    "info": {
+      "attack": 5,
+      "defense": 9,
+      "magic": 3,
+      "difficulty": 5
+    },
+    "tags": [
+      "Tank",
+      "Fighter"
+    ],
+    "winrate": null,
+    "counters": [
+      "Udyr",
+      "Chogath",
+      "Riven",
+      "Swain",
+      "Zac"
+    ],
+    "tips": ""
+  },
+  "Sivir": {
+    "id": "Sivir",
+    "name": "Sivir",
+    "info": {
+      "attack": 9,
+      "defense": 3,
+      "magic": 1,
+      "difficulty": 4
+    },
+    "tags": [
+      "Marksman"
+    ],
+    "winrate": null,
+    "counters": [
+      "Hwei",
+      "Seraphine",
+      "Kogmaw",
+      "Yasuo",
+      "Jinx"
+    ],
+    "tips": ""
+  },
+  "Skarner": {
+    "id": "Skarner",
+    "name": "Skarner",
+    "info": {
+      "attack": 7,
+      "defense": 8,
+      "magic": 5,
+      "difficulty": 5
+    },
+    "tags": [
+      "Tank",
+      "Fighter"
+    ],
+    "winrate": null,
+    "counters": [
+      "Gwen",
+      "Udyr",
+      "Zyra",
+      "Dr Mundo",
+      "Nunu"
+    ],
+    "tips": ""
+  },
+  "Smolder": {
+    "id": "Smolder",
+    "name": "Smolder",
+    "info": {
+      "attack": 8,
+      "defense": 2,
+      "magic": 5,
+      "difficulty": 6
+    },
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Mel",
+      "Miss Fortune",
+      "Ziggs",
+      "Brand",
+      "Sivir"
+    ],
+    "tips": ""
+  },
+  "Sona": {
+    "id": "Sona",
+    "name": "Sona",
+    "info": {
+      "attack": 5,
+      "defense": 2,
+      "magic": 8,
+      "difficulty": 4
+    },
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Fiddlesticks",
+      "Senna",
+      "Elise",
+      "Seraphine",
+      "Tresh"
+    ],
+    "tips": ""
+  },
+  "Soraka": {
+    "id": "Soraka",
+    "name": "Soraka",
+    "info": {
+      "attack": 2,
+      "defense": 5,
+      "magic": 7,
+      "difficulty": 3
+    },
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Teemo",
+      "Amumu",
+      "Seraphine",
+      "Zilean",
+      "Blitzcrank"
+    ],
+    "tips": ""
+  },
+  "Swain": {
+    "id": "Swain",
+    "name": "Swain",
+    "info": {
+      "attack": 2,
+      "defense": 6,
+      "magic": 9,
+      "difficulty": 8
+    },
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "winrate": null,
+    "counters": [
+      "Zyra",
+      "Elise",
+      "Taric",
+      "Brand",
+      "Lulu"
+    ],
+    "tips": ""
+  },
+  "Sylas": {
+    "id": "Sylas",
+    "name": "Sylas",
+    "info": {
+      "attack": 3,
+      "defense": 4,
+      "magic": 8,
+      "difficulty": 5
+    },
+    "tags": [
+      "Mage",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Gwen",
+      "Rammus",
+      "Taliyah",
+      "Briar",
+      "Belveth"
+    ],
+    "tips": ""
+  },
+  "Syndra": {
+    "id": "Syndra",
+    "name": "Syndra",
+    "info": {
+      "attack": 2,
+      "defense": 3,
+      "magic": 9,
+      "difficulty": 8
+    },
+    "tags": [
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Naafiri",
+      "Tristana",
+      "Fizz",
+      "Sion",
+      "Jayce"
+    ],
+    "tips": ""
+  },
+  "Tahm Kench": {
+    "id": "TahmKench",
+    "name": "Tahm Kench",
+    "info": {
+      "attack": 3,
+      "defense": 9,
+      "magic": 6,
+      "difficulty": 5
+    },
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "winrate": null,
+    "counters": [
+      "Rell",
+      "Lulu",
+      "Bard",
+      "Velkoz",
+      "Brand"
+    ],
+    "tips": ""
+  },
+  "Taliyah": {
+    "id": "Taliyah",
+    "name": "Taliyah",
+    "info": {
+      "attack": 1,
+      "defense": 7,
+      "magic": 8,
+      "difficulty": 5
+    },
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "winrate": null,
+    "counters": [
+      "Kennen",
+      "Swain",
+      "Velkoz",
+      "Zed",
+      "Annie"
+    ],
+    "tips": ""
+  },
+  "Talon": {
+    "id": "Talon",
+    "name": "Talon",
+    "info": {
+      "attack": 9,
+      "defense": 3,
+      "magic": 1,
+      "difficulty": 7
+    },
+    "tags": [
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Rammus",
+      "Khazix",
+      "Lee Sin",
+      "Warwick",
+      "Evelynn"
+    ],
+    "tips": ""
+  },
+  "Taric": {
+    "id": "Taric",
+    "name": "Taric",
+    "info": {
+      "attack": 4,
+      "defense": 8,
+      "magic": 5,
+      "difficulty": 3
+    },
+    "tags": [
+      "Support",
+      "Tank"
+    ],
+    "winrate": null,
+    "counters": [
+      "Renata",
+      "Xerath",
+      "Elise",
+      "Pantheon",
+      "Blitzcrank"
+    ],
+    "tips": ""
+  },
+  "Teemo": {
+    "id": "Teemo",
+    "name": "Teemo",
+    "info": {
+      "attack": 5,
+      "defense": 3,
+      "magic": 7,
+      "difficulty": 6
+    },
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Aurora",
+      "Olaf",
+      "Yorick",
+      "Zac",
+      "Shen"
+    ],
+    "tips": ""
+  },
+  "Thresh": {
+    "id": "Thresh",
+    "name": "Thresh",
+    "info": {
+      "attack": 5,
+      "defense": 6,
+      "magic": 6,
+      "difficulty": 7
+    },
+    "tags": [
+      "Support",
+      "Tank"
+    ],
+    "winrate": null,
+    "counters": [
+      "Hwei",
+      "Zoe",
+      "Amumu",
+      "Zilean",
+      "Seraphine"
+    ],
+    "tips": ""
+  },
+  "Tristana": {
+    "id": "Tristana",
+    "name": "Tristana",
+    "info": {
+      "attack": 9,
+      "defense": 3,
+      "magic": 5,
+      "difficulty": 4
+    },
+    "tags": [
+      "Marksman",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Kogmaw",
+      "Veigar",
+      "Yasuo",
+      "Lucian",
+      "Brand"
+    ],
+    "tips": ""
+  },
+  "Trundle": {
+    "id": "Trundle",
+    "name": "Trundle",
+    "info": {
+      "attack": 7,
+      "defense": 6,
+      "magic": 2,
+      "difficulty": 5
+    },
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "winrate": null,
+    "counters": [
+      "Talon",
+      "Karthus",
+      "Ivern",
+      "Ekko",
+      "Reksai"
+    ],
+    "tips": ""
+  },
+  "Tryndamere": {
+    "id": "Tryndamere",
+    "name": "Tryndamere",
+    "info": {
+      "attack": 10,
+      "defense": 5,
+      "magic": 2,
+      "difficulty": 5
+    },
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Quinn",
+      "Trundle",
+      "Varus",
+      "Warwick",
+      "Zac"
+    ],
+    "tips": ""
+  },
+  "Twisted Fate": {
+    "id": "TwistedFate",
+    "name": "Twisted Fate",
+    "info": {
+      "attack": 6,
+      "defense": 2,
+      "magic": 6,
+      "difficulty": 9
+    },
+    "tags": [
+      "Mage",
+      "Marksman"
+    ],
+    "winrate": null,
+    "counters": [
+      "Xerath",
+      "Viktor",
+      "Katarina",
+      "Syndra",
+      "Fizz"
+    ],
+    "tips": ""
+  },
+  "Twitch": {
+    "id": "Twitch",
+    "name": "Twitch",
+    "info": {
+      "attack": 9,
+      "defense": 2,
+      "magic": 3,
+      "difficulty": 6
+    },
+    "tags": [
+      "Marksman",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Yasuo",
+      "Nilah",
+      "Brand",
+      "Kogmaw",
+      "Tristana"
+    ],
+    "tips": ""
+  },
+  "Udyr": {
+    "id": "Udyr",
+    "name": "Udyr",
+    "info": {
+      "attack": 8,
+      "defense": 7,
+      "magic": 4,
+      "difficulty": 7
+    },
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "winrate": null,
+    "counters": [
+      "Rammus",
+      "Kindred",
+      "Gragas",
+      "Naafiri",
+      "Ivern"
+    ],
+    "tips": ""
+  },
+  "Urgot": {
+    "id": "Urgot",
+    "name": "Urgot",
+    "info": {
+      "attack": 8,
+      "defense": 5,
+      "magic": 3,
+      "difficulty": 8
+    },
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "winrate": null,
+    "counters": [
+      "Varus",
+      "Rumble",
+      "Malphite",
+      "Shen",
+      "Vladimir"
+    ],
+    "tips": ""
+  },
+  "Varus": {
+    "id": "Varus",
+    "name": "Varus",
+    "info": {
+      "attack": 7,
+      "defense": 3,
+      "magic": 4,
+      "difficulty": 2
+    },
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Swain",
+      "Nilah",
+      "Mel",
+      "Seraphine",
+      "Kogmaw"
+    ],
+    "tips": ""
+  },
+  "Vayne": {
+    "id": "Vayne",
+    "name": "Vayne",
+    "info": {
+      "attack": 10,
+      "defense": 1,
+      "magic": 1,
+      "difficulty": 8
+    },
+    "tags": [
+      "Marksman",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Hwei",
+      "Ashe",
+      "Smolder",
+      "Aphelios",
+      "Veigar"
+    ],
+    "tips": ""
+  },
+  "Veigar": {
+    "id": "Veigar",
+    "name": "Veigar",
+    "info": {
+      "attack": 2,
+      "defense": 2,
+      "magic": 10,
+      "difficulty": 7
+    },
+    "tags": [
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Taric",
+      "Teemo",
+      "Sona",
+      "Janna",
+      "Zoe"
+    ],
+    "tips": ""
+  },
+  "Vel'Koz": {
+    "id": "Velkoz",
+    "name": "Vel'Koz",
+    "info": {
+      "attack": 2,
+      "defense": 2,
+      "magic": 10,
+      "difficulty": 8
+    },
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "winrate": null,
+    "counters": [
+      "Janna",
+      "Pantheon",
+      "Zilean",
+      "Sona",
+      "Bard"
+    ],
+    "tips": ""
+  },
+  "Vex": {
+    "id": "Vex",
+    "name": "Vex",
+    "info": {
+      "attack": 0,
+      "defense": 0,
+      "magic": 0,
+      "difficulty": 0
+    },
+    "tags": [
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Annie",
+      "Cassiopeia",
+      "Malphite",
+      "Smolder",
+      "Velkoz"
+    ],
+    "tips": ""
+  },
+  "Vi": {
+    "id": "Vi",
+    "name": "Vi",
+    "info": {
+      "attack": 8,
+      "defense": 5,
+      "magic": 3,
+      "difficulty": 4
+    },
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Ivern",
+      "Nunu",
+      "Jarvan",
+      "Jax",
+      "Shaco"
+    ],
+    "tips": ""
+  },
+  "Viego": {
+    "id": "Viego",
+    "name": "Viego",
+    "info": {
+      "attack": 6,
+      "defense": 4,
+      "magic": 2,
+      "difficulty": 5
+    },
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Warwick",
+      "Nunu",
+      "Ivern",
+      "Nidalee",
+      "Belveth"
+    ],
+    "tips": ""
+  },
+  "Viktor": {
+    "id": "Viktor",
+    "name": "Viktor",
+    "info": {
+      "attack": 2,
+      "defense": 4,
+      "magic": 10,
+      "difficulty": 9
+    },
+    "tags": [
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Tristana",
+      "Talon",
+      "Neeko",
+      "Kassadin",
+      "Quinn"
+    ],
+    "tips": ""
+  },
+  "Vladimir": {
+    "id": "Vladimir",
+    "name": "Vladimir",
+    "info": {
+      "attack": 2,
+      "defense": 6,
+      "magic": 8,
+      "difficulty": 7
+    },
+    "tags": [
+      "Mage",
+      "Fighter"
+    ],
+    "winrate": null,
+    "counters": [
+      "Cassiopeia",
+      "Brand",
+      "Kennen",
+      "Irelia",
+      "Malzahar"
+    ],
+    "tips": ""
+  },
+  "Volibear": {
+    "id": "Volibear",
+    "name": "Volibear",
+    "info": {
+      "attack": 7,
+      "defense": 7,
+      "magic": 4,
+      "difficulty": 3
+    },
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "winrate": null,
+    "counters": [
+      "Ryze",
+      "Swain",
+      "Kled",
+      "Chogath",
+      "Sion"
+    ],
+    "tips": ""
+  },
+  "Warwick": {
+    "id": "Warwick",
+    "name": "Warwick",
+    "info": {
+      "attack": 9,
+      "defense": 5,
+      "magic": 3,
+      "difficulty": 3
+    },
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "winrate": null,
+    "counters": [
+      "Morgana",
+      "Rammus",
+      "Jax",
+      "Udyr",
+      "Ivern"
+    ],
+    "tips": ""
+  },
+  "Xayah": {
+    "id": "Xayah",
+    "name": "Xayah",
+    "info": {
+      "attack": 10,
+      "defense": 6,
+      "magic": 1,
+      "difficulty": 5
+    },
+    "tags": [
+      "Marksman"
+    ],
+    "winrate": null,
+    "counters": [
+      "Veigar",
+      "Kogmaw",
+      "Brand",
+      "Senna",
+      "Seraphine"
+    ],
+    "tips": ""
+  },
+  "Xerath": {
+    "id": "Xerath",
+    "name": "Xerath",
+    "info": {
+      "attack": 1,
+      "defense": 3,
+      "magic": 10,
+      "difficulty": 8
+    },
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "winrate": null,
+    "counters": [
+      "Swain",
+      "Fizz",
+      "Talon",
+      "Chogath",
+      "Neeko"
+    ],
+    "tips": ""
+  },
+  "Xin Zhao": {
+    "id": "XinZhao",
+    "name": "Xin Zhao",
+    "info": {
+      "attack": 8,
+      "defense": 6,
+      "magic": 3,
+      "difficulty": 2
+    },
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "winrate": null,
+    "counters": [
+      "Shyvana",
+      "Lillia",
+      "Trundle",
+      "Taliyah",
+      "Zac"
+    ],
+    "tips": ""
+  },
+  "Yasuo": {
+    "id": "Yasuo",
+    "name": "Yasuo",
+    "info": {
+      "attack": 8,
+      "defense": 4,
+      "magic": 4,
+      "difficulty": 10
+    },
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Kennen",
+      "Malphite",
+      "Neeko",
+      "Corki",
+      "Aurelion Sol"
+    ],
+    "tips": ""
+  },
+  "Yone": {
+    "id": "Yone",
+    "name": "Yone",
+    "info": {
+      "attack": 8,
+      "defense": 4,
+      "magic": 4,
+      "difficulty": 8
+    },
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Kennen",
+      "Quinn",
+      "Chogath",
+      "Vex",
+      "Katarina"
+    ],
+    "tips": ""
+  },
+  "Yorick": {
+    "id": "Yorick",
+    "name": "Yorick",
+    "info": {
+      "attack": 6,
+      "defense": 6,
+      "magic": 4,
+      "difficulty": 6
+    },
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "winrate": null,
+    "counters": [
+      "Udyr",
+      "Shen",
+      "Olaf",
+      "Kayn",
+      "Renekton"
+    ],
+    "tips": ""
+  },
+  "Yuumi": {
+    "id": "Yuumi",
+    "name": "Yuumi",
+    "info": {
+      "attack": 5,
+      "defense": 1,
+      "magic": 8,
+      "difficulty": 2
+    },
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Leblanc",
+      "Elise",
+      "Maokai",
+      "Braum",
+      "Nautilus"
+    ],
+    "tips": ""
+  },
+  "Zac": {
+    "id": "Zac",
+    "name": "Zac",
+    "info": {
+      "attack": 3,
+      "defense": 7,
+      "magic": 7,
+      "difficulty": 8
+    },
+    "tags": [
+      "Tank",
+      "Fighter"
+    ],
+    "winrate": null,
+    "counters": [
+      "Teemo",
+      "Taliyah",
+      "Amumu",
+      "Lillia",
+      "Shyvana"
+    ],
+    "tips": ""
+  },
+  "Zed": {
+    "id": "Zed",
+    "name": "Zed",
+    "info": {
+      "attack": 9,
+      "defense": 2,
+      "magic": 1,
+      "difficulty": 7
+    },
+    "tags": [
+      "Assassin"
+    ],
+    "winrate": null,
+    "counters": [
+      "Fiddlesticks",
+      "Amumu",
+      "Master Yi",
+      "Naafiri",
+      "Pantheon"
+    ],
+    "tips": ""
+  },
+  "Zeri": {
+    "id": "Zeri",
+    "name": "Zeri",
+    "info": {
+      "attack": 8,
+      "defense": 5,
+      "magic": 3,
+      "difficulty": 6
+    },
+    "tags": [
+      "Marksman"
+    ],
+    "winrate": null,
+    "counters": [
+      "Ziggs",
+      "Senna",
+      "Hwei",
+      "Nilah",
+      "Samira"
+    ],
+    "tips": ""
+  },
+  "Ziggs": {
+    "id": "Ziggs",
+    "name": "Ziggs",
+    "info": {
+      "attack": 2,
+      "defense": 4,
+      "magic": 9,
+      "difficulty": 4
+    },
+    "tags": [
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Senna",
+      "Brand",
+      "Seraphine",
+      "Yasuo",
+      "Vayne"
+    ],
+    "tips": ""
+  },
+  "Zilean": {
+    "id": "Zilean",
+    "name": "Zilean",
+    "info": {
+      "attack": 2,
+      "defense": 5,
+      "magic": 8,
+      "difficulty": 6
+    },
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Maokai",
+      "Fiddlesticks",
+      "Poppy",
+      "Sona",
+      "Leblanc"
+    ],
+    "tips": ""
+  },
+  "Zoe": {
+    "id": "Zoe",
+    "name": "Zoe",
+    "info": {
+      "attack": 1,
+      "defense": 7,
+      "magic": 8,
+      "difficulty": 5
+    },
+    "tags": [
+      "Mage"
+    ],
+    "winrate": null,
+    "counters": [
+      "Naafiri",
+      "Quinn",
+      "Neeko",
+      "Kayle",
+      "Kassadin"
+    ],
+    "tips": ""
+  },
+  "Zyra": {
+    "id": "Zyra",
+    "name": "Zyra",
+    "info": {
+      "attack": 4,
+      "defense": 3,
+      "magic": 8,
+      "difficulty": 7
+    },
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "winrate": null,
+    "counters": [
+      "Tahm Kench",
+      "Leona",
+      "Milio",
+      "Elise",
+      "Pyke"
+    ],
+    "tips": ""
+  }
+}
