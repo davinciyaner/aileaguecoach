@@ -105,7 +105,7 @@ export default function Features() {
                     ))}
                 </motion.div>
             </div>
-            <p className="mt-10 text-center text-3xl font-semibold tracking-tight text-white sm:text-4xl">Champion Empfehlung</p>
+            <p className="mt-20 text-center text-3xl font-semibold tracking-tight text-white sm:text-4xl">Champion Empfehlung</p>
             <p className="mt-6 text-center text-lg text-gray-400">
                 Kriege während der Championauswahl Champions vorgeschlagen die gut gegen deine Gegner sind.
             </p>
@@ -117,7 +117,7 @@ export default function Features() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
                 viewport={{ once: true }}
-                className="mt-10 flex justify-center"
+                className="mt-20 flex justify-center"
             >
                 <div
                     className="rounded-3xl bg-[rgba(31,41,55,0.4)] backdrop-blur-sm shadow-lg"
@@ -142,6 +142,23 @@ export default function Features() {
                     />
                 </div>
             </motion.div>
+            <div className="mt-20 flex flex-col items-center">
+                <p className="mt-10 text-center text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                    Champion Counterpicks
+                </p>
+
+                <p className="mt-6 text-center text-lg text-gray-400">
+                    Probiere es aus! Wähle die Champions deiner Gegner und erhalte die besten 5 Counterpicks gegen jeden.
+                </p>
+
+                <a
+                    href="/counter"
+                    className="mt-10 px-4 py-4 rounded-md bg-indigo-600 text-white text-md font-bold shadow-xl
+                    hover:bg-indigo-500 hover:scale-105 transition-all duration-300"
+                >
+                    Jetzt Counter suchen️
+                </a>
+            </div>
         </section>
     );
 }
