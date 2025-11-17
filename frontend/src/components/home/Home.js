@@ -80,7 +80,7 @@ export default function Home() {
 
                         <div className="flex justify-center lg:justify-end">
                             <Image
-                                src="/homepictures/hansai.PNG"
+                                src="/homepictures/hansai.png"
                                 alt={t("headline")}
                                 width={1200}
                                 height={675}
