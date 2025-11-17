@@ -3,6 +3,9 @@ import React, { useEffect, useState } from "react";
 import { DndContext, useDraggable, useDroppable } from "@dnd-kit/core";
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/Navbar";
+import {useLanguage} from "@/context/LanguageContext";
+import deTranslations from "@/locales/de/common.json";
+import enTranslations from "@/locales/en/common.json";
 
 // --- 🔹 Drag & Drop Komponenten ---
 function Draggable({ id, children }) {
@@ -41,6 +44,12 @@ export default function CounterPicks() {
     const [yourTeam, setYourTeam] = useState([]);
     const [enemyTeam, setEnemyTeam] = useState([]);
     const [search, setSearch] = useState("");
+
+    const { language } = useLanguage();
+    const t = (key) => {
+        const translations = language === 'de' ? deTranslations : enTranslations;
+        return translations[key] || key; // fallback falls Key fehlt
+    };
 
     useEffect(() => {
         async function loadData() {
@@ -87,50 +96,46 @@ export default function CounterPicks() {
     return (
         <div className="w-full flex flex-col">
             <Navbar minimal={true} />
-        <div className="flex flex-col mt-20 items-center gap-6 p-6 sm:p-8 text-white">
-            <h1 className="text-3xl font-bold text-center">Wähle deine Counter Picks</h1>
+            <div className="flex flex-col mt-20 items-center gap-6 p-6 sm:p-8 text-white">
+                <h1 className="text-3xl font-bold text-center">{t("choose_counter_picks")}</h1>
 
-            {/* 🔍 Suchfeld */}
-            <input
-                type="text"
-                placeholder="Champion suchen..."
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                className="w-full max-w-lg p-2 border border-gray-600 rounded-lg bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
+                {/* 🔍 Suchfeld */}
+                <input
+                    type="text"
+                    placeholder={t("search_champion")}
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    className="w-full max-w-lg p-2 border border-gray-600 rounded-lg bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
 
-            {/* 🔹 Champion Pool */}
-            <DndContext onDragEnd={handleDragEnd}>
-                <div className="flex flex-wrap justify-center gap-3 max-w-7xl bg-gray-800 p-4 rounded-2xl">
-                    {filtered.map((c) => (
-                        <Draggable key={c.id} id={c.id}>
-                            <div className="flex flex-col items-center bg-gray-700 p-2 rounded-xl w-[100px] hover:bg-gray-600 transition">
-                                <img
-                                    src={c.icon}
-                                    alt={c.name}
-                                    loading="lazy"
-                                    className="rounded-md mb-1 object-cover w-12 h-12"
-                                />
-                                <span className="text-xs font-medium text-center">{c.name}</span>
-                                <span className="text-[10px] text-gray-400 mt-0.5">
-                                    Difficulty: {c.difficulty}
-                                </span>
-                            </div>
-                        </Draggable>
-                    ))}
-                </div>
+                <DndContext onDragEnd={handleDragEnd}>
+                    <div className="flex flex-wrap justify-center gap-3 max-w-7xl bg-gray-800 p-4 rounded-2xl mt-4">
+                        {filtered.map((c) => (
+                            <Draggable key={c.id} id={c.id}>
+                                <div className="flex flex-col items-center bg-gray-700 p-2 rounded-xl w-[100px] hover:bg-gray-600 transition text-white">
+                                    <img
+                                        src={c.icon}
+                                        alt={c.name}
+                                        loading="lazy"
+                                        className="rounded-md mb-1 object-cover w-12 h-12"
+                                    />
+                                    <span className="text-xs font-medium text-center">{c.name}</span>
+                                    <span className="text-[10px] text-gray-200 mt-0.5">
+                                        Difficulty: {c.difficulty}
+                                    </span>
+                                </div>
+                            </Draggable>
+                        ))}
+                    </div>
 
                 {/* 🔹 Teams */}
                 <div className="flex flex-col md:flex-row gap-6 w-full max-w-6xl mt-6">
                     {/* Dein Team */}
                     <div className="flex flex-col items-center gap-2 w-full md:w-1/2">
-                        <h2 className="text-xl font-semibold text-green-400 mb-2">Dein Team</h2>
+                        <h2 className="text-xl font-semibold text-green-400 mb-2">{t("your_team")}</h2>
                         <Droppable id="yourTeam">
                             {yourTeam.map((c) => (
-                                <div
-                                    key={c.id}
-                                    className="flex items-center gap-2 bg-gray-700 px-3 py-1 rounded-lg w-full sm:w-auto"
-                                >
+                                <div key={c.id} className="flex items-center gap-2 bg-gray-700 px-3 py-1 rounded-lg w-full sm:w-auto">
                                     <span>{c.name}</span>
                                     <button
                                         onClick={() => removeFromTeam(c, "you")}
@@ -145,13 +150,10 @@ export default function CounterPicks() {
 
                     {/* Gegnerteam */}
                     <div className="flex flex-col items-center gap-2 w-full md:w-1/2">
-                        <h2 className="text-xl font-semibold text-red-400 mb-2">Gegnerteam</h2>
+                        <h2 className="text-xl font-semibold text-red-400 mb-2">{t("enemy_team")}</h2>
                         <Droppable id="enemyTeam">
                             {enemyTeam.map((c) => (
-                                <div
-                                    key={c.id}
-                                    className="flex items-center gap-2 bg-gray-700 px-3 py-1 rounded-lg w-full sm:w-auto"
-                                >
+                                <div key={c.id} className="flex items-center gap-2 bg-gray-700 px-3 py-1 rounded-lg w-full sm:w-auto">
                                     <span>{c.name}</span>
                                     <button
                                         onClick={() => removeFromTeam(c, "enemy")}
@@ -164,51 +166,41 @@ export default function CounterPicks() {
                         </Droppable>
                     </div>
                 </div>
-            </DndContext>
+                </DndContext>
 
-            {/* Counter Suggestions */}
-            {enemyTeam.length > 0 && (
-                <div className="gap-6 w-full max-w-6xl mt-6">
-                    <h3 className="text-lg font-bold text-blue-400 mb-2">Beste Counter gegen dein Gegner</h3>
-
-                    {enemyTeam.map((champ) => (
-                        <div key={champ.id} className="mb-3">
-                            <p className="font-semibold mb-1">{champ.name}</p>
-                            <div className="flex gap-2 flex-wrap">
-                                {champ.counters.slice(0, 5).map((counterName, index) => {
-                                    if (!counterName) return null; // verhindert Fehler bei null/undefined
-
-                                    // normalize: alles lowercase, Apostrophe entfernen
-                                    const normalizedInput = counterName.toLowerCase().replace(/'/g, "");
-                                    const counterChamp = champions.find(
-                                        (c) => c.name.toLowerCase().replace(/'/g, "") === normalizedInput
-                                    );
-                                    return (
-                                        <span
-                                            key={index}
-                                            className="bg-blue-600 px-2 py-1 rounded-md text-sm flex items-center gap-1"
-                                        >
-                                            {counterName}
-                                            {counterChamp && (
-                                                <span className="text-[10px] text-gray-300">
-                                                    ({counterChamp.difficulty})
-                                                </span>
-                                            )}
-                                        </span>
-                                    );
-                                })}
+                {/* Counter Suggestions */}
+                {enemyTeam.length > 0 && (
+                    <div className="gap-6 w-full max-w-6xl mt-6">
+                        <h3 className="text-lg font-bold text-blue-400 mb-2">{t("best_counters")}</h3>
+                        {enemyTeam.map((champ) => (
+                            <div key={champ.id} className="mb-3">
+                                <p className="font-semibold mb-1">{champ.name}</p>
+                                <div className="flex gap-2 flex-wrap">
+                                    {champ.counters?.slice(0, 5).map((counterName, index) => {
+                                        if (!counterName) return null;
+                                        const counterChamp = champions.find(
+                                            (c) => c.name.toLowerCase() === counterName.toLowerCase()
+                                        );
+                                        return (
+                                            <span key={index} className="bg-blue-600 px-2 py-1 rounded-md text-sm flex items-center gap-1">
+                                                {counterName}
+                                                {counterChamp && (
+                                                    <span className="text-[10px] text-gray-300">({counterChamp.difficulty})</span>
+                                                )}
+                                            </span>
+                                        );
+                                    })}
+                                </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
-            )}
+                        ))}
+                    </div>
+                )}
 
-            {/* ⚖️ Riot Credit */}
-            <p className="text-xs text-gray-500 mt-20 text-center">
-                Data and images provided by Riot Games. Riot Games, League of Legends and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
-            </p>
-
-        </div>
+                {/* ⚖️ Riot Credit */}
+                <p className="text-xs text-gray-500 mt-20 text-center">
+                    {t("riot_credit")}
+                </p>
+            </div>
             <div className="mt-20">
                 <Footer />
             </div>

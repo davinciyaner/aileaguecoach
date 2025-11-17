@@ -1,12 +1,21 @@
-"use client";
+'use client'
 
 import React, { useState, useEffect } from "react";
 import { StarIcon } from "@heroicons/react/24/solid";
-import { jwtDecode } from "jwt-decode"; // ✅ richtig importiert
+import { jwtDecode } from "jwt-decode";
+
+import { useLanguage } from "@/context/LanguageContext";
+import deTranslations from '@/locales/de/common.json';
+import enTranslations from '@/locales/en/common.json';
 
 export default function Reviews() {
+    const { language } = useLanguage();
+    const t = (key, vars = {}) => {
+        const str = language === "de" ? deTranslations[key] : enTranslations[key];
+        return Object.keys(vars).reduce((acc, k) => acc.replace(`{{${k}}}`, vars[k]), str);
+    };
+
     const [reviews, setReviews] = useState([]);
-    const [stats, setStats] = useState([]);
     const [totalReviews, setTotalReviews] = useState(0);
     const [showForm, setShowForm] = useState(false);
     const [rating, setRating] = useState(5);
@@ -21,7 +30,6 @@ export default function Reviews() {
     useEffect(() => {
         const token = localStorage.getItem("token");
         if (!token) return;
-
         try {
             const decoded = jwtDecode(token);
             setLoggedInUser(decoded);
@@ -35,18 +43,15 @@ export default function Reviews() {
         const res = await fetch(`${API_URL}/api/reviews/stats`);
         const data = await res.json();
         setReviews(data.reviews);
-        setStats(data.stats);
         setTotalReviews(data.total);
     };
 
-    useEffect(() => {
-        fetchData();
-    }, []);
+    useEffect(() => { fetchData(); }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!loggedInUser) return alert("Melde dich an, um eine Bewertung zu schreiben.");
-        if (!comment) return alert("Schreib eine Bewertung");
+        if (!loggedInUser) return alert(t("reviews_login_prompt"));
+        if (!comment) return alert(t("reviews_input_placeholder_comment"));
 
         const res = await fetch(`${API_URL}/api/reviews`, {
             method: "POST",
@@ -54,7 +59,7 @@ export default function Reviews() {
             body: JSON.stringify({
                 name: name || loggedInUser.username || loggedInUser.name,
                 rating,
-                comment,
+                comment
             }),
         });
 
@@ -71,24 +76,21 @@ export default function Reviews() {
         }
     };
 
-    const toggleExpanded = (id) => {
-        setExpanded((prev) => ({
-            ...prev,
-            [id]: !prev[id],
-        }));
-    };
+    const toggleExpanded = (id) => setExpanded(prev => ({ ...prev, [id]: !prev[id] }));
+
+    const averageRating = totalReviews
+        ? (reviews.reduce((sum, r) => sum + r.rating, 0) / totalReviews).toFixed(1)
+        : 0;
 
     return (
         <section className="bg-gray-900 py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div id="reviews" className="mx-auto max-w-2xl text-center mb-12">
-                    <h2 className="text-base font-semibold text-indigo-400">Kundenbewertungen</h2>
+                    <h2 className="text-base font-semibold text-indigo-400">{t("reviews_title")}</h2>
                     <p className="mt-2 text-4xl font-semibold text-white sm:text-5xl">
-                        {totalReviews
-                            ? (reviews.reduce((sum, r) => sum + r.rating, 0) / totalReviews).toFixed(1)
-                            : 0} von 5 Sternen
+                        {t("reviews_average", { average: averageRating })}
                     </p>
-                    <p className="mt-1 text-gray-400">{totalReviews} Kundenbewertungen</p>
+                    <p className="mt-1 text-gray-400">{t("reviews_total", { total: totalReviews })}</p>
                 </div>
 
                 <div className="text-center mb-12">
@@ -97,29 +99,26 @@ export default function Reviews() {
                             onClick={() => setShowForm(!showForm)}
                             className="rounded-md bg-indigo-500 px-6 py-2 text-white font-semibold hover:bg-indigo-400 transition"
                         >
-                            {showForm ? "Bewertungen schließen" : "Schreibe eine Bewertung"}
+                            {showForm ? t("reviews_close_button") : t("reviews_write_button")}
                         </button>
                     ) : (
                         <p className="text-gray-400">
-                            Bitte <span className="text-indigo-400 font-semibold">melde dich an,</span> um eine Bewertung zu schreiben.
+                            {t("reviews_login_prompt").replace(t("reviews_login_hint"), <span className="text-indigo-400 font-semibold">{t("reviews_login_hint")}</span>)}
                         </p>
                     )}
                 </div>
 
                 {showForm && loggedInUser && (
-                    <form
-                        onSubmit={handleSubmit}
-                        className="max-w-2xl mx-auto mb-12 space-y-4 bg-gray-800 p-6 rounded-xl shadow-md"
-                    >
+                    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto mb-12 space-y-4 bg-gray-800 p-6 rounded-xl shadow-md">
                         <input
                             type="text"
-                            placeholder="Dein Benutzername"
+                            placeholder={t("reviews_input_placeholder_name")}
                             value={name}
                             readOnly
                             className="w-full rounded-md bg-gray-700/50 px-3 py-2 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 cursor-not-allowed"
                         />
                         <div className="flex items-center space-x-1">
-                            {[1, 2, 3, 4, 5].map((star) => (
+                            {[1,2,3,4,5].map(star => (
                                 <StarIcon
                                     key={star}
                                     className={`h-6 w-6 cursor-pointer transition-colors duration-200 ${
@@ -132,42 +131,36 @@ export default function Reviews() {
                             ))}
                         </div>
                         <textarea
-                            placeholder="Schreibe deine Bewertung hier..."
+                            placeholder={t("reviews_input_placeholder_comment")}
                             value={comment}
-                            onChange={(e) => setComment(e.target.value)}
+                            onChange={e => setComment(e.target.value)}
                             className="w-full rounded-md bg-gray-700/50 px-3 py-2 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500"
                         />
                         <button
                             type="submit"
                             className="rounded-md bg-indigo-500 px-6 py-2 text-white font-semibold hover:bg-indigo-400 transition"
                         >
-                            Bewertung abgeben
+                            {t("reviews_submit_button")}
                         </button>
                     </form>
                 )}
 
-                {/* Reviews anzeigen */}
                 <div className="max-w-4xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    {reviews.map((rev) => {
+                    {reviews.map(rev => {
                         const text = rev.comment || "";
                         const isLong = text.length > 250;
-                        const displayText = expanded[rev._id] ? text : text.slice(0, 250);
-
+                        const displayText = expanded[rev._id] ? text : text.slice(0,250);
                         return (
                             <div key={rev._id} className="bg-gray-800 rounded-2xl p-6 shadow-md hover:shadow-xl transition">
                                 <div className="flex items-center mb-2">
                                     {[...Array(5)].map((_, i) => (
-                                        <StarIcon
-                                            key={i}
-                                            className={`h-5 w-5 ${i < rev.rating ? "text-yellow-400" : "text-gray-500"}`}
-                                        />
+                                        <StarIcon key={i} className={`h-5 w-5 ${i < rev.rating ? "text-yellow-400" : "text-gray-500"}`} />
                                     ))}
-                                    <span className="ml-2 text-gray-400 text-sm">{rev.name || "Anonymous"}</span>
+                                    <span className="ml-2 text-gray-400 text-sm">{rev.name || t("reviews_anonymous")}</span>
                                 </div>
 
                                 <p className="text-gray-300">
-                                    {displayText}
-                                    {isLong && !expanded[rev._id] && "…"}
+                                    {displayText}{isLong && !expanded[rev._id] && "…"}
                                 </p>
 
                                 {isLong && (
@@ -175,7 +168,7 @@ export default function Reviews() {
                                         onClick={() => toggleExpanded(rev._id)}
                                         className="mt-2 text-indigo-400 hover:text-indigo-300 text-sm"
                                     >
-                                        {expanded[rev._id] ? "Weniger anzeigen" : "Mehr anzeigen"}
+                                        {expanded[rev._id] ? t("reviews_read_less") : t("reviews_read_more")}
                                     </button>
                                 )}
                             </div>

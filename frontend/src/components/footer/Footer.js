@@ -2,17 +2,23 @@
 import React, { useState, useEffect } from "react";
 import { Mail } from "lucide-react";
 
+import { useLanguage } from "@/context/LanguageContext";
+import deTranslations from '@/locales/de/common.json';
+import enTranslations from '@/locales/en/common.json';
+
 export default function Footer() {
+    const { language } = useLanguage();
+    const t = (key) => (language === "de" ? deTranslations[key] : enTranslations[key]);
+
     const [email, setEmail] = useState("");
     const [subscribed, setSubscribed] = useState(false);
     const [message, setMessage] = useState("");
     const [messageColor, setMessageColor] = useState("");
     const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-    // Newsletter abonnieren
     const handleSubscribe = async (event) => {
         event.preventDefault();
-        if (!email) return setMessage("Bitte gib eine gültige E-Mail-Adresse ein.");
+        if (!email) return setMessage(t("footer_email_invalid"));
 
         try {
             const res = await fetch(`${API_URL}/api/newsletter/newsletter`, {
@@ -25,19 +31,18 @@ export default function Footer() {
             if (res.ok) {
                 setSubscribed(true);
                 setMessageColor("text-green-500");
-                setMessage("✅ Erfolgreich für den Newsletter angemeldet!");
+                setMessage(t("footer_subscribe_success"));
             } else {
                 setMessageColor("text-red-500");
-                setMessage(data.message || "Fehler bei der Anmeldung.");
+                setMessage(data.message || t("footer_subscribe_error"));
             }
         } catch (err) {
             console.error(err);
             setMessageColor("text-red-500");
-            setMessage("Etwas ist schiefgelaufen. Bitte versuche es erneut.");
+            setMessage(t("footer_generic_error"));
         }
     };
 
-    // Newsletter abbestellen
     const handleUnsubscribe = async () => {
         if (!email) return;
         try {
@@ -49,19 +54,18 @@ export default function Footer() {
             if (res.ok) {
                 setSubscribed(false);
                 setMessageColor("text-green-500");
-                setMessage("✅ Erfolgreich abgemeldet.");
+                setMessage(t("footer_unsubscribe_success"));
             } else {
                 setMessageColor("text-red-500");
-                setMessage(data.message || "Fehler bei der Abmeldung.");
+                setMessage(data.message || t("footer_unsubscribe_error"));
             }
         } catch (err) {
             console.error(err);
             setMessageColor("text-red-500");
-            setMessage("Etwas ist schiefgelaufen. Bitte versuche es erneut.");
+            setMessage(t("footer_generic_error"));
         }
     };
 
-    // Automatische Abmeldung per Query
     useEffect(() => {
         const queryEmail = new URLSearchParams(window.location.search).get("email");
         if (queryEmail) {
@@ -74,31 +78,25 @@ export default function Footer() {
         <footer className="bg-gray-950 border-t border-gray-800">
             <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
                 <div className="mx-auto max-w-3xl text-center mb-16">
-                    <h2 className="text-2xl font-semibold text-white sm:text-3xl">
-                        Bleibe mit Hans AI immer auf dem Laufenden
-                    </h2>
-                    <p className="mt-4 text-gray-400">
-                        Abonniere unseren Newsletter für exklusive Updates, frühen Zugang zu neuen Funktionen
-                        und Coaching-Tipps direkt von unserem KI-Coach.
-                    </p>
+                    <h2 className="text-2xl font-semibold text-white sm:text-3xl">{t("footer_newsletter_title")}</h2>
+                    <p className="mt-4 text-gray-400">{t("footer_newsletter_desc")}</p>
 
                     {!subscribed ? (
-                        <form className="mt-6 flex flex-col items-center max-w-md mx-auto gap-3"
-                              onSubmit={handleSubscribe}>
+                        <form className="mt-6 flex flex-col items-center max-w-md mx-auto gap-3" onSubmit={handleSubscribe}>
                             <div className="flex w-full gap-x-3">
                                 <input
                                     type="email"
                                     required
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    placeholder="E-Mail-Adresse eingeben"
+                                    placeholder={t("footer_email_placeholder")}
                                     className="min-w-0 flex-auto rounded-md border-0 bg-gray-800/50 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-gray-700 focus:ring-2 focus:ring-indigo-500 sm:text-sm sm:leading-6"
                                 />
                                 <button
                                     type="submit"
                                     className="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
                                 >
-                                    Abonnieren
+                                    {t("footer_subscribe_button")}
                                 </button>
                             </div>
                             {message && (
@@ -107,14 +105,14 @@ export default function Footer() {
                         </form>
                     ) : (
                         <div className="mt-6 flex flex-col items-center gap-3">
-              <span className="text-gray-300 px-3.5 py-2.5 rounded-md bg-gray-800/50">
-                Abonniert: {email}
-              </span>
+                            <span className="text-gray-300 px-3.5 py-2.5 rounded-md bg-gray-800/50">
+                                {t("footer_subscribed_label")}: {email}
+                            </span>
                             <button
                                 onClick={handleUnsubscribe}
                                 className="flex-none rounded-md bg-red-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-400 focus-visible:outline-offset-2 focus-visible:outline-red-500"
                             >
-                                Abbestellen
+                                {t("footer_unsubscribe_button")}
                             </button>
                             {message && (
                                 <p className={`mt-2 text-sm ${messageColor}`}>{message}</p>
@@ -123,19 +121,13 @@ export default function Footer() {
                     )}
                 </div>
 
-                <div
-                    className="border-t border-gray-800 pt-12 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="border-t border-gray-800 pt-12 flex flex-col md:flex-row items-center justify-between gap-6">
                     <div className="text-gray-400 text-sm text-center md:text-left">
-                        © {new Date().getFullYear()} Hans AI Coach. Alle Rechte vorbehalten.
+                        © {new Date().getFullYear()} Hans AI Coach. {t("footer_copyright")}
                     </div>
-
                     <div className="flex space-x-6">
-                        <a href="/privacy" className="text-gray-400 hover:text-indigo-400">
-                            Datenschutzerklärung
-                        </a>
-                        <a href="/legal-notice" className="text-gray-400 hover:text-indigo-400">
-                            Impressum
-                        </a>
+                        <a href="/privacy" className="text-gray-400 hover:text-indigo-400">{t("footer_privacy")}</a>
+                        <a href="/legal-notice" className="text-gray-400 hover:text-indigo-400">{t("footer_legal")}</a>
                         <a href="https://discord.gg/4ecd9TvCmU" className="text-gray-400 hover:text-indigo-400">
                             <img src="/icons/Discord-Symbol-White.png" alt="Discord" className="w-8 h-6"/>
                         </a>

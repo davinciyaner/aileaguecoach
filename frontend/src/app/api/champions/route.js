@@ -1,9 +1,9 @@
-import counterData from "../../../../public/data/champions_counter.json";
+import { NextResponse } from "next/server";
+import counterData from "../../../data/champions_counter.json";
 
 export async function GET() {
     const patchVersion = "14.23.1";
     const url = `https://ddragon.leagueoflegends.com/cdn/${patchVersion}/data/en_US/champion.json`;
-
     const res = await fetch(url);
     const data = await res.json();
 
@@ -25,5 +25,5 @@ export async function GET() {
         };
     });
 
-    return Response.json(champions);
+    return NextResponse.json(champions);
 }

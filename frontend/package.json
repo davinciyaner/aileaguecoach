@@ -14,11 +14,14 @@
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "framer-motion": "^12.23.24",
+    "i18next": "^25.6.2",
     "jwt-decode": "^4.0.0",
     "lucide-react": "^0.546.0",
     "next": "15.5.6",
+    "next-i18next": "^15.4.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "react-i18next": "^16.3.3",
     "react-window": "^2.2.3"
   },
   "devDependencies": {

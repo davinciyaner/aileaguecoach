@@ -5,11 +5,8 @@ import Navbar from "../navbar/Navbar";
 
 const LegalNotice = () => {
     return (
-        <div className="min-h-screen bg-gray-900 text-gray-100">
-            {/* 🧭 Navbar */}
-            <div className="mt-20">
+        <div className="min-h-screen bg-gray-900">
                 <Navbar minimal={true} />
-            </div>
 
             <main className="max-w-3xl mx-auto px-6 py-16">
                 <h1 className="text-4xl font-bold text-white mb-6">Impressum</h1>

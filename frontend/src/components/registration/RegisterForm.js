@@ -3,17 +3,24 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 
+import { useLanguage } from '@/context/LanguageContext'
+import deTranslations from '@/locales/de/common.json';
+import enTranslations from '@/locales/en/common.json';
+
 export default function RegisterForm() {
     const router = useRouter()
+    const { language } = useLanguage()
+    const t = (key) => (language === 'de' ? deTranslations[key] : enTranslations[key])
+
     const [email, setEmail] = useState('')
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
 
-    const API_URL = process.env.NEXT_PUBLIC_API_URL;
+    const API_URL = process.env.NEXT_PUBLIC_API_URL
 
-    const fetchRegister = async (e) => {
+    const handleRegister = async (e) => {
         e.preventDefault()
         setError('')
         setLoading(true)
@@ -26,9 +33,8 @@ export default function RegisterForm() {
             })
 
             const data = await res.json()
-            if (!res.ok) throw new Error(data.message || 'Deine Registrierung ist fehlgeschlagen. Bitte versuche es erneut.')
+            if (!res.ok) throw new Error(data.message || t('register_error'))
 
-            // Optional: Token speichern oder direkt auf Login-Seite weiterleiten
             localStorage.setItem('token', data.token)
             router.push('/login')
         } catch (err) {
@@ -42,25 +48,24 @@ export default function RegisterForm() {
         <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                 <h2 className="mt-10 text-center text-2xl font-bold tracking-tight text-white">
-                    Account erstellen
+                    {t('register_title')}
                 </h2>
             </div>
 
             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                <form onSubmit={fetchRegister} className="space-y-6">
+                <form onSubmit={handleRegister} className="space-y-6">
                     <div>
                         <label htmlFor="email" className="block text-sm font-medium text-gray-100">
-                            E-Mail
+                            {t('register_email_label')}
                         </label>
                         <div className="mt-2">
                             <input
                                 id="email"
-                                name="email"
                                 type="email"
                                 required
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                placeholder="E-Mail"
+                                placeholder={t('register_email_placeholder')}
                                 className="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:outline-indigo-500 sm:text-sm"
                             />
                         </div>
@@ -68,17 +73,16 @@ export default function RegisterForm() {
 
                     <div>
                         <label htmlFor="username" className="block text-sm font-medium text-gray-100">
-                            Benutzername
+                            {t('register_username_label')}
                         </label>
                         <div className="mt-2">
                             <input
                                 id="username"
-                                name="username"
                                 type="text"
                                 required
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
-                                placeholder="Benutzername"
+                                placeholder={t('register_username_placeholder')}
                                 className="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:outline-indigo-500 sm:text-sm"
                             />
                         </div>
@@ -86,17 +90,16 @@ export default function RegisterForm() {
 
                     <div>
                         <label htmlFor="password" className="block text-sm font-medium text-gray-100">
-                            Passwort
+                            {t('register_password_label')}
                         </label>
                         <div className="mt-2">
                             <input
                                 id="password"
-                                name="password"
                                 type="password"
                                 required
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                placeholder="Passwort"
+                                placeholder={t('register_password_placeholder')}
                                 className="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:outline-indigo-500 sm:text-sm"
                             />
                         </div>
@@ -112,15 +115,15 @@ export default function RegisterForm() {
                                 loading ? 'bg-indigo-400' : 'bg-indigo-500 hover:bg-indigo-400'
                             } px-3 py-1.5 text-sm font-semibold text-white focus-visible:outline-2 focus-visible:outline-indigo-500`}
                         >
-                            {loading ? 'Registrieren...' : 'Registrieren'}
+                            {loading ? t('register_loading') : t('register_submit')}
                         </button>
                     </div>
                 </form>
 
                 <p className="mt-10 text-center text-sm text-gray-400">
-                    Hast du bereits einen Account?{' '}
+                    {t('register_already_account')}{' '}
                     <a href="/login" className="font-semibold text-indigo-400 hover:text-indigo-300">
-                        Hier anmelden
+                        {t('register_login')}
                     </a>
                 </p>
             </div>

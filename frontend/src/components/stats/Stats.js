@@ -1,55 +1,31 @@
-"use client";
+'use client'
 
 import React from "react";
 import { motion } from "framer-motion";
 import { Brain, Rocket, Users, Sparkles } from "lucide-react";
 
-const timeline = [
-    {
-        icon: Brain,
-        title: "Idee & Forschung",
-        date: "11. Oktober 2025",
-        description:
-            "Die Idee zu Hans war geboren – ein KI-Coach der nächsten Generation, der League of Legends-Spielern hilft, ihr volles Potenzial zu entfalten.",
-    },
-    {
-        icon: Rocket,
-        title: "MVP-Entwicklung",
-        date: "18. Oktober 2025",
-        description:
-            "Der erste Prototyp wird entwickelt – mit KI-gestützter Echtzeitanalyse und den Grundlagen für intelligentes Coaching.",
-    },
-    {
-        icon: Users,
-        title: "Geschlossene Beta",
-        date: "26. Oktober 2025",
-        description:
-            "Der frühe Zugang startet für ausgewählte Spieler, um Hans zu testen und die Zukunft des KI-basierten Trainings mitzugestalten.",
-    },
-    {
-        icon: Sparkles,
-        title: "Öffentliche Veröffentlichung",
-        date: "8. November 2025",
-        description:
-            "Hans geht offiziell live. Echtzeit-Coaching und Performance-Dashboards werden für alle Spieler verfügbar.",
-    },
-];
+import { useLanguage } from "@/context/LanguageContext";
+import deTranslations from '@/locales/de/common.json';
+import enTranslations from '@/locales/en/common.json';
 
 export default function Timeline() {
+    const { language } = useLanguage();
+    const t = (key) => (language === "de" ? deTranslations[key] : enTranslations[key]);
+
+    const timeline = [
+        { icon: Brain, title: t("timeline_step_1_title"), date: t("timeline_step_1_date"), description: t("timeline_step_1_desc") },
+        { icon: Rocket, title: t("timeline_step_2_title"), date: t("timeline_step_2_date"), description: t("timeline_step_2_desc") },
+        { icon: Users, title: t("timeline_step_3_title"), date: t("timeline_step_3_date"), description: t("timeline_step_3_desc") },
+        { icon: Sparkles, title: t("timeline_step_4_title"), date: t("timeline_step_4_date"), description: t("timeline_step_4_desc") },
+    ];
+
     return (
         <section className="relative bg-gray-950 py-24 sm:py-32 overflow-hidden">
             <div className="mx-auto max-w-5xl px-6 lg:px-8">
                 <div id="future" className="text-center mb-16">
-                    <h2 className="text-base font-semibold text-indigo-400">
-                        Unsere Roadmap
-                    </h2>
-                    <p className="mt-2 text-4xl font-semibold text-white sm:text-5xl">
-                        Wir bauen die Zukunft des KI-Coachings
-                    </p>
-                    <p className="mt-6 text-lg text-gray-400 max-w-2xl mx-auto">
-                        Von einer ehrgeizigen Idee zu einer revolutionären Coaching-Plattform –
-                        so entwickelt sich Hans Schritt für Schritt weiter.
-                    </p>
+                    <h2 className="text-base font-semibold text-indigo-400">{t("timeline_title_small")}</h2>
+                    <p className="mt-2 text-4xl font-semibold text-white sm:text-5xl">{t("timeline_title_big")}</p>
+                    <p className="mt-6 text-lg text-gray-400 max-w-2xl mx-auto">{t("timeline_description")}</p>
                 </div>
 
                 <div className="relative border-l border-gray-700 pl-16 space-y-12">
@@ -66,9 +42,7 @@ export default function Timeline() {
                                 <step.icon className="h-6 w-6" />
                             </div>
                             <div>
-                                <h3 className="text-xl font-semibold text-white">
-                                    {step.title}
-                                </h3>
+                                <h3 className="text-xl font-semibold text-white">{step.title}</h3>
                                 <p className="text-sm text-indigo-400 mt-1">{step.date}</p>
                                 <p className="mt-3 text-gray-400">{step.description}</p>
                             </div>
