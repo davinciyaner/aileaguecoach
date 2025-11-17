@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image';
 import Head from "next/head";
 import { useAuth } from "@/context/AuthContext";
 import Navbar from "../navbar/Navbar";
@@ -78,10 +79,12 @@ export default function Home() {
                         </div>
 
                         <div className="flex justify-center lg:justify-end">
-                            <img
+                            <Image
                                 src="/homepictures/hansai.PNG"
                                 alt={t("headline")}
-                                className="w-full max-w-3xl rounded-lg shadow-lg"
+                                width={1200}
+                                height={675}
+                                className="rounded-lg shadow-lg"
                             />
                         </div>
                     </section>

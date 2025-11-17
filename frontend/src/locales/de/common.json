@@ -156,7 +156,7 @@
   "downloadText": "Lade die neueste Version herunter und starte deine Reise mit dem Hans AI Coach.",
   "downloadButton": "Für Windows herunterladen",
   "loading": "Lädt...",
-  "versionInfo": "Version {{version}} · Veröffentlicht am {{releaseDate}} · {{downloads}} Downloads",
+  "versionInfo": "Version 0.1.1 · Veröffentlicht am 18. November 2025 · Downloads",
   "systemRequirements": "Systemanforderungen",
   "requirement1": "Windows 10 oder höher (64-Bit)",
   "requirement2": "Mindestens 4 GB RAM und 200 MB freier Speicherplatz",
