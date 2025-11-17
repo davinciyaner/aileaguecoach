@@ -13,8 +13,8 @@ export const getDownloadStats = async (req, res) => {
         if (!stats) {
             // Falls noch kein Eintrag existiert, initialisieren
             stats = await Download.create({
-                version: "0.1.0-Beta.1",
-                releaseDate: new Date("2025-11-08"),
+                version: "0.1.1-Beta.1",
+                releaseDate: new Date("2025-11-17"),
                 downloads: 0,
             });
         }
@@ -34,18 +34,14 @@ export const getDownloadStats = async (req, res) => {
 
 // Download für Windows
 export const downloadWindows = async (req, res) => {
-    const filePath = path.join(__dirname, "..", "..", "downloads", "main.exe");
-
-    if (!fs.existsSync(filePath)) {
-        return res.status(404).json({ message: "Datei nicht gefunden." });
-    }
+    const githubUrl = "https://github.com/davinciyaner/aileaguecoach/releases/download/v0.0.1/main.exe";
 
     try {
         let stats = await Download.findOne({});
         if (!stats) {
             stats = await Download.create({
-                version: "0.1.0-Beta.1",
-                releaseDate: new Date("2025-11-06"),
+                version: "0.0.1",
+                releaseDate: new Date(),
                 downloads: 1,
             });
         } else {
@@ -53,9 +49,10 @@ export const downloadWindows = async (req, res) => {
             await stats.save();
         }
 
-        res.download(filePath, "main.exe");
+        return res.redirect(githubUrl);
     } catch (err) {
         console.error(err);
         res.status(500).json({ message: "Fehler beim Starten des Downloads" });
     }
 };
+

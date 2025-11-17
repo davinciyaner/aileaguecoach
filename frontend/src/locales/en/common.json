@@ -159,7 +159,7 @@
   "versionInfo": "Version {{version}} · Released on {{releaseDate}} · {{downloads}} downloads",
   "systemRequirements": "System Requirements",
   "requirement1": "Windows 10 or higher (64-bit)",
-  "requirement2": "At least 4 GB RAM and 200 MB free storage",
+  "requirement2": "At least 4 GB RAM and 300 MB free storage",
   "requirement3": "Internet connection required",
 
   "privacyTitle": "Privacy Policy",
