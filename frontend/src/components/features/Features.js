@@ -88,7 +88,7 @@ export default function Features() {
                 <p className="mt-2 text-center text-gray-400 text-base">{t("champion_advisor_note")}</p>
                 <div className="mt-20 flex justify-center">
                     <motion.img
-                        src="/homepictures/pickadvisor.png"
+                        src="/homepictures/pickadvisor.PNG"
                         alt="Hans AI Coach Analyse"
                         className="object-cover rounded-lg w-full max-w-[800px]"
                         initial={{ opacity: 0, y: 30 }}
