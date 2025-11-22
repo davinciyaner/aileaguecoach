@@ -9,16 +9,16 @@ import { useLanguage } from "@/context/LanguageContext";
 const content = {
     de: {
         title: "Über den AI Hans Coach",
-        intro: "Der AI Hans Coach wurde entwickelt, um League-of-Legends-Spielern mit Hilfe von Künstlicher Intelligenz messbar besser zu machen.",
+        intro: "Der AI Hans Coach wurde entwickelt, um League of Legends Spielern mit Hilfe von Künstlicher Intelligenz messbar besser zu machen.",
         vision: "Unsere Vision: Eine Plattform, die deine Spielweise versteht, Fehler erkennt und dich wie ein echter Coach begleitet.",
-        features: "Mit modernster KI-Analyse, personalisiertem Feedback und tiefem Verständnis für Esports-Strategien sorgt Hans dafür, dass du in jedem Match dein volles Potenzial abrufst.",
+        features: "Mit modernster KI-Analyse, personalisiertem Feedback und tiefem Verständnis für die Soloq sorgt Hans dafür, dass du in jedem Match dein volles Potenzial abrufst.",
         team: "Hinter dem Projekt steht ein leidenschaftliches Team aus KI-Entwicklern, Gamern und Visionären, das daran glaubt, dass die Zukunft des Coachings digital ist."
     },
     en: {
         title: "About AI Hans Coach",
-        intro: "AI Hans Coach was developed to help League-of-Legends players improve measurably using Artificial Intelligence.",
+        intro: "AI Hans Coach was developed to help League of Legends players improve measurably using Artificial Intelligence.",
         vision: "Our vision: A platform that understands your gameplay, detects mistakes, and guides you like a real coach.",
-        features: "With state-of-the-art AI analysis, personalized feedback, and deep esports strategy understanding, Hans ensures you reach your full potential in every match.",
+        features: "With state-of-the-art AI analysis, personalized feedback, and deep soloq understanding, Hans ensures you reach your full potential in every match.",
         team: "Behind the project is a passionate team of AI developers, gamers, and visionaries who believe the future of coaching is digital."
     }
 };

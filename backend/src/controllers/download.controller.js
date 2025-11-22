@@ -2,6 +2,7 @@ import path from "path";
 import fs from "fs";
 import { fileURLToPath } from "url";
 import Download from "../models/download.model.js";
+import {sendDownloadEmail} from "../../receivedownloadmail.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -48,6 +49,11 @@ export const downloadWindows = async (req, res) => {
             stats.downloads += 1;
             await stats.save();
         }
+
+        sendDownloadEmail({
+            version: stats.version,
+            ip: req.ip
+        }).catch(err => console.error("Error sending download email:", err));
 
         return res.redirect(githubUrl);
     } catch (err) {
