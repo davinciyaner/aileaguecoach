@@ -21,7 +21,7 @@ export default function Footer() {
         if (!email) return setMessage(t("footer_email_invalid"));
 
         try {
-            const res = await fetch(`${API_URL}/api/newsletter`, {
+            const res = await fetch(`${API_URL}/api/newsletter/newsletter`, {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({email}),
