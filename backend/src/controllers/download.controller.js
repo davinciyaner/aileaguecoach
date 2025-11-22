@@ -35,7 +35,7 @@ export const getDownloadStats = async (req, res) => {
 
 // Download für Windows
 export const downloadWindows = async (req, res) => {
-    const githubUrl = "https://github.com/davinciyaner/aileaguecoach/releases/download/v0.0.1/main.exe";
+    const githubUrl = "https://github.com/davinciyaner/aileaguecoach/releases/download/v0.1.2/main.exe";
 
     try {
         let stats = await Download.findOne({});
