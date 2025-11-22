@@ -1,5 +1,4 @@
 import path from "path";
-import fs from "fs";
 import { fileURLToPath } from "url";
 import Download from "../models/download.model.js";
 import {sendDownloadEmail} from "../../receivedownloadmail.js";
@@ -28,7 +27,6 @@ export const getDownloadStats = async (req, res) => {
             },
         });
     } catch (err) {
-        console.error(err);
         res.status(500).json({ message: "Fehler beim Abrufen der Download-Stats" });
     }
 };
@@ -41,9 +39,9 @@ export const downloadWindows = async (req, res) => {
         let stats = await Download.findOne({});
         if (!stats) {
             stats = await Download.create({
-                version: "0.0.1",
+                version: "0.1.2",
                 releaseDate: new Date(),
-                downloads: 1,
+                downloads: 0,
             });
         } else {
             stats.downloads += 1;
@@ -57,7 +55,6 @@ export const downloadWindows = async (req, res) => {
 
         return res.redirect(githubUrl);
     } catch (err) {
-        console.error(err);
         res.status(500).json({ message: "Fehler beim Starten des Downloads" });
     }
 };
