@@ -22,25 +22,17 @@ export const subscribeNewsletter = async (req, res) => {
 
         const existingEmail = await Newsletter.findOne({ email });
         if (existingEmail) {
-            return res
-                .status(400)
-                .json({ message: "Sie sind bereits für unseren Newsletter angemeldet." });
+            return res.status(400).json({ message: "Sie sind bereits für unseren Newsletter angemeldet." });
         }
 
         const subscriber = new Newsletter({ email });
         await subscriber.save();
 
-        const transporter = nodemailer.createTransport({
-            host: "smtp.gmail.com",
-            port: 465,
-            secure: true,
-            auth: {
-                user: process.env.GMAIL_USER,
-                pass: process.env.GMAIL_PASS,
-            },
-        });
+        // Antwort sofort zurückgeben
+        res.status(200).json({ message: "Erfolgreich für unseren Newsletter angemeldet." });
 
-        const mailOptions = {
+        // Mail asynchron senden, Fehler nur loggen
+        transporter.sendMail({
             from: `"AI Hans League of Legends Coach" <${process.env.GMAIL_USER}>`,
             to: email,
             subject: "Willkommen beim AI Hans League of Legends Coach",
@@ -50,17 +42,14 @@ export const subscribeNewsletter = async (req, res) => {
         <br/>
         <p>Bleiben Sie scharf,<br/>Ihr Hans-Team</p>
       `,
-        };
+        }).catch(err => console.error("Newsletter Mail error:", err));
 
-        await transporter.sendMail(mailOptions);
-
-        return res
-            .status(200)
-            .json({ message: "Erfolgreich für unseren Newsletter angemeldet." });
     } catch (error) {
-        return res.status(500).json({ error: error.message });
+        console.error("SubscribeNewsletter error:", error);
+        res.status(500).json({ message: "Serverfehler." });
     }
 };
+
 
 export const unsubscribeNewsletter = async (req, res) => {
     try {

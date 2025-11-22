@@ -88,9 +88,9 @@ export const getMe = async (req, res) => {
 export const forgotPassword = async (req, res) => {
     try {
         const { email } = req.body;
-
         const user = await User.findOne({ email });
-        if (!user) return res.status(400).json({ message: "Dieser Benutzername mit dieser E-Mail Adresse existiert nicht." });
+        if (!user)
+            return res.status(400).json({ message: "Dieser Benutzername mit dieser E-Mail Adresse existiert nicht." });
 
         const resetToken = crypto.randomBytes(32).toString("hex");
         const resetTokenExpires = Date.now() + 10 * 60 * 1000;
@@ -101,21 +101,25 @@ export const forgotPassword = async (req, res) => {
 
         const resetUrl = `${process.env.CLIENT_URL}/reset-password?token=${resetToken}`;
 
-        await transporter.sendMail({
+        // Antwort sofort zurückgeben
+        res.status(200).json({ message: "Der Code wurde an deine E-Mail Adresse verschickt." });
+
+        // Mail asynchron versenden
+        transporter.sendMail({
             from: `"AI Hans League of Legends Coach" <${process.env.GMAIL_USER}>`,
             to: email,
             subject: "Reset your password",
             html: `
-                <h2>Password Reset Request</h2>
-                <p>Click the link below to reset your password (valid for 10 minutes):</p>
-                <a href="${resetUrl}">${resetUrl}</a>
-                <p>If you did not request this, please ignore this email.</p>
-            `,
-        })
+        <h2>Password Reset Request</h2>
+        <p>Click the link below to reset your password (valid for 10 minutes):</p>
+        <a href="${resetUrl}">${resetUrl}</a>
+        <p>If you did not request this, please ignore this email.</p>
+      `,
+        }).catch(err => console.error("Mail sending error:", err));
 
-        return res.status(200).json({ message: "Der Code wurde an deine E-Mail Adresse verschickt." });
     } catch (error) {
-        return res.status(400).json({ message: "Server error" });
+        console.error("Forgot-password error:", error);
+        return res.status(500).json({ message: "Server error" });
     }
 };
 
