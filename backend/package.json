@@ -32,6 +32,7 @@
     "morgan": "^1.9.1",
     "node-fetch": "^3.3.2",
     "nodemailer": "^7.0.9",
+    "resend": "^6.5.2",
     "rotating-file-stream": "^1.4.6"
   }
 }

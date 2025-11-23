@@ -1,16 +1,9 @@
-import nodemailer from "nodemailer";
 import Newsletter from "../models/newsletter.model.js";
 import dotenv from "dotenv";
+import {sendEmail} from "../../mailservice.js";
 
 dotenv.config();
 
-const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_PASS,
-    },
-});
 
 export const subscribeNewsletter = async (req, res) => {
     try {
@@ -25,25 +18,22 @@ export const subscribeNewsletter = async (req, res) => {
             return res.status(400).json({ message: "Sie sind bereits für unseren Newsletter angemeldet." });
         }
 
-        const subscriber = new Newsletter({ email });
-        await subscriber.save();
+        await Newsletter.create({ email });
 
-        // Antwort sofort zurückgeben
+        // Sofort Antwort zurück
         res.status(200).json({ message: "Erfolgreich für unseren Newsletter angemeldet." });
 
-        // Mail asynchron senden, Fehler nur loggen
-        transporter.sendMail({
-            from: `"AI Hans League of Legends Coach" <${process.env.GMAIL_USER}>`,
+        // Mail async senden
+        sendEmail({
             to: email,
             subject: "Willkommen beim AI Hans League of Legends Coach",
             html: `
-        <h2>Willkommen in der AI Hans League of Legends Coach Community!</h2>
-        <p>Sie sind nun angemeldet, um exklusive Updates, neue Features und Performance-Insights von Ihrem AI Hans League of Legends Coach zu erhalten.</p>
-        <br/>
-        <p>Bleiben Sie scharf,<br/>Ihr Hans-Team</p>
-      `,
-        }).catch(err => console.error("Newsletter Mail error:", err));
-
+                <h2>Willkommen in der AI Hans League of Legends Coach Community!</h2>
+                <p>Du erhältst ab sofort Updates & exklusive Inhalte.</p>
+                <br/>
+                <p>Bleib Stark in der Kluft,<br/>Dein Hans-Team</p>
+            `
+        });
     } catch (error) {
         console.error("SubscribeNewsletter error:", error);
         res.status(500).json({ message: "Serverfehler." });
