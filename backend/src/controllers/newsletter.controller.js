@@ -24,7 +24,7 @@ export const subscribeNewsletter = async (req, res) => {
         res.status(200).json({ message: "Erfolgreich für unseren Newsletter angemeldet." });
 
         // Mail async senden
-        sendEmail({
+        await sendEmail({
             to: email,
             subject: "Willkommen beim AI Hans League of Legends Coach",
             html: `
