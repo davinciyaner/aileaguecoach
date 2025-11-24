@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AI Hans – League of Legends Coaching Assistant
 
-## Getting Started
+**AI Hans** ist ein intelligenter Coaching-Assistent für **League of Legends**, der dir hilft, besser zu werden, Fehler zu analysieren und deine Performance langfristig zu verbessern.
 
-First, run the development server:
+Der Coach analysiert deine Matches, gibt konstruktives Feedback und zeigt dir klare Verbesserungsmöglichkeiten – wie ein persönlicher E-Sports-Trainer.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
+- Automatische Analyse deiner Spiele während du spielst**
+- Kalkulierte win chance während des Spiels
+- Lass dir die Meta Champs anzeigen
+- Lass dir die Counter Picks gegen deine Gegner anzeigen
+- Sehe alle Champs und wie stark sie sind
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Download
 
-## Learn More
+Neueste Version herunterladen**
+https://github.com/davinciyaner/aileaguecoach/releases/download/v0.1.2/main.exe
 
-To learn more about Next.js, take a look at the following resources:
+> Für Windows (.exe)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Installation
 
-## Deploy on Vercel
+1. Lade die **AI Hans** über **Releases** herunter
+2. Starte League of Legends und suche ein Spiel
+3. Wenn du im Spiel bist, öffne **AI Hans**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Entwickler
+
+**Finn Paustian**
+
+---
+
+## Lizenz
+
+AI Hans License – All rights reserved.
+Unauthorised copying, distribution or modification is prohibited.
+
+
+
+
+---
+
+# English version
+
+---
+
+# AI Hans – League of Legends Coaching Assistant
+
+**AI Hans** is an intelligent coaching assistant for League of Legends designed to help you improve, analyze mistakes, and develop long-term performance growth.
+
+The coach reviews your matches, provides constructive feedback, and highlights clear improvement opportunities — just like a personal e-sports trainer.
+
+---
+
+## Features
+
+- Automatic game analysis live while ingame
+- Calculate the win chance live
+- See the Meta Champs
+- Get counters in match select
+- See all champs and how strong they are
+
+---
+
+## Download
+
+Get the latest release:
+https://github.com/davinciyaner/aileaguecoach/releases/download/v0.1.2/main.exe
+Windows (.exe)
+
+---
+
+## Installation
+
+- Download AI Hans from the Releases section
+- Launch League of Legends and start a game
+- Once in-game, open AI Hans
+
+---
+
+## Developer
+Finn Paustian
+
+---
+
+## License
+
+AI Hans License – All rights reserved.
+Unauthorized copying, distribution, or modification is prohibited.
+
