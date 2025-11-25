@@ -12,6 +12,7 @@ import profileRoutes from "./routes/profile.routes.js";
 import downloadRoutes from "./routes/download.routes.js";
 import subscriptionRoutes from "./routes/subscription.routes.js";
 import newsletterRoutes from "./routes/newsletter.routes.js";
+import {globalLimiter} from "./middleware/ratelimits.js";
 
 const app = express();
 
@@ -21,6 +22,8 @@ const PORT = process.env.PORT || 3001;
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 app.use(cookieParser());
+
+app.use(globalLimiter);
 
 
 const allowedOrigins = [process.env.CLIENT_URL].filter(Boolean);
@@ -64,6 +67,22 @@ app.use("/api/newsletter", newsletterRoutes);
 
 app.use("*", (req, res) => {
     res.status(404).json({ status: false, message: "Endpoint Not Found" });
+});
+
+// Optional: Dynamische Dateien nur mit Check
+const isValidPath = (file) => {
+    // z.B. nur exe-Dateien zulassen
+    return file.endsWith(".exe");
+};
+
+app.get("/:file", globalLimiter, (req, res) => {
+    const file = req.params.file;
+    if (isValidPath(file)) {
+        const filePath = path.join(process.cwd(), file);
+        res.sendFile(filePath);
+    } else {
+        res.status(404).send("File not found or not allowed.");
+    }
 });
 
 
