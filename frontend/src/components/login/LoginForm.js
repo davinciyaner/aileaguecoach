@@ -1,12 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 
 import { useLanguage } from "@/context/LanguageContext";
-import deTranslations from '@/locales/de/common.json';
-import enTranslations from '@/locales/en/common.json';
 
 export default function LoginForm() {
     const router = useRouter();
