@@ -66,7 +66,7 @@ export const handleWebhook = async (req, res) => {
             const subscriptionId = event.resource.id;
             const planName = event.resource.plan_id;
 
-            const user = await User.findOne({ subscriptionId });
+            const user = await User.findOne({ subscriptionId: { $eq: subscriptionId } });
             if (user) {
                 user.plan = planName; // z.B. "iron", "gold", "challenger"
                 await user.save();
@@ -84,7 +84,7 @@ export const cancelSubscription = async (req, res) => {
     try {
         const { userId } = req.body;
 
-        const user = await User.findById(userId);
+        const user = await User.findById({ userId: { $eq: userId}});
         if (!user || !user.subscriptionId) {
             return res.status(400).json({ message: "No active subscription" });
         }

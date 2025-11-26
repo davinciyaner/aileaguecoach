@@ -45,6 +45,19 @@ export default function LoginForm() {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
+    const [csrfToken, setCsrfToken] = useState("");
+
+    useEffect(() => {
+        const fetchToken = async () => {
+            const res = await fetch(`${API_URL}/api/csrf-token`, {
+                credentials: "include",
+            });
+            const data = await res.json();
+            setCsrfToken(data.csrfToken);
+        };
+
+        fetchToken();
+    }, []);
 
     const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
@@ -56,7 +69,8 @@ export default function LoginForm() {
         try {
             const res = await fetch(`${API_URL}/api/auth/login`, {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                credentials: "include",
+                headers: { "Content-Type": "application/json" , "CSRF-TOKEN": csrfToken},
                 body: JSON.stringify({ username, password }),
             });
 

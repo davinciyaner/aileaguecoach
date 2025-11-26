@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import csrf from "csurf";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -15,6 +16,17 @@ import newsletterRoutes from "./routes/newsletter.routes.js";
 import {globalLimiter} from "./middleware/ratelimits.js";
 
 const app = express();
+
+const csrfProtection = csrf({
+    cookie: true,
+});
+
+app.use(csrfProtection);
+
+app.get("/api/csrf-token", (req, res) => {
+    res.json({ csrfToken: req.csrfToken() });
+});
+
 
 const PORT = process.env.PORT || 3001;
 
