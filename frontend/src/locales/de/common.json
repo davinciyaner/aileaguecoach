@@ -14,7 +14,7 @@
   "navbar_close_menu": "Schließe Menü",
 
   "beta": "BETA VERSION",
-  "headline": "Steige schneller mit unserem AI Coach auf - Win chancen und Objectives Empfehlungen live während des Spiels",
+  "headline": "Steige schneller mit unserem AI Coach auf",
   "subtext": "Mit unserer KI war es noch nie so einfach, in League of Legends aufzusteigen – analysiere Spiele in Echtzeit, berechne deine Gewinnchance live und erhalte Empfehlungen, wie du und dein Team das Spiel gewinnt.",
   "start_now": "Kostenlos Herunterladen",
   "seo_title": "League of Legends AI – Analysiere dein Spiel in Echtzeit",
@@ -159,8 +159,7 @@
   "versionInfo": "Version 0.1.1 · Veröffentlicht am 18. November 2025 · Downloads",
   "systemRequirements": "Systemanforderungen",
   "requirement1": "Windows 10 oder höher (64-Bit)",
-  "requirement2": "Mindestens 4 GB RAM und 200 MB freier Speicherplatz",
-  "requirement3": "Internetverbindung erforderlich",
+  "requirement2": "Mindestens 4 GB RAM und 500 MB freier Speicherplatz",
 
   "privacyTitle": "Datenschutzerklärung",
   "privacyIntro": "Der Schutz Ihrer persönlichen Daten ist uns wichtig. Nachfolgend informieren wir Sie transparent über Art, Umfang und Zweck der Verarbeitung personenbezogener Daten.",

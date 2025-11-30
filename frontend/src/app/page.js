@@ -49,9 +49,9 @@ export default function Main() {
     return (
         <>
             <Home />
-            <Features />
             <Stats />
             <Reviews />
+            <Features />
             <Faq />
             <Footer />
         </>

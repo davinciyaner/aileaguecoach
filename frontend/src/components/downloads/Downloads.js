@@ -72,7 +72,6 @@ export default function Downloads() {
                     <ul className="list-disc list-inside space-y-1">
                         <li>{t('requirement1')}</li>
                         <li>{t('requirement2')}</li>
-                        <li>{t('requirement3')}</li>
                     </ul>
                 </div>
             </main>

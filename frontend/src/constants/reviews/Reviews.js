@@ -82,10 +82,11 @@ export default function Reviews() {
         ? (reviews.reduce((sum, r) => sum + r.rating, 0) / totalReviews).toFixed(1)
         : 0;
 
+
     return (
         <section className="bg-gray-900 py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <div id="reviews" className="mx-auto max-w-2xl text-center mb-12">
+                <div className="mx-auto max-w-2xl text-center mb-12">
                     <h2 className="text-base font-semibold text-indigo-400">{t("reviews_title")}</h2>
                     <p className="mt-2 text-4xl font-semibold text-white sm:text-5xl">
                         {t("reviews_average", { average: averageRating })}

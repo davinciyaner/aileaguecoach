@@ -14,8 +14,8 @@
   "navbar_close_menu": "Close main menu",
 
   "beta": "BETA VERSION",
-  "headline": "Climb faster with AI coaching – live win chance & objective recommendations",
-  "subtext": "With our AI, it has never been easier to climb in League of Legends – analyze games in real time, calculate your live win chance and get recommendations on how you and your team can win.",
+  "headline": "Climb faster with our AI coach",
+  "subtext": "With our AI, it has never been easier to climb in League of Legends – analyze games in real time, calculate your win chance and get recommendations on how you and your team can win.",
   "start_now": "Free Download",
   "seo_title": "League of Legends AI – Analyze your game in real time",
   "seo_description": "Climb ranked with AI support. Our League of Legends AI analyzes your matches in real time, evaluates objectives, team synergy, and meta trends.",
@@ -49,21 +49,14 @@
   "timeline_title_big": "Building the Future of AI Coaching",
   "timeline_description": "From an ambitious idea to a revolutionary coaching platform – see how Hans evolves step by step.",
 
-  "timeline_step_1_title": "Idea & Research",
-  "timeline_step_1_date": "October 11, 2025",
-  "timeline_step_1_desc": "The idea for Hans was born – a next-generation AI coach helping League of Legends players reach their full potential.",
+  "timeline_step_1_title": "50+ users",
+  "timeline_step_1_desc": "every single day",
 
-  "timeline_step_2_title": "MVP Development",
-  "timeline_step_2_date": "October 18, 2025",
-  "timeline_step_2_desc": "The first prototype is developed – with AI-powered real-time analysis and the foundations for intelligent coaching.",
+  "timeline_step_2_title": "2000+ matches",
+  "timeline_step_2_desc": "analyzed in our beta version",
 
-  "timeline_step_3_title": "Closed Beta",
-  "timeline_step_3_date": "October 26, 2025",
-  "timeline_step_3_desc": "Early access opens for selected players to test Hans and shape the future of AI-based training.",
-
-  "timeline_step_4_title": "Public Launch",
-  "timeline_step_4_date": "November 8, 2025",
-  "timeline_step_4_desc": "Hans officially goes live. Real-time coaching and performance dashboards become available to all players.",
+  "timeline_step_3_title": "8-15% winrate",
+  "timeline_step_3_desc": "Our community get a better winrate in just 7 days",
 
   "reviews_title": "Customer Reviews",
   "reviews_average": "{{average}} out of 5 stars",
@@ -159,8 +152,7 @@
   "versionInfo": "Version 0.1.1 · Released on 18. November 2025 · downloads",
   "systemRequirements": "System Requirements",
   "requirement1": "Windows 10 or higher (64-bit)",
-  "requirement2": "At least 4 GB RAM and 300 MB free storage",
-  "requirement3": "Internet connection required",
+  "requirement2": "At least 4 GB RAM and 500 MB free storage",
 
   "privacyTitle": "Privacy Policy",
   "privacyIntro": "Protecting your personal data is important to us. Below we transparently inform you about the type, scope, and purpose of processing personal data.",

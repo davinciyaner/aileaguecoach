@@ -29,9 +29,9 @@ const Navbar = ({ minimal = false }) => {
 
     const navigation = [
         { name: t("navbar_about"), href: '/about' },
-        { name: t("navbar_features"), href: '#features' },
-        { name: t("navbar_future"), href: '#future' },
         { name: t("navbar_reviews"), href: '#reviews' },
+        { name: t("navbar_future"), href: '#future' },
+        { name: t("navbar_features"), href: '#features' },
         { name: t("navbar_faq"), href: '#faq' },
         { name: t("navbar_download"), href: '/download' },
         { name: t("navbar_discord"), href: 'https://discord.gg/4ecd9TvCmU' },

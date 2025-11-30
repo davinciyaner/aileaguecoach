@@ -17,13 +17,12 @@ export default function Home() {
     const { language } = useLanguage();
     const t = (key) => {
         const translations = language === 'de' ? deTranslations : enTranslations;
-        return translations[key] || key; // fallback falls Key fehlt
+        return translations[key] || key;
     };
 
 
     return (
         <>
-            {/* Meta-Tags und SEO */}
             <Head>
                 <title>{t("seo_title")}</title>
                 <meta name="description" content={t("seo_description")} />
