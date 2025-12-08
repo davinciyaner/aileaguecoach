@@ -70,7 +70,7 @@ export default function Reviews() {
             setHoverRating(0);
             setShowForm(false);
             fetchData();
-            alert("Danke für deine Bewertung");
+            alert(t("reviews_gesendet"));
         } else {
             alert(data.message);
         }

@@ -63,7 +63,7 @@ export default function Downloads() {
                             })}
                         </p>
                     ) : (
-                        <p className="text-gray-500 text-sm mt-3">Version 0.1.1-Beta.1</p>
+                        <p className="text-gray-500 text-sm mt-3">Version 0.1.3 - Beta</p>
                     )}
                 </div>
 

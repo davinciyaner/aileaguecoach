@@ -75,6 +75,7 @@
   "reviews_read_less": "Weniger anzeigen",
   "reviews_anonymous": "Anonymous",
   "reviews_login_hint": "melde dich an,",
+  "reviews_gesendet": "Danke für deine Bewertung!",
 
   "faq_title": "FAQ",
   "faq_heading": "Häufig gestellte Fragen",
@@ -153,10 +154,10 @@
   "downloadText": "Lade die neueste Version herunter und starte deine Reise mit dem Hans AI Coach.",
   "downloadButton": "Für Windows herunterladen",
   "loading": "Lädt...",
-  "versionInfo": "Version 0.1.1 · Veröffentlicht am 18. November 2025 · Downloads",
+  "versionInfo": "Version 0.1.3 · Veröffentlicht am 08. Dezember 2025 · Downloads",
   "systemRequirements": "Systemanforderungen",
   "requirement1": "Windows 10 oder höher (64-Bit)",
-  "requirement2": "Mindestens 4 GB RAM und 500 MB freier Speicherplatz",
+  "requirement2": "Mindestens 8 GB RAM und 1gb MB freier Speicherplatz",
 
   "privacyTitle": "Datenschutzerklärung",
   "privacyIntro": "Der Schutz Ihrer persönlichen Daten ist uns wichtig. Nachfolgend informieren wir Sie transparent über Art, Umfang und Zweck der Verarbeitung personenbezogener Daten.",

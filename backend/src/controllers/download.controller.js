@@ -12,7 +12,7 @@ export const getDownloadStats = async (req, res) => {
         if (!stats) {
             // Falls noch kein Eintrag existiert, initialisieren
             stats = await Download.create({
-                version: "0.1.2",
+                version: "0.1.3",
                 releaseDate: new Date(),
                 downloads: 0,
             });
@@ -33,7 +33,7 @@ export const getDownloadStats = async (req, res) => {
 
 // Download für Windows
 export const downloadWindows = async (req, res) => {
-    const githubUrl = "https://github.com/davinciyaner/aileaguecoach/releases/download/v0.1.2/main.exe";
+    const githubUrl = "https://github.com/davinciyaner/aileaguecoach/releases/download/v0.1.3/AIHans.exe";
 
     try {
         // Nur DB-Update (optional) – blockiert den Redirect nicht
@@ -41,7 +41,7 @@ export const downloadWindows = async (req, res) => {
             let stats = await Download.findOne({});
             if (!stats) {
                 stats = await Download.create({
-                    version: "0.1.2",
+                    version: "0.1.3",
                     releaseDate: new Date(),
                     downloads: 0,
                 });
